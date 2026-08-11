@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réan Clinton | Operations & HR Leader</title>
+    <title>Réan Clinton | Director of Operations & Civil Aviation Executive Brief</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -11,12 +11,11 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            600: '#0284c7',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                        executive: {
+                            800: '#0f172a',
+                            900: '#020617',
+                            gold: '#c5a059',
+                            goldhover: '#b08b46'
                         }
                     }
                 }
@@ -24,198 +23,241 @@
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-executive-gold selection:text-slate-950">
 
-    <!-- Header Navigation -->
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-slate-900">Réan Clinton</a>
-            <div class="space-x-6 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-brand-600 transition">About</a>
-                <a href="#experience" class="hover:text-brand-600 transition">Experience</a>
-                <a href="#education" class="hover:text-brand-600 transition">Education</a>
-                <a href="#certifications" class="hover:text-brand-600 transition">Certifications</a>
-                <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+    <!-- Top Executive Bar -->
+    <div class="bg-executive-gold text-slate-950 text-[11px] font-bold tracking-widest uppercase py-1.5 px-6 text-center">
+        National Development Scholar | M.Sc. Aviation (Distinction) | Executive Operations & Advisory
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="sticky top-0 w-full bg-slate-950/90 backdrop-blur-md border-b border-slate-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-lg font-black tracking-widest text-white uppercase flex items-center gap-2">
+                Réan Clinton <span class="text-executive-gold text-xs font-normal border-l border-slate-700 pl-2">Executive Brief</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <a href="#governance" class="hover:text-executive-gold transition">Executive Summary</a>
+                <a href="#matrix" class="hover:text-executive-gold transition">Operational Pillars</a>
+                <a href="#research" class="hover:text-executive-gold transition">Award Research</a>
+                <a href="#credentials" class="hover:text-executive-gold transition">Credentials</a>
             </div>
+            <a href="mailto:reanclinton@gmail.com" class="bg-executive-gold text-slate-950 px-5 py-2 rounded text-xs font-bold uppercase tracking-wider hover:bg-executive-goldhover transition">
+                Request Briefing
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="max-w-3xl">
-            <span class="inline-block py-1 px-3 rounded-full bg-brand-50 text-brand-800 text-xs font-semibold tracking-wide uppercase mb-4">
-                Operations & Human Capital Strategy
-            </span>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-                Driving Operational Excellence & High-Performance Human Capital Systems
-            </h1>
-            <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                Accomplished operations manager and HR strategist with a Master of Science in Aviation (Distinction) and a proven track record managing $2M+ in fiscal accounts, streamlining CRM automations, and driving workforce analytics across multi-department teams.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="bg-brand-900 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:bg-brand-800 transition">
-                    Get in Touch
-                </a>
-                <a href="mailto:reanclinton@gmail.com" class="bg-white text-slate-700 border border-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-100 transition flex items-center gap-2">
-                    <i class="fa-regular fa-envelope"></i> Email Resume
-                </a>
+    <!-- Executive Hero Header -->
+    <section id="governance" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Executive Statement -->
+            <div class="lg:col-span-7">
+                <span class="text-xs font-bold text-executive-gold uppercase tracking-widest block mb-3">
+                    <i class="fa-solid fa-building-columns mr-1"></i> Executive Leadership Profile
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+                    Director of Operations & Civil Aviation Governance
+                </h1>
+                <p class="text-slate-300 text-base leading-relaxed mb-8">
+                    Senior operations executive specializing in civil aviation compliance (ICAO Annex 19), large-scale ground service execution, fiscal stewardship, and strategic workforce management across high-demand airport and hospitality environments.
+                </p>
+
+                <!-- C-Suite Contact Strip -->
+                <div class="grid sm:grid-cols-3 gap-3 mb-8 text-xs">
+                    <div class="bg-slate-900 p-3 rounded border border-slate-800">
+                        <span class="text-slate-500 uppercase block font-bold text-[10px]">Location</span>
+                        <span class="text-slate-200 font-semibold">Barbados / Regional</span>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded border border-slate-800">
+                        <span class="text-slate-500 uppercase block font-bold text-[10px]">Direct Phone</span>
+                        <a href="tel:9374777862" class="text-slate-200 font-semibold hover:text-executive-gold">(937) 477-7862</a>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded border border-slate-800">
+                        <span class="text-slate-500 uppercase block font-bold text-[10px]">Direct Email</span>
+                        <a href="mailto:reanclinton@gmail.com" class="text-slate-200 font-semibold hover:text-executive-gold truncate block">reanclinton@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:reanclinton@gmail.com?subject=Executive%20Opportunity%20Inquiry" class="bg-executive-gold text-slate-950 px-6 py-3.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-executive-goldhover transition">
+                        Initiate Director Inquiry
+                    </a>
+                    <a href="#matrix" class="bg-slate-900 border border-slate-700 text-white px-6 py-3.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-slate-800 transition">
+                        Review Core Competencies
+                    </a>
+                </div>
+            </div>
+
+            <!-- Executive Portrait & Board Badges -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="relative bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-2xl">
+                    <div class="aspect-[4/5] w-full rounded-lg overflow-hidden bg-slate-800 relative">
+                        <img src="profile.jpg" alt="Réan Clinton" class="w-full h-full object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop'">
+                    </div>
+                    <div class="p-4 bg-slate-950 rounded-lg border border-slate-800 mt-3 text-center">
+                        <div class="text-xs font-bold text-white uppercase tracking-wider">Board & Advisory Roles</div>
+                        <div class="text-[11px] text-executive-gold mt-1">Aviation Safety Advisory Council | UAA Member</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Key Governance & Scale Metrics -->
+    <section class="py-12 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <span class="text-3xl font-black text-executive-gold block">300+</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Staff Command</span>
+            </div>
+            <div>
+                <span class="text-3xl font-black text-executive-gold block">7+</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Airline Accounts Managed</span>
+            </div>
+            <div>
+                <span class="text-3xl font-black text-executive-gold block">$2M+</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Fiscal Grants Audited</span>
+            </div>
+            <div>
+                <span class="text-3xl font-black text-executive-gold block">100%</span>
+                <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Regulatory Readiness</span>
             </div>
         </div>
     </section>
 
-    <!-- About Highlights -->
-    <section id="about" class="py-12 bg-white border-y border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-3 gap-8">
-            <div class="p-6 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="text-brand-600 text-2xl font-bold mb-2">$2M+</div>
-                <div class="text-slate-900 font-semibold mb-1">Fiscal Oversight</div>
-                <p class="text-sm text-slate-600">Managed and audited federal grant funds against strict operational budgets.</p>
-            </div>
-            <div class="p-6 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="text-brand-600 text-2xl font-bold mb-2">45 to 21 Days</div>
-                <div class="text-slate-900 font-semibold mb-1">Time-to-Fill Efficiency</div>
-                <p class="text-sm text-slate-600">Reduced recruitment timelines through predictive workforce forecasting models.</p>
-            </div>
-            <div class="p-6 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="text-brand-600 text-2xl font-bold mb-2">300+ Staff</div>
-                <div class="text-slate-900 font-semibold mb-1">Workforce Leadership</div>
-                <p class="text-sm text-slate-600">Implemented hybrid human capital management systems across 5 operational departments.</p>
-            </div>
+    <!-- Director Capability Matrix -->
+    <section id="matrix" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-bold text-executive-gold uppercase tracking-widest block mb-2">Director Matrix</span>
+            <h2 class="text-3xl font-black text-white tracking-tight">OPERATIONAL & GOVERNANCE PILLARS</h2>
         </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-slate-900 mb-12">Professional Experience</h2>
-        
-        <div class="space-y-12">
-            <!-- Role 1 -->
-            <div class="relative pl-8 border-l-2 border-brand-600">
-                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-600"></div>
-                <div class="flex flex-wrap justify-between items-baseline mb-2">
-                    <h3 class="text-xl font-bold text-slate-900">Graduate Research Coordinator</h3>
-                    <span class="text-sm font-medium text-slate-500">Aug 2024 – Apr 2026</span>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Strategic Pillar 1 -->
+            <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 hover:border-executive-gold transition duration-300">
+                <div class="text-executive-gold text-2xl mb-4"><i class="fa-solid fa-plane-shield"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">Civil Aviation & Safety Systems</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Direct oversight of Safety Management Systems (SMS) aligning with ICAO Annex 19 and international SARPs. Expert in audit-readiness across ground handling, safety risk profiling, and regulatory compliance.
+                </p>
+                <div class="border-t border-slate-800 pt-4 text-xs text-slate-300 space-y-1">
+                    <p>• ICAO Annex 19 SMS Frameworks</p>
+                    <p>• Emergency Response & Risk Management</p>
+                    <p>• Multi-Agency Regulatory Liaison</p>
                 </div>
-                <p class="text-brand-800 font-medium mb-4">College of Aviation, Embry-Riddle Aeronautical University | Daytona Beach, FL</p>
-                <ul class="list-disc list-inside space-y-2 text-slate-600 text-sm leading-relaxed">
-                    <li>Managed fiscal oversight for $2M+ in federal grant funds, auditing expenditures against operational budgets to ensure compliance.</li>
-                    <li>Integrated Salesforce CRM and KnowledgeLake across 5 academic programs to automate document processing, track satisfaction KPIs, and accelerate resolution timelines.</li>
-                    <li>Led the development and rollout of an automated dissertation chair matching tool, eliminating placement inaccuracies between student proposals and faculty specializations.</li>
-                    <li>Conducted comprehensive global aviation safety research evaluating international civil aviation standards and regulatory frameworks to optimize industry risk mitigation.</li>
-                    <li>Honored with the ERAU International Engagement Award for Excellence in International Research.</li>
-                </ul>
             </div>
 
-            <!-- Role 2 -->
-            <div class="relative pl-8 border-l-2 border-slate-300">
-                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                <div class="flex flex-wrap justify-between items-baseline mb-2">
-                    <h3 class="text-xl font-bold text-slate-900">Human Resources Business Partner</h3>
-                    <span class="text-sm font-medium text-slate-500">Jan 2024 – Aug 2024</span>
+            <!-- Strategic Pillar 2 -->
+            <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 hover:border-executive-gold transition duration-300">
+                <div class="text-executive-gold text-2xl mb-4"><i class="fa-solid fa-sliders"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">24/7 Operations & Service Delivery</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Commanding multi-department operational staff across high-volume environments. Proven record in eliminating turnaround delays, enforcing SLAs, and driving cross-functional efficiency under tight margins.
+                </p>
+                <div class="border-t border-slate-800 pt-4 text-xs text-slate-300 space-y-1">
+                    <p>• Ground Handling SLA Management</p>
+                    <p>• Turnaround Schedule Optimization</p>
+                    <p>• Irregular Operations (IROPS) Protocol</p>
                 </div>
-                <p class="text-brand-800 font-medium mb-4">DSPS HR Solutions | Bridgetown, Barbados</p>
-                <ul class="list-disc list-inside space-y-2 text-slate-600 text-sm leading-relaxed">
-                    <li>Championed business initiatives across a portfolio of hospitality clients, ensuring company policies and Standard Operating Procedures (SOPs) reflected core business objectives.</li>
-                    <li>Established structured performance evaluation frameworks, setting clear KPIs for operational teams through formal appraisal processes to hold staff accountable for service outcomes.</li>
-                    <li>Formulated workforce analytics dashboards tracking attendance, overtime, and turnover across client accounts, providing C-suite leadership with monthly data to control labor spending.</li>
-                </ul>
             </div>
 
-            <!-- Role 3 -->
-            <div class="relative pl-8 border-l-2 border-slate-300">
-                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                <div class="flex flex-wrap justify-between items-baseline mb-2">
-                    <h3 class="text-xl font-bold text-slate-900">Acting Human Resources Manager</h3>
-                    <span class="text-sm font-medium text-slate-500">Feb 2023 – Apr 2023</span>
-                </div>
-                <p class="text-brand-800 font-medium mb-4">Caribbean Aircraft Handling (CAH) | Christ Church, Barbados</p>
-                <ul class="list-disc list-inside space-y-2 text-slate-600 text-sm leading-relaxed">
-                    <li>Directed human capital strategy across 7+ global airline accounts, balancing competing corporate and stakeholder priorities to ensure efficient 24/7 service execution.</li>
-                    <li>Maintained audit-readiness for executive oversight committees and global regulatory bodies to pass ICAO, IATA, and ISAGO safety and quality audits.</li>
-                    <li>Reconciled unplanned labor expenditures during irregular operations by executing airline chargebacks to protect operating margins and control labor costs.</li>
-                </ul>
-            </div>
-
-            <!-- Role 4 -->
-            <div class="relative pl-8 border-l-2 border-slate-300">
-                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
-                <div class="flex flex-wrap justify-between items-baseline mb-2">
-                    <h3 class="text-xl font-bold text-slate-900">Human Resources Coordinator</h3>
-                    <span class="text-sm font-medium text-slate-500">Jul 2019 – Jul 2023</span>
-                </div>
-                <p class="text-brand-800 font-medium mb-4">Caribbean Aircraft Handling (CAH) | Christ Church, Barbados</p>
-                <ul class="list-disc list-inside space-y-2 text-slate-600 text-sm leading-relaxed">
-                    <li>Reduced Time-to-Fill from 45 to 21 days via predictive recruitment models for peak flight schedules.</li>
-                    <li>Maintained an active open-door policy that addressed frontline workforce grievances at the root level, averting formal labor disputes and safeguarding seamless service delivery.</li>
-                    <li>Drove the transition to a hybrid human capital management system that improved safety tracking and HR processes across 5 departments to support over 300 staff members.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-slate-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12">Education</h2>
-            <div class="grid sm:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl border border-slate-200">
-                    <span class="text-xs font-semibold text-brand-600">2024 – 2026</span>
-                    <h3 class="text-lg font-bold text-slate-900 mt-1">Master of Science in Aviation (Distinction)</h3>
-                    <p class="text-sm text-slate-600 mb-3">Embry-Riddle Aeronautical University | Daytona Beach, FL</p>
-                    <p class="text-xs text-slate-500"><strong>Specialization:</strong> Aerospace Management, Sustainability & Safety Management Systems</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-slate-200">
-                    <span class="text-xs font-semibold text-brand-600">2019 – 2022</span>
-                    <h3 class="text-lg font-bold text-slate-900 mt-1">Bachelor of Science in Management (Honors)</h3>
-                    <p class="text-sm text-slate-600 mb-3">The University of the West Indies | Bridgetown, Barbados</p>
-                    <p class="text-xs text-brand-800 font-medium">Barbadian National Development Scholar — Awarded prestigious national scholarship for academic distinction and leadership potential.</p>
+            <!-- Strategic Pillar 3 -->
+            <div class="bg-slate-900 p-8 rounded-xl border border-slate-800 hover:border-executive-gold transition duration-300">
+                <div class="text-executive-gold text-2xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">Fiscal Control & Workforce Strategy</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Managing $2M+ accounts, auditing departmental expenditures, and executing data-driven labor forecasting models to maintain operational capability while controlling labor costs and overtime.
+                </p>
+                <div class="border-t border-slate-800 pt-4 text-xs text-slate-300 space-y-1">
+                    <p>• $2M+ Federal/Grant Audit Management</p>
+                    <p>• Predictive Seasonality Staffing Models</p>
+                    <p>• Expense Recovery & Chargeback Execution</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-slate-900 mb-8">Certifications & Affiliations</h2>
-        <div class="grid sm:grid-cols-3 gap-6">
-            <div class="p-5 border border-slate-200 rounded-lg bg-white">
-                <div class="font-bold text-slate-900">SHRM-SCP</div>
-                <p class="text-xs text-slate-500 mb-2">Society for Human Resource Management</p>
-                <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-medium">Expected Sep 2026</span>
-            </div>
-            <div class="p-5 border border-slate-200 rounded-lg bg-white">
-                <div class="font-bold text-slate-900">Talent Acquisition Certificate</div>
-                <p class="text-xs text-slate-500 mb-2">HR Certification Institute</p>
-                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-medium">Issued Feb 2026</span>
-            </div>
-            <div class="p-5 border border-slate-200 rounded-lg bg-white">
-                <div class="font-bold text-slate-900">HR Analytics Certificate</div>
-                <p class="text-xs text-slate-500 mb-2">University of California, Irvine</p>
-                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-medium">Issued Feb 2026</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-brand-900 text-white">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Let's Connect</h2>
-            <p class="text-slate-300 max-w-lg mx-auto mb-8">
-                Open to executive operational leadership opportunities and strategic management consulting roles.
-            </p>
-            <div class="flex justify-center gap-6 text-lg">
-                <a href="mailto:reanclinton@gmail.com" class="hover:text-brand-100 transition flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i> reanclinton@gmail.com
-                </a>
-                <a href="tel:9374777862" class="hover:text-brand-100 transition flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i> 937-477-7862
-                </a>
+    <!-- Award-Winning Applied Research -->
+    <section id="research" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 lg:p-12">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8">
+                        <span class="text-xs font-bold text-executive-gold uppercase tracking-widest block mb-2">Featured Executive Deliverable</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mb-4">
+                            SIDS Aviation Governance & ICAO Annex 19 Quantitative Model
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Awarded the prestigious <strong>University Aviation Association (UAA) Research Award</strong> and the <strong>International Education Research Award</strong>. This work provides an actionable regulatory compliance model for Small Island Developing States (SIDS) to bridge SMS implementation gaps under resource-constrained conditions.
+                        </p>
+                        <div class="flex flex-wrap gap-3 text-xs">
+                            <span class="bg-slate-900 text-slate-300 border border-slate-800 px-3 py-1 rounded">M.Sc. Aviation (Distinction)</span>
+                            <span class="bg-slate-900 text-slate-300 border border-slate-800 px-3 py-1 rounded">National Development Scholar</span>
+                            <span class="bg-slate-900 text-slate-300 border border-slate-800 px-3 py-1 rounded">UAA Honoree</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 text-center border-t lg:border-t-0 lg:border-l border-slate-800 pt-6 lg:pt-0 lg:pl-8">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Request Executive Briefing</div>
+                        <p class="text-xs text-slate-500 mb-6">Access the full executive summary and operational model framework.</p>
+                        <a href="mailto:reanclinton@gmail.com?subject=Request%20for%20Executive%20Research%20Brief" class="inline-block w-full bg-executive-gold text-slate-950 font-bold text-xs uppercase tracking-wider py-3 rounded hover:bg-executive-goldhover transition">
+                            Contact Author
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-6 text-center text-xs text-slate-500 bg-slate-950">
-        © 2026 Réan Clinton. All rights reserved.
+    <!-- Credentials & Affiliations -->
+    <section id="credentials" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-xs font-bold uppercase tracking-widest text-executive-gold mb-6">Education & Development</h3>
+                <div class="space-y-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                        <div class="text-xs text-executive-gold font-bold mb-1">2024 – 2026</div>
+                        <div class="text-lg font-bold text-white">Master of Science in Aviation (Distinction)</div>
+                        <div class="text-sm text-slate-400">Embry-Riddle Aeronautical University</div>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                        <div class="text-xs text-executive-gold font-bold mb-1">2019 – 2022</div>
+                        <div class="text-lg font-bold text-white">Bachelor of Science in Management (Honors)</div>
+                        <div class="text-sm text-slate-400">The University of the West Indies | National Scholar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xs font-bold uppercase tracking-widest text-executive-gold mb-6">Executive Credentials</h3>
+                <div class="space-y-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                        <div class="text-lg font-bold text-white">Certificate in Tourism Management</div>
+                        <div class="text-sm text-slate-400 mb-2">United Nations World Tourism Organization (UNWTO)</div>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                        <div class="text-lg font-bold text-white">Senior Certified Professional (SHRM-SCP)</div>
+                        <div class="text-sm text-slate-400">Society for Human Resource Management | <span class="text-executive-gold">Expected Sep 2026</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Contact -->
+    <footer class="py-16 bg-slate-900 border-t border-slate-800 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h3 class="text-2xl font-black text-white mb-3">Initiate Executive Inquiry</h3>
+            <p class="text-slate-400 text-xs mb-8">Available for Director-level roles, operations management, and civil aviation advisory assignments.</p>
+            <a href="mailto:reanclinton@gmail.com" class="inline-block bg-executive-gold text-slate-950 font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded hover:bg-executive-goldhover transition">
+                Direct Email: reanclinton@gmail.com
+            </a>
+            <div class="text-slate-600 text-[11px] mt-12">
+                © 2026 Réan Clinton. All Executive Rights Reserved.
+            </div>
+        </div>
     </footer>
 
 </body>
