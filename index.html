@@ -7,7 +7,7 @@
     <!-- Executive Fonts: Cinzel, Montserrat, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -15,7 +15,7 @@
             --navy-muted: #1E293B;
             --gold-regal: #C5A059;
             --gold-light: #DFC07F;
-            --gold-subtle: rgba(197, 160, 89, 0.15);
+            --gold-subtle: rgba(197, 160, 89, 0.12);
             --ivory-bg: #F8F9FA;
             --white-pure: #FFFFFF;
             --text-dark: #0F172A;
@@ -99,6 +99,7 @@
             color: var(--white-pure);
             padding: 9rem 2rem 6rem 2rem;
             border-bottom: 4px solid var(--gold-regal);
+            position: relative;
         }
 
         .hero-container {
@@ -189,13 +190,16 @@
             transition: all 0.3s ease;
             border: 1px solid var(--gold-regal);
             cursor: pointer;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-gold:hover {
             background-color: var(--gold-light);
             border-color: var(--gold-light);
             transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(197, 160, 89, 0.25);
         }
 
         .btn-outline {
@@ -211,7 +215,9 @@
             text-decoration: none;
             border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-outline:hover {
@@ -284,6 +290,19 @@
             padding: 2.5rem 1.8rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, border-top-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--gold-subtle);
+            border-radius: 0 0 0 100%;
         }
 
         .metric-card:hover {
@@ -313,65 +332,6 @@
             color: var(--text-muted);
         }
 
-        /* Competency Grid */
-        .competency-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .competency-card {
-            background-color: var(--white-pure);
-            border: 1px solid #E2E8F0;
-            padding: 2.5rem;
-            border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .competency-card:hover {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            border-color: var(--gold-regal);
-        }
-
-        .competency-icon {
-            color: var(--gold-regal);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-family: var(--font-regal);
-        }
-
-        .competency-title {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            color: var(--navy-deep);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .competency-list {
-            list-style: none;
-        }
-
-        .competency-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 1.1rem;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .competency-list li::before {
-            content: "■";
-            position: absolute;
-            left: 0;
-            color: var(--gold-regal);
-            font-size: 0.6rem;
-            top: 0.2rem;
-        }
-
         /* Timeline */
         .timeline {
             position: relative;
@@ -394,6 +354,7 @@
             border-radius: 50%;
             background: var(--gold-regal);
             border: 3px solid var(--white-pure);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
         }
 
         .timeline-role {
@@ -444,6 +405,104 @@
             font-weight: bold;
         }
 
+        /* Strategic Blueprint Cards */
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+
+        .blueprint-card {
+            background: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .blueprint-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08);
+            border-color: var(--gold-regal);
+        }
+
+        .blueprint-icon {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+        }
+
+        .blueprint-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .blueprint-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Research Section Styling */
+        .research-wrapper {
+            background: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .research-poster-box {
+            background: #0F172A;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--gold-regal);
+        }
+
+        .research-poster-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .research-results-box {
+            padding: 3rem;
+            background: var(--white-pure);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .results-item {
+            background: var(--ivory-bg);
+            border-left: 3px solid var(--gold-regal);
+            padding: 1.2rem 1.5rem;
+        }
+
+        .results-item-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--navy-deep);
+            margin-bottom: 0.3rem;
+        }
+
+        .results-item-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
         /* Education & Certs Grid */
         .edu-grid {
             display: grid;
@@ -456,6 +515,11 @@
             border: 1px solid #E2E8F0;
             border-left: 4px solid var(--navy-deep);
             padding: 2rem;
+            transition: border-left-color 0.3s ease;
+        }
+
+        .edu-card:hover {
+            border-left-color: var(--gold-regal);
         }
 
         .edu-card h3 {
@@ -472,62 +536,92 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Asset Viewer Container */
-        .asset-viewer-container {
-            background: var(--white-pure);
-            border: 1px solid #E2E8F0;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            overflow: hidden;
-            padding: 2.5rem;
-        }
-
-        /* Honors Section */
+        /* Visual Eye-Catching Honors Section */
         .honors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
-        .honor-card {
+        .honor-card-visual {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
-            border-top: 3px solid var(--gold-regal);
-            padding: 2.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            border-radius: 4px;
+            padding: 2.2rem;
             position: relative;
-            transition: transform 0.3s ease, border-top-color 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .honor-card:hover {
-            transform: translateY(-4px);
-            border-top-color: var(--navy-deep);
+        .honor-card-visual:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: var(--gold-regal);
         }
 
-        .honor-badge {
-            font-family: var(--font-regal);
+        .honor-card-visual::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-regal), var(--navy-deep));
+        }
+
+        .honor-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+        }
+
+        .honor-badge-visual {
+            background: var(--gold-subtle);
             color: var(--gold-regal);
-            font-size: 0.8rem;
+            padding: 0.35rem 0.8rem;
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            border-radius: 2px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .honor-icon {
+            font-size: 2rem;
         }
 
         .honor-title {
             font-family: var(--font-heading);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--navy-deep);
             font-weight: 700;
             margin-bottom: 0.4rem;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .honor-issuer {
             font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
+            color: var(--gold-regal);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .honor-metric-highlight {
+            display: inline-block;
+            background: var(--navy-deep);
+            color: var(--white-pure);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
             font-weight: 600;
+            border-radius: 2px;
+            margin-top: 1rem;
         }
 
         /* Call to Action Section */
@@ -583,15 +677,16 @@
         footer {
             background-color: var(--navy-deep);
             color: #94A3B8;
-            padding: 3rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
         }
 
         footer h3 {
             font-family: var(--font-regal);
             color: var(--white-pure);
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1.5px;
         }
 
         @media (max-width: 992px) {
@@ -601,6 +696,7 @@
             .cta-group { justify-content: center; }
             .nav-links { display: none; }
             .cta-title { font-size: 1.8rem; }
+            .research-results-box { padding: 1.8rem; }
         }
     </style>
 </head>
@@ -614,7 +710,7 @@
                 <li><a href="#summary">Overview</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#competencies">Capabilities</a></li>
-                <li><a href="#research">Research & Deck</a></li>
+                <li><a href="#research">Research & Results</a></li>
                 <li><a href="#education">Education & Certs</a></li>
                 <li><a href="#honors">Recognition</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -744,105 +840,116 @@
         </div>
     </section>
 
-    <!-- 3. Executive Competency: Stakeholder Engagement & Strategic Alignment -->
+    <!-- 3. Strategic Vision & Executive Blueprint -->
     <section id="competencies" class="section-white">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Governance & Communication</div>
-                <h2 class="section-title">Stakeholder Engagement & Strategic Alignment</h2>
+                <div class="section-tag">Strategic Vision</div>
+                <h2 class="section-title">Forward-Looking Executive Blueprint</h2>
             </div>
 
-            <div class="competency-grid">
-                <div class="competency-card">
-                    <div class="competency-icon">🏛️</div>
-                    <h3 class="competency-title">Cross-Sector Regulatory Governance</h3>
-                    <ul class="competency-list">
-                        <li><strong>Multi-Jurisdictional Alignment:</strong> Harmonizes compliance standards across international governing bodies and regional aviation authorities. This establishes uniform risk management protocols across 3 distinct operating jurisdictions while maintaining 100% audit readiness.</li>
-                        <li><strong>Crisis Risk Mitigation:</strong> Formulates adaptive communication procedures for major operational disruptions. This preserves core service delivery across 24-hour shift rotations and protects critical infrastructure assets during unforeseen emergencies.</li>
-                        <li><strong>Institutional Trust Building:</strong> Conducts structured governance reviews with state regulators, industry oversight boards, and executive leadership. This secures official policy sign-offs and ensures zero statutory non-compliance penalties.</li>
-                    </ul>
+            <div class="blueprint-grid">
+                <div class="blueprint-card" style="border-top: 3px solid var(--gold-regal);">
+                    <div class="blueprint-icon">🌐</div>
+                    <h3 class="blueprint-title">Global Regulatory Horizon</h3>
+                    <p class="blueprint-desc">
+                        Anticipating shift patterns in international civil aviation governance to design adaptive compliance models before statutory mandates take effect, insulating enterprise operations from systemic regulatory friction.
+                    </p>
                 </div>
 
-                <div class="competency-card">
-                    <div class="competency-icon">📈</div>
-                    <h3 class="competency-title">Workforce & Labor Alignment</h3>
-                    <ul class="competency-list">
-                        <li><strong>Union & Executive Mediation:</strong> Facilitates structured dialogue between executive leadership, operational directors, and union representatives. This resolves workplace grievances within 14 business days and maintains productive labor relations.</li>
-                        <li><strong>Change Management Integration:</strong> Executes multi-tier change frameworks across 4 organizational levels during operational shifts. This aligns ground staff, middle management, and C-suite executives around shared strategic objectives.</li>
-                        <li><strong>Public-Private Upskilling Strategy:</strong> Coordinates regional training alliances between public agencies and private enterprise partners. This preserves institutional talent pools and fills critical workforce capability gaps across 7-day operational schedules.</li>
-                    </ul>
+                <div class="blueprint-card" style="border-top: 3px solid var(--navy-deep);">
+                    <div class="blueprint-icon">🏛️</div>
+                    <h3 class="blueprint-title">Institutional Ecosystem Cohesion</h3>
+                    <p class="blueprint-desc">
+                        Bridging macro-level state policy with micro-level operational execution, transforming potentially conflicting public oversight and private commercial incentives into unified, high-performing regional ecosystems.
+                    </p>
                 </div>
 
-                <div class="competency-card">
-                    <div class="competency-icon">⚡</div>
-                    <h3 class="competency-title">Systems & Operational Coordination</h3>
-                    <ul class="competency-list">
-                        <li><strong>Technology Adoption Leadership:</strong> Directs multi-departmental user groups during enterprise software rollouts. This aligns vendor technical specifications with internal end-user requirements to achieve full system adoption within 90 days.</li>
-                        <li><strong>Executive Strategy Advisory:</strong> Translates operational metrics and frontline workforce sentiment into executive decision briefings. This provides C-suite leaders with clear, actionable insights for long-term strategic planning.</li>
-                        <li><strong>Cross-Departmental Workflow Optimization:</strong> Establishes shared governance frameworks across technical, financial, and operational divisions. This eliminates communication silos and accelerates project delivery timelines across all functional teams.</li>
-                    </ul>
+                <div class="blueprint-card" style="border-top: 3px solid var(--gold-regal);">
+                    <div class="blueprint-icon">🛡️</div>
+                    <h3 class="blueprint-title">Resilience & Crisis Architecture</h3>
+                    <p class="blueprint-desc">
+                        Architecting preemptive operational structures that allow complex organizational supply chains to absorb geopolitical, environmental, and economic shocks without compromising core capabilities or human safety.
+                    </p>
+                </div>
+
+                <div class="blueprint-card" style="border-top: 3px solid var(--navy-deep);">
+                    <div class="blueprint-icon">⚡</div>
+                    <h3 class="blueprint-title">Human Capital Modernization</h3>
+                    <p class="blueprint-desc">
+                        Positioning workforce strategy as a core value engine rather than a back-office support function, driving technological transformation, workforce readiness, and long-term organizational sustainability.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Strategic Research & Presentation Vault -->
+    <!-- 4. Strategic Research Poster & Results Vault -->
     <section id="research" class="section-ivory">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Executive Vault</div>
-                <h2 class="section-title">Strategic Research & Global Briefings</h2>
+                <h2 class="section-title">Strategic Research & Policy Results</h2>
             </div>
 
             <!-- Global Aviation Research Context Banner -->
-            <div style="background: var(--navy-deep); color: var(--white-pure); padding: 2rem; border-radius: 4px; margin-bottom: 3rem; border-left: 4px solid var(--gold-regal);">
+            <div style="background: var(--navy-deep); color: var(--white-pure); padding: 2rem; border-radius: 4px; margin-bottom: 2.5rem; border-left: 4px solid var(--gold-regal);">
                 <h3 style="font-family: var(--font-heading); color: var(--gold-regal); font-size: 1.15rem; margin-bottom: 0.5rem;">The Imperative of Global Aviation Safety Harmonization</h3>
                 <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.7;">
                     Global civil aviation relies on consistent regulatory standards. When developing states face structural resource constraints, safety gaps emerge that affect international airspace integrity. My award-winning quantitative research evaluates state capacity and international safety management protocols, delivering data-driven frameworks to establish uniform compliance across diverse global regions.
                 </p>
             </div>
 
-            <div class="asset-viewer-container">
-                <!-- Research Poster Image Display Section -->
-                <div style="margin-bottom: 4rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
-                        <div>
-                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.3rem; margin-bottom: 0.3rem;">Small Island Developing States & ICAO Annex 19 Compliance</h3>
-                            <p style="color: var(--gold-regal); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                                🏆 Award-Winning Empirical Synthesis | Quantitative Statistical Methodology
-                            </p>
-                        </div>
+            <div class="research-wrapper">
+                <!-- Research Poster Focus -->
+                <div class="research-poster-box">
+                    <div style="margin-bottom: 1.5rem; text-align: left;">
+                        <span style="color: var(--gold-regal); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">
+                            🏆 Award-Winning Empirical Research Poster
+                        </span>
+                        <h3 style="font-family: var(--font-heading); color: var(--white-pure); font-size: 1.35rem;">
+                            Small Island Developing States & ICAO Annex 19 Compliance
+                        </h3>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        Utilizing Chi-Square independence tests and descriptive statistical analyses, this study investigates how Small Island Developing State (SIDS) classification impacts compliance with ICAO Annex 19 Safety Management standards. The findings demonstrate that SIDS are not a monolith in regulatory execution, while revealing that even larger continental powers experience significant compliance hurdles. Recognized with top honors at the University Aviation Association Conference and the Embry-Riddle International Research Excellence Award.
-                    </p>
-                    
+
                     <!-- High-Resolution Poster Image Frame -->
-                    <div style="background: #0F172A; padding: 1rem; border-radius: 4px; text-align: center; border: 1px solid var(--gold-regal);">
-                        <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" style="max-width: 100%; height: auto; border-radius: 2px; display: block; margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.3);" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
-                        
-                        <!-- Fallback message in case poster.png is not found -->
-                        <div id="poster-error" style="display:none; padding: 2rem; color: var(--gold-light);">
-                            <p style="font-size: 1.1rem; font-weight: 600;">[ poster.png Upload Pending ]</p>
-                            <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.5rem;">Ensure <code>poster.png</code> is saved in the exact same folder as <code>index.html</code>.</p>
-                        </div>
+                    <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" class="research-poster-img" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
+                    
+                    <div id="poster-error" style="display:none; padding: 2rem; color: var(--gold-light);">
+                        <p style="font-size: 1.1rem; font-weight: 600;">[ poster.png Upload Pending ]</p>
+                        <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.5rem;">Ensure <code>poster.png</code> is saved in the exact same folder as <code>index.html</code>.</p>
                     </div>
                 </div>
 
-                <hr style="border: 0; border-top: 1px solid #E2E8F0; margin-bottom: 4rem;">
-
-                <!-- Presentation Slide Deck Section -->
-                <div>
-                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.3rem; margin-bottom: 0.5rem;">Empirical Evaluation of ICAO Safety Compliance & Institutional Capacity</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        Executive research presentation detailing quantitative Chi-Square testing, descriptive safety trends, and strategic policy recommendations for global oversight bodies.
+                <!-- Blended Research Results & Presentation Action -->
+                <div class="research-results-box">
+                    <h4 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.15rem; margin-bottom: 0.5rem;">
+                        Key Research Findings & Policy Impact
+                    </h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+                        Utilizing Chi-Square independence tests and descriptive statistical analyses, this study investigates how Small Island Developing State (SIDS) classification impacts compliance with ICAO Annex 19 Safety Management standards.
                     </p>
-                    
-                    <!-- Embedded PDF Viewer -->
-                    <iframe src="presentation.pdf" width="100%" height="520px" style="border: 1px solid #CBD5E1; border-radius: 4px; margin-bottom: 1.2rem;"></iframe>
-                    
-                    <div style="text-align: center;">
-                        <a href="presentation.pdf" target="_blank" class="btn-gold" style="font-size: 0.8rem; padding: 0.6rem 1.5rem;">Open / Download Presentation Deck (PDF)</a>
+
+                    <div class="results-grid">
+                        <div class="results-item">
+                            <div class="results-item-title">Heterogeneity in Execution</div>
+                            <div class="results-item-desc">Demonstrates SIDS are not a monolith; safety performance varies significantly based on regional governance structures.</div>
+                        </div>
+                        <div class="results-item">
+                            <div class="results-item-title">Continental Capacity Gaps</div>
+                            <div class="results-item-desc">Reveals larger continental powers experience similar structural compliance hurdles despite greater aggregate resources.</div>
+                        </div>
+                        <div class="results-item">
+                            <div class="results-item-title">Actionable Governance Framework</div>
+                            <div class="results-item-desc">Provides ICAO and regional civil aviation authorities with a scalable model for targeted technical assistance.</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E2E8F0;">
+                        <a href="presentation.pdf" target="_blank" class="btn-gold">
+                            <span>View Complete Results & Slide Deck</span>
+                            <span style="font-size: 1.1rem;">→</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -888,7 +995,7 @@
         </div>
     </section>
 
-    <!-- 6. Honors & Recognition -->
+    <!-- 6. Honors & Recognition (Eye-Catching Visual Redesign) -->
     <section id="honors" class="section-ivory">
         <div class="container">
             <div class="section-header">
@@ -897,31 +1004,55 @@
             </div>
 
             <div class="honors-grid">
-                <div class="honor-card">
-                    <div class="honor-badge">National Distinction</div>
-                    <h3 class="honor-title">Barbadian National Development Scholar</h3>
-                    <div class="honor-issuer">Government of Barbados</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Granted full national postgraduate scholarship for academic excellence and strategic alignment with Caribbean infrastructure, policy, and regional development goals.
-                    </p>
+                <div class="honor-card-visual">
+                    <div>
+                        <div class="honor-header">
+                            <span class="honor-badge-visual">National Honors</span>
+                            <span class="honor-icon">🇧🇧</span>
+                        </div>
+                        <h3 class="honor-title">National Development Scholar</h3>
+                        <div class="honor-issuer">Government of Barbados</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Awarded full national postgraduate scholarship for academic leadership and strategic alignment with Caribbean infrastructure and regional policy goals.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="honor-metric-highlight">Highest National Academic Distinction</span>
+                    </div>
                 </div>
 
-                <div class="honor-card">
-                    <div class="honor-badge">International Distinction</div>
-                    <h3 class="honor-title">First Place Graduate Research Award</h3>
-                    <div class="honor-issuer">University Aviation Association</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Recognized globally for empirical quantitative research establishing the baseline for regional regulatory compliance and state capacity constraints in global aviation.
-                    </p>
+                <div class="honor-card-visual">
+                    <div>
+                        <div class="honor-header">
+                            <span class="honor-badge-visual">Global Distinction</span>
+                            <span class="honor-icon">🥇</span>
+                        </div>
+                        <h3 class="honor-title">1st Place Graduate Research Award</h3>
+                        <div class="honor-issuer">University Aviation Association</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Recognized globally for empirical quantitative research establishing baseline safety compliance models for international civil aviation authorities.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="honor-metric-highlight">Top Global Graduate Researcher</span>
+                    </div>
                 </div>
 
-                <div class="honor-card">
-                    <div class="honor-badge">Institutional Excellence</div>
-                    <h3 class="honor-title">International Engagement Award for Excellence in Research</h3>
-                    <div class="honor-issuer">Embry-Riddle Aeronautical University</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Honored for research excellence in evaluating international civil aviation standards, state capacity modeling, and regulatory risk mitigation frameworks.
-                    </p>
+                <div class="honor-card-visual">
+                    <div>
+                        <div class="honor-header">
+                            <span class="honor-badge-visual">Institutional Award</span>
+                            <span class="honor-icon">🏛️</span>
+                        </div>
+                        <h3 class="honor-title">International Research Excellence</h3>
+                        <div class="honor-issuer">Embry-Riddle Aeronautical University</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Honored for pioneering research evaluating international civil aviation safety standards, state capacity modeling, and risk mitigation frameworks.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="honor-metric-highlight">Excellence in Research Award</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -947,7 +1078,7 @@
         <div class="container">
             <h3>RÉAN CLINTON</h3>
             <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;">
-                Operations, Human Capital & Regional Governance Specialist
+                Operations, Human Capital & Regional Governance Executive
             </p>
             <p style="font-size: 0.8rem; color: #64748B;">
                 © Réan Clinton. Built for Executive & Regional Governance Excellence.
