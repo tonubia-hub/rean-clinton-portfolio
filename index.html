@@ -141,14 +141,20 @@
             text-align: center;
         }
 
-        .profile-img {
-            width: 320px;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 2px solid var(--gold-regal);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        .profile-avatar {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 4px solid var(--gold-regal);
             background: var(--navy-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-regal);
+            font-size: 4rem;
+            color: var(--gold-regal);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
         .cta-group {
@@ -171,6 +177,7 @@
             transition: all 0.3s ease;
             border: 1px solid var(--gold-regal);
             cursor: pointer;
+            display: inline-block;
         }
 
         .btn-gold:hover {
@@ -192,6 +199,7 @@
             text-decoration: none;
             border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .btn-outline:hover {
@@ -494,29 +502,29 @@
             display: block;
         }
 
-        .asset-meta {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .document-preview-box {
-            background: #F1F5F9;
-            border: 2px dashed #CBD5E1;
-            border-radius: 4px;
+        .resume-text-view {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
             padding: 2rem;
-            text-align: center;
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            border-radius: 4px;
+            max-height: 480px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            color: var(--text-dark);
         }
 
-        .document-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        .resume-text-view h3 {
+            font-family: var(--font-heading);
+            color: var(--navy-deep);
+            border-bottom: 1px solid var(--gold-regal);
+            padding-bottom: 0.3rem;
+            margin: 1.2rem 0 0.6rem 0;
+            font-size: 1rem;
+        }
+
+        .resume-text-view ul {
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
         }
 
         /* Honors Section */
@@ -567,29 +575,77 @@
             font-weight: 600;
         }
 
+        /* Call to Action Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, #0F172A 100%);
+            color: var(--white-pure);
+            padding: 6rem 2rem;
+            text-align: center;
+            border-top: 4px solid var(--gold-regal);
+            border-bottom: 2px solid var(--gold-regal);
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-subtitle {
+            color: var(--gold-regal);
+            font-family: var(--font-regal);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-title {
+            font-family: var(--font-regal);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+        }
+
+        .cta-description {
+            font-size: 1.05rem;
+            color: #CBD5E1;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
         /* Footer */
         footer {
             background-color: var(--navy-deep);
             color: #94A3B8;
-            padding: 4rem 2rem;
-            border-top: 3px solid var(--gold-regal);
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         footer h3 {
             font-family: var(--font-regal);
             color: var(--white-pure);
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
         }
 
         @media (max-width: 992px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; }
             .hero-title { font-size: 2.2rem; }
-            .profile-img { width: 260px; height: 310px; margin: 0 auto; }
+            .profile-avatar { width: 200px; height: 200px; font-size: 3rem; }
             .cta-group { justify-content: center; }
-            .asset-meta { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .cta-title { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -603,7 +659,7 @@
                 <li><a href="#summary">Overview</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#competencies">Capabilities</a></li>
-                <li><a href="#documents">Resume & Strategy</a></li>
+                <li><a href="#documents">Resume & Briefings</a></li>
                 <li><a href="#education">Education & Certs</a></li>
                 <li><a href="#honors">Recognition</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -626,7 +682,7 @@
                 </div>
             </div>
             <div class="profile-frame">
-                <img src="profile.jpg" alt="Réan Clinton" class="profile-img" onerror="this.src='https://via.placeholder.com/320x380/1E293B/C5A059?text=Rean+Clinton'">
+                <div class="profile-avatar">RC</div>
             </div>
         </div>
     </section>
@@ -643,22 +699,22 @@
                 <div class="metric-card">
                     <div class="metric-number" data-target="300">0</div>
                     <div class="metric-label">Workforce Members Managed</div>
-                    <div class="metric-desc">Multidisciplinary personnel and ground operations teams directed across airport & HR environments[cite: 2].</div>
+                    <div class="metric-desc">Multidisciplinary personnel and ground operations teams directed across airport & HR environments.</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-number" data-target="2">0</div>
                     <div class="metric-label">$2M+ Grant Oversight</div>
-                    <div class="metric-desc">Fiscal oversight and operational budget auditing managed for federal research programs[cite: 2].</div>
+                    <div class="metric-desc">Fiscal oversight and operational budget auditing managed for federal research programs.</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-number" data-target="7">0</div>
                     <div class="metric-label">Global Airline Accounts</div>
-                    <div class="metric-desc">Human capital strategy and 24/7 service execution directed for international carriers[cite: 2].</div>
+                    <div class="metric-desc">Human capital strategy and 24/7 service execution directed for international carriers.</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-number" data-target="100">0</div>
                     <div class="metric-label">% Audit Compliance</div>
-                    <div class="metric-desc">Maintained passed audits under ICAO, IATA, and ISAGO regulatory standards[cite: 2].</div>
+                    <div class="metric-desc">Maintained passed audits under ICAO, IATA, and ISAGO regulatory standards.</div>
                 </div>
             </div>
         </div>
@@ -679,11 +735,11 @@
                     <div class="timeline-date">Aug 2024 – Apr 2026</div>
                     <div class="timeline-body">
                         <ul>
-                            <li>Managed fiscal oversight for $2M+ in federal grant funds, auditing expenditures against operational budgets to ensure compliance[cite: 2].</li>
-                            <li>Integrated Salesforce CRM and KnowledgeLake across 5 academic programs to automate document processing, track satisfaction KPIs, and accelerate resolution timelines[cite: 2].</li>
-                            <li>Led the development and rollout of an automated dissertation chair matching tool, eliminating placement inaccuracies between student proposals and faculty specializations[cite: 2].</li>
-                            <li>Conducted comprehensive global aviation safety research evaluating international civil aviation standards and regulatory frameworks to optimize industry risk mitigation[cite: 2].</li>
-                            <li>Honored with the ERAU International Engagement Award for Excellence in International Research[cite: 2].</li>
+                            <li>Managed fiscal oversight for $2M+ in federal grant funds, auditing expenditures against operational budgets to ensure compliance.</li>
+                            <li>Integrated Salesforce CRM and KnowledgeLake across 5 academic programs to automate document processing, track satisfaction KPIs, and accelerate resolution timelines.</li>
+                            <li>Led the development and rollout of an automated dissertation chair matching tool, eliminating placement inaccuracies between student proposals and faculty specializations.</li>
+                            <li>Conducted comprehensive global aviation safety research evaluating international civil aviation standards and regulatory frameworks to optimize industry risk mitigation.</li>
+                            <li>Honored with the ERAU International Engagement Award for Excellence in International Research.</li>
                         </ul>
                     </div>
                 </div>
@@ -694,9 +750,9 @@
                     <div class="timeline-date">Jan 2024 – Aug 2024</div>
                     <div class="timeline-body">
                         <ul>
-                            <li>Championed business initiatives across a portfolio of clients, ensuring company policies and SOPs reflected core business objectives[cite: 2].</li>
-                            <li>Implemented performance management frameworks and clear KPI evaluation processes for operational teams, establishing structured feedback loops and accountability mechanisms[cite: 2].</li>
-                            <li>Developed workforce analytics dashboards to track key people metrics, delivering data-driven insights to C-suite leadership for strategic workforce planning and cost optimization[cite: 2].</li>
+                            <li>Championed business initiatives across a portfolio of clients, ensuring company policies and SOPs reflected core business objectives.</li>
+                            <li>Implemented performance management frameworks and clear KPI evaluation processes for operational teams, establishing structured feedback loops and accountability mechanisms.</li>
+                            <li>Developed workforce analytics dashboards to track key people metrics, delivering data-driven insights to C-suite leadership for strategic workforce planning and cost optimization.</li>
                         </ul>
                     </div>
                 </div>
@@ -707,9 +763,9 @@
                     <div class="timeline-date">Feb 2023 – Apr 2023</div>
                     <div class="timeline-body">
                         <ul>
-                            <li>Directed human capital strategy across 7+ global airline accounts, balancing competing corporate and stakeholder priorities to ensure efficient 24/7 service execution[cite: 2].</li>
-                            <li>Maintained audit-readiness for executive oversight committees and global regulatory bodies to pass ICAO, IATA, and ISAGO safety and quality audits[cite: 2].</li>
-                            <li>Reconciled unplanned labor expenditures during irregular operations by executing airline chargebacks to protect operating margins and control labor costs[cite: 2].</li>
+                            <li>Directed human capital strategy across 7+ global airline accounts, balancing competing corporate and stakeholder priorities to ensure efficient 24/7 service execution.</li>
+                            <li>Maintained audit-readiness for executive oversight committees and global regulatory bodies to pass ICAO, IATA, and ISAGO safety and quality audits.</li>
+                            <li>Reconciled unplanned labor expenditures during irregular operations by executing airline chargebacks to protect operating margins and control labor costs.</li>
                         </ul>
                     </div>
                 </div>
@@ -720,9 +776,9 @@
                     <div class="timeline-date">Jul 2019 – Jul 2023</div>
                     <div class="timeline-body">
                         <ul>
-                            <li>Reduced Time-to-Fill from 45 to 21 days via predictive recruitment models for peak flight schedules[cite: 2].</li>
-                            <li>Served as a trusted HR advisor addressing workforce grievances and conflict resolution at the root level, preventing formal labor disputes and maintaining positive organizational culture[cite: 2].</li>
-                            <li>Drove the transition to a hybrid human capital management system that improved safety tracking and HR processes across 5 departments to support over 300 staff members[cite: 2].</li>
+                            <li>Reduced Time-to-Fill from 45 to 21 days via predictive recruitment models for peak flight schedules.</li>
+                            <li>Served as a trusted HR advisor addressing workforce grievances and conflict resolution at the root level, preventing formal labor disputes and maintaining positive organizational culture.</li>
+                            <li>Drove the transition to a hybrid human capital management system that improved safety tracking and HR processes across 5 departments to support over 300 staff members.</li>
                         </ul>
                     </div>
                 </div>
@@ -743,9 +799,9 @@
                     <div class="competency-icon">✈️</div>
                     <h3 class="competency-title">Aviation & Regulatory Compliance</h3>
                     <ul class="competency-list">
-                        <li>Audit execution and readiness under ICAO, IATA, and ISAGO standards[cite: 2].</li>
-                        <li>Safety Management Systems (SMS) and aerospace policy risk mitigation[cite: 2].</li>
-                        <li>Ground handling operational scheduling and 24/7 airline client management[cite: 2].</li>
+                        <li>Audit execution and readiness under ICAO, IATA, and ISAGO standards.</li>
+                        <li>Safety Management Systems (SMS) and aerospace policy risk mitigation.</li>
+                        <li>Ground handling operational scheduling and 24/7 airline client management.</li>
                     </ul>
                 </div>
 
@@ -753,9 +809,9 @@
                     <div class="competency-icon">👥</div>
                     <h3 class="competency-title">Human Capital & Talent Analytics</h3>
                     <ul class="competency-list">
-                        <li>End-to-end recruitment optimization and predictive capacity planning[cite: 2].</li>
-                        <li>Workforce analytics dashboard design for executive decision-making[cite: 2].</li>
-                        <li>Conflict resolution, labor union relations, and KPI performance modeling[cite: 2].</li>
+                        <li>End-to-end recruitment optimization and predictive capacity planning.</li>
+                        <li>Workforce analytics dashboard design for executive decision-making.</li>
+                        <li>Conflict resolution, labor union relations, and KPI performance modeling.</li>
                     </ul>
                 </div>
 
@@ -763,16 +819,16 @@
                     <div class="competency-icon">🏛️</div>
                     <h3 class="competency-title">Fiscal Oversight & Systems Integration</h3>
                     <ul class="competency-list">
-                        <li>Federal grant financial auditing ($2M+) and chargeback reconciliation[cite: 2].</li>
-                        <li>Enterprise CRM automation (Salesforce, KnowledgeLake) across business units[cite: 2].</li>
-                        <li>Small Island Developing States (SIDS) regional governance frameworks[cite: 2].</li>
+                        <li>Federal grant financial auditing ($2M+) and chargeback reconciliation.</li>
+                        <li>Enterprise CRM automation (Salesforce, KnowledgeLake) across business units.</li>
+                        <li>Small Island Developing States (SIDS) regional governance frameworks.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Resumes & Strategy Briefings (404-Proofed Embeds) -->
+    <!-- 4. Interactive Resume & Strategic Vault -->
     <section id="documents" class="section-ivory">
         <div class="container">
             <div class="section-header">
@@ -787,57 +843,84 @@
                     <button class="tab-btn" onclick="switchTab('poster-tab', this)">Research Poster</button>
                 </div>
 
-                <!-- Tab 1: Resume -->
+                <!-- Tab 1: Embedded Interactive Resume -->
                 <div id="resume-tab" class="tab-content active">
-                    <div class="asset-meta">
-                        <div>
-                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Executive Curriculum Vitae</h3>
-                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                                Complete overview covering aerospace management, human capital leadership across global airline accounts, and institutional grant administration[cite: 2].
-                            </p>
-                            <a href="Rean_F_Clinton_Resume.docx" download class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download Resume (.docx)</a>
-                        </div>
-                        <div class="document-preview-box">
-                            <div class="document-icon">📄</div>
-                            <strong style="color: var(--navy-deep);">Réan Clinton Resume</strong>
-                            <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">Word / PDF Document</span>
-                        </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="font-family: var(--font-heading); color: var(--navy-deep);">Curriculum Vitae Preview</h3>
+                        <button onclick="downloadResume()" class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Download Resume File</button>
+                    </div>
+                    
+                    <div class="resume-text-view" id="resumeTextContainer">
+                        <strong style="font-size: 1.2rem; color: var(--navy-deep);">Réan Clinton</strong><br>
+                        Bridgetown, Barbados | 937-477-7862 | reanclinton@gmail.com
+                        
+                        <h3>PROFESSIONAL EXPERIENCE</h3>
+                        <strong>Graduate Research Coordinator</strong> | College of Aviation, ERAU (Aug 2024 – Apr 2026)
+                        <ul>
+                            <li>Managed fiscal oversight for $2M+ in federal grant funds, auditing expenditures against operational budgets to ensure compliance.</li>
+                            <li>Integrated Salesforce CRM and KnowledgeLake across 5 academic programs to automate document processing, track satisfaction KPIs, and accelerate resolution timelines.</li>
+                            <li>Led the development and rollout of an automated dissertation chair matching tool.</li>
+                            <li>Conducted comprehensive global aviation safety research evaluating international civil aviation standards.</li>
+                        </ul>
+
+                        <strong>Human Resources Business Partner</strong> | DSPS HR Solutions (Jan 2024 – Aug 2024)
+                        <ul>
+                            <li>Championed business initiatives across a portfolio of clients, ensuring company policies and SOPs reflected core business objectives.</li>
+                            <li>Implemented performance management frameworks and clear KPI evaluation processes for operational teams.</li>
+                            <li>Developed workforce analytics dashboards to track key people metrics for C-suite leadership.</li>
+                        </ul>
+
+                        <strong>Acting Human Resources Manager</strong> | Caribbean Aircraft Handling (Feb 2023 – Apr 2023)
+                        <ul>
+                            <li>Directed human capital strategy across 7+ global airline accounts for 24/7 service execution.</li>
+                            <li>Maintained audit-readiness to pass ICAO, IATA, and ISAGO safety and quality audits.</li>
+                            <li>Reconciled unplanned labor expenditures during irregular operations by executing airline chargebacks.</li>
+                        </ul>
+
+                        <strong>Human Resources Coordinator</strong> | Caribbean Aircraft Handling (Jul 2019 – Jul 2023)
+                        <ul>
+                            <li>Reduced Time-to-Fill from 45 to 21 days via predictive recruitment models.</li>
+                            <li>Served as a trusted HR advisor addressing workforce grievances and conflict resolution.</li>
+                            <li>Drove transition to a hybrid HCM system across 5 departments supporting 300+ staff.</li>
+                        </ul>
+
+                        <h3>EDUCATION</h3>
+                        • <strong>Master of Science in Aviation (Distinction)</strong> – Embry-Riddle Aeronautical University (2024 – 2026)<br>
+                        • <strong>Bachelor of Science in Management (Honors)</strong> – The University of the West Indies (2019 – 2022)<br>
+                        • <strong>Associate Degrees in Accounts/IT & Law/Sociology</strong> – Barbados Community College
+
+                        <h3>CERTIFICATIONS</h3>
+                        • <strong>SHRM-SCP</strong> (Senior Certified Professional) – Expected Sep 2026<br>
+                        • <strong>HR Analytics Certificate</strong> – UC Irvine (Feb 2026)<br>
+                        • <strong>Talent Acquisition Certificate</strong> – HRCI (Feb 2026)
                     </div>
                 </div>
 
-                <!-- Tab 2: Presentation Deck -->
+                <!-- Tab 2: Presentation Briefing -->
                 <div id="presentation-tab" class="tab-content">
-                    <div class="asset-meta">
-                        <div>
-                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Empirical Evaluation of Regulatory Compliance</h3>
-                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                                An executive brief detailing aviation safety compliance, state capacity trends, and institutional recommendations for regional safety oversight organizations.
-                            </p>
-                            <a href="presentation.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">View Executive Briefing</a>
-                        </div>
-                        <div class="document-preview-box">
-                            <div class="document-icon">📊</div>
-                            <strong style="color: var(--navy-deep);">Aviation Research Deck</strong>
-                            <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">Presentation Slides</span>
-                        </div>
+                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Empirical Evaluation of Regulatory Compliance & Institutional Capacity</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        An executive research presentation detailing aviation safety compliance, state capacity trends, and strategic policy recommendations for regional oversight organizations.
+                    </p>
+                    <div style="background: var(--navy-deep); color: var(--white-pure); padding: 3rem 2rem; border-radius: 4px; text-align: center;">
+                        <h4 style="font-family: var(--font-regal); color: var(--gold-regal); font-size: 1.3rem; margin-bottom: 0.5rem;">Executive Briefing Deck</h4>
+                        <p style="color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.9rem;">
+                            Prepared for presentation at Embry-Riddle Aeronautical University and regional aviation symposia.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Tab 3: Poster -->
                 <div id="poster-tab" class="tab-content">
-                    <div class="asset-meta">
-                        <div>
-                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety</h3>
-                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                                Visual synthesis presented at Embry-Riddle Aeronautical University mapping state capacity constraints against Safety Management System (SMS) implementation hurdles.
-                            </p>
-                            <a href="poster.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">View High-Res Poster</a>
-                        </div>
-                        <div class="document-preview-box">
-                            <div class="document-icon">🖼️</div>
-                            <strong style="color: var(--navy-deep);">SIDS Research Poster</strong>
-                            <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">Visual Research Asset</span>
-                        </div>
+                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS Compliance</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        Award-winning quantitative synthesis evaluating Safety Management System (SMS) implementation hurdles across Small Island Developing States.
+                    </p>
+                    <div style="background: var(--navy-deep); color: var(--white-pure); padding: 3rem 2rem; border-radius: 4px; text-align: center;">
+                        <h4 style="font-family: var(--font-regal); color: var(--gold-regal); font-size: 1.3rem; margin-bottom: 0.5rem;">1st Place UAA Research Poster</h4>
+                        <p style="color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.9rem;">
+                            Recognized by the University Aviation Association for excellence in empirical safety methodology.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -857,8 +940,8 @@
                     <h3>Master of Science in Aviation (Distinction)</h3>
                     <div class="school">Embry-Riddle Aeronautical University | 2024 – 2026</div>
                     <p style="font-size: 0.88rem; color: var(--text-muted);">
-                        Specialization: Aerospace Management, Sustainability & Safety Management Systems (SMS)[cite: 2].<br>
-                        <strong>Barbadian National Development Scholar</strong>[cite: 2].
+                        Specialization: Aerospace Management, Sustainability & Safety Management Systems (SMS).<br>
+                        <strong>Barbadian National Development Scholar</strong>.
                     </p>
                 </div>
 
@@ -866,7 +949,7 @@
                     <h3>Bachelor of Science in Management (Honors)</h3>
                     <div class="school">The University of the West Indies | 2019 – 2022</div>
                     <p style="font-size: 0.88rem; color: var(--text-muted);">
-                        Comprehensive grounding in organizational strategy, operational management, and leadership[cite: 2].
+                        Comprehensive grounding in organizational strategy, operational management, and leadership.
                     </p>
                 </div>
 
@@ -874,9 +957,9 @@
                     <h3>Executive Certifications</h3>
                     <div class="school">SHRM / HRCI / UC Irvine</div>
                     <p style="font-size: 0.88rem; color: var(--text-muted);">
-                        • <strong>SHRM-SCP</strong> (Senior Certified Professional - Expected Sep 2026)[cite: 2]<br>
-                        • <strong>HR Analytics Certificate</strong> (UC Irvine, Feb 2026)[cite: 2]<br>
-                        • <strong>Talent Acquisition Certificate</strong> (HRCI, Feb 2026)[cite: 2]
+                        • <strong>SHRM-SCP</strong> (Senior Certified Professional - Expected Sep 2026)<br>
+                        • <strong>HR Analytics Certificate</strong> (UC Irvine, Feb 2026)<br>
+                        • <strong>Talent Acquisition Certificate</strong> (HRCI, Feb 2026)
                     </p>
                 </div>
             </div>
@@ -897,7 +980,7 @@
                     <h3 class="honor-title">Barbadian National Development Scholar</h3>
                     <div class="honor-issuer">Government of Barbados</div>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Granted full national postgraduate scholarship for academic excellence and strategic alignment with Caribbean infrastructure, policy, and regional development goals[cite: 2].
+                        Granted full national postgraduate scholarship for academic excellence and strategic alignment with Caribbean infrastructure, policy, and regional development goals.
                     </p>
                 </div>
 
@@ -915,24 +998,36 @@
                     <h3 class="honor-title">International Engagement Award for Excellence in Research</h3>
                     <div class="honor-issuer">Embry-Riddle Aeronautical University (ERAU)</div>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Honored for research excellence in evaluating international civil aviation standards, state capacity modeling, and regulatory risk mitigation frameworks[cite: 2].
+                        Honored for research excellence in evaluating international civil aviation standards, state capacity modeling, and regulatory risk mitigation frameworks.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact">
+    <!-- 7. Call to Action / Executive Contact Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-box">
+            <div class="cta-subtitle">Initiate Strategic Engagement</div>
+            <h2 class="cta-title">Ready to Elevate Your Organization's Operational & Human Capital Strategy?</h2>
+            <p class="cta-description">
+                Whether you are seeking executive leadership in aviation operations, multi-jurisdictional compliance expertise, or data-driven workforce transformation, let's connect to discuss how I can drive measurable value for your team.
+            </p>
+            <div class="cta-actions">
+                <a href="mailto:reanclinton@gmail.com" class="btn-gold">Send Direct Email</a>
+                <a href="tel:+19374777862" class="btn-outline">Call Direct: (937) 477-7862</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <h3>RÉAN CLINTON</h3>
-            <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1.5rem;">
+            <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;">
                 Operations, Human Capital & Regional Governance Specialist
             </p>
-            <p style="color: #CBD5E1; font-size: 0.95rem;">
-                Bridgetown, Barbados | (937) 477-7862 | <a href="mailto:reanclinton@gmail.com" style="color: var(--gold-regal); text-decoration: none;">reanclinton@gmail.com</a>[cite: 2]
-            </p>
-            <p style="margin-top: 2rem; font-size: 0.8rem; color: #64748B;">
+            <p style="font-size: 0.8rem; color: #64748B;">
                 © Réan Clinton. Built for Executive & Regional Governance Excellence.
             </p>
         </div>
@@ -946,6 +1041,15 @@
             
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
+        }
+
+        function downloadResume() {
+            const text = document.getElementById('resumeTextContainer').innerText;
+            const blob = new Blob([text], { type: 'text/plain' });
+            const anchor = document.createElement('a');
+            anchor.download = 'Rean_Clinton_Resume.txt';
+            anchor.href = window.URL.createObjectURL(blob);
+            anchor.click();
         }
 
         const observer = new IntersectionObserver((entries) => {
