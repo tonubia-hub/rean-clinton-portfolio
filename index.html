@@ -3,8 +3,18 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Réan Clinton | Executive Portfolio & Leadership Profile</title>
+ <title>Réan Clinton | Operations, Human Capital & Regulatory Governance Executive</title>
+ <meta name="description" content="Executive portfolio of Réan Clinton. Senior HR & Operations leader specializing in human capital management, regulatory compliance, workforce analytics, and operational resilience across aviation and enterprise sectors.">
  
+ <!-- OpenGraph Meta Tags for LinkedIn & Social Sharing -->
+ <meta property="og:title" content="Réan Clinton | Operations & Human Capital Executive">
+ <meta property="og:description" content="Executive Portfolio of Réan Clinton. Specializing in HR strategy, regulatory compliance, workflow automation, and organizational resilience.">
+ <meta property="og:image" content="poster.png">
+ <meta property="og:type" content="website">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Réan Clinton | Executive Portfolio">
+ <meta name="twitter:description" content="Operations, Human Capital & Regulatory Governance Executive.">
+
  <!-- Fonts -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,22 +40,22 @@
    --font-body: 'Inter', sans-serif;
    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
  }
- * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
- }
- html {
-   scroll-behavior: smooth;
- }
- body {
-   background-color: var(--ivory-bg);
-   color: var(--text-dark);
-   font-family: var(--font-body);
-   line-height: 1.7;
-   overflow-x: hidden;
- }
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+ body { background-color: var(--ivory-bg); color: var(--text-dark); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; }
  
+ /* Top Progress Bar */
+ #scroll-progress {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 3px;
+   background: linear-gradient(90deg, var(--gold-regal), var(--gold-bright));
+   width: 0%;
+   z-index: 2000;
+   transition: width 0.1s ease-out;
+ }
+
  /* Navigation */
  header {
    position: fixed;
@@ -62,7 +72,7 @@
    max-width: 1280px;
    margin: 0 auto;
    display: flex;
-   justify-space: space-between;
+   justify-content: space-between;
    align-items: center;
    padding: 1.1rem 2rem;
  }
@@ -73,9 +83,22 @@
    color: var(--white-pure);
    text-decoration: none;
    letter-spacing: 2px;
+   display: flex;
+   align-items: center;
+   gap: 0.6rem;
  }
- .brand-logo span {
-   color: var(--gold-regal);
+ .brand-logo span { color: var(--gold-regal); }
+ .logo-monogram {
+   width: 32px;
+   height: 32px;
+   border: 1.5px solid var(--gold-regal);
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 0.85rem;
+   color: var(--gold-bright);
+   background: rgba(197, 160, 89, 0.1);
  }
  .nav-links {
    display: flex;
@@ -104,12 +127,8 @@
    background: var(--gold-regal);
    transition: var(--transition-smooth);
  }
- .nav-links a:hover {
-   color: var(--gold-regal);
- }
- .nav-links a:hover::after {
-   width: 100%;
- }
+ .nav-links a:hover { color: var(--gold-regal); }
+ .nav-links a:hover::after { width: 100%; }
  .nav-btn-contact {
    background: transparent;
    border: 1px solid var(--gold-regal) !important;
@@ -118,13 +137,27 @@
    border-radius: 3px;
    box-shadow: 0 0 10px rgba(197, 160, 89, 0.15);
  }
- .nav-btn-contact::after {
-   display: none !important;
- }
+ .nav-btn-contact::after { display: none !important; }
  .nav-btn-contact:hover {
    background: var(--gold-regal) !important;
    color: var(--navy-deep) !important;
    box-shadow: 0 0 15px var(--gold-glow);
+ }
+
+ .mobile-toggle {
+   display: none;
+   background: transparent;
+   border: none;
+   cursor: pointer;
+   padding: 0.5rem;
+ }
+ .mobile-toggle span {
+   display: block;
+   width: 25px;
+   height: 3px;
+   margin: 5px 0;
+   background-color: var(--gold-regal);
+   transition: var(--transition-smooth);
  }
 
  /* Hero / Introduction */
@@ -174,8 +207,7 @@
    gap: 0.75rem;
  }
  .hero-subtitle-dot {
-   width: 8px;
-   height: 8px;
+   width: 8px; height: 8px;
    background-color: var(--gold-regal);
    border-radius: 50%;
    box-shadow: 0 0 10px var(--gold-regal);
@@ -195,6 +227,23 @@
    font-weight: 300;
    line-height: 1.85;
  }
+
+ /* Recruiter At-a-Glance Metrics Grid */
+ .executive-stats-bar {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+   margin-bottom: 2rem;
+   background: rgba(10, 25, 47, 0.8);
+   border: 1px solid rgba(197, 160, 89, 0.3);
+   padding: 1rem;
+   border-radius: 6px;
+ }
+ .stat-box { text-align: center; border-right: 1px solid rgba(197, 160, 89, 0.2); }
+ .stat-box:last-child { border-right: none; }
+ .stat-number { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--gold-bright); }
+ .stat-label { font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.8px; }
+
  .profile-avatar-container {
    position: relative;
    padding: 5px;
@@ -211,19 +260,10 @@
    overflow: hidden;
    margin: 0 auto;
  }
- .profile-avatar img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   object-position: center top;
- }
+ .profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
  /* Buttons & Actions */
- .cta-group {
-   display: flex;
-   gap: 1.2rem;
-   flex-wrap: wrap;
- }
+ .cta-group { display: flex; gap: 1.2rem; flex-wrap: wrap; }
  .btn-gold {
    background-color: var(--gold-regal);
    color: var(--navy-deep);
@@ -274,16 +314,8 @@
  }
 
  /* General Section Layouts */
- .section-white { 
-   background-color: var(--white-pure); 
-   padding: 6rem 2rem; 
-   position: relative; 
- }
- .section-ivory { 
-   background-color: var(--ivory-bg); 
-   padding: 6rem 2rem; 
-   position: relative; 
- }
+ .section-white { background-color: var(--white-pure); padding: 6rem 2rem; position: relative; }
+ .section-ivory { background-color: var(--ivory-bg); padding: 6rem 2rem; position: relative; }
  .section-dark { 
    background-color: var(--navy-deep); 
    color: var(--white-pure); 
@@ -320,25 +352,17 @@
    margin-top: 0.7rem;
  }
 
- /* SVG Vector Icon Styling */
  .icon-svg {
-   width: 22px;
-   height: 22px;
+   width: 22px; height: 22px;
    fill: none;
    stroke: var(--gold-regal);
    stroke-width: 2;
-   stroke-linecap: round;
-   stroke-linejoin: round;
-   display: inline-block;
-   vertical-align: middle;
+   stroke-linecap: round; stroke-linejoin: round;
+   display: inline-block; vertical-align: middle;
  }
 
  /* Mission & Vision Section */
- .mission-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-   gap: 2.5rem;
- }
+ .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
  .mission-card {
    background: var(--white-pure);
    border: 1px solid #E2E8F0;
@@ -350,36 +374,15 @@
    position: relative;
  }
  .mission-card::before {
-   content: '';
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 100px;
-   height: 100px;
+   content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px;
    background: radial-gradient(circle, var(--gold-subtle) 0%, transparent 70%);
    pointer-events: none;
  }
- .mission-card:hover {
-   border-top-color: var(--gold-light);
-   transform: translateY(-4px);
-   box-shadow: 0 12px 25px rgba(10, 25, 47, 0.08);
- }
- .mission-card-title {
-   font-family: var(--font-heading);
-   font-size: 1.25rem;
-   color: var(--navy-deep);
-   margin-bottom: 1rem;
-   display: flex;
-   align-items: center;
-   gap: 0.75rem;
- }
- .mission-card p {
-   color: var(--text-muted);
-   font-size: 0.98rem;
-   line-height: 1.8;
- }
+ .mission-card:hover { border-top-color: var(--gold-light); transform: translateY(-4px); box-shadow: 0 12px 25px rgba(10, 25, 47, 0.08); }
+ .mission-card-title { font-family: var(--font-heading); font-size: 1.25rem; color: var(--navy-deep); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+ .mission-card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; }
 
- /* Enhanced Leadership Dossier Section */
+ /* Leadership Dossier Section */
  .dossier-wrapper {
    background: rgba(10, 25, 47, 0.7);
    border: 1px solid var(--gold-regal);
@@ -389,67 +392,23 @@
    position: relative;
    backdrop-filter: blur(8px);
  }
- .dossier-tabs {
-   display: flex;
-   gap: 1rem;
-   margin-bottom: 2rem;
-   border-bottom: 2px solid rgba(197, 160, 89, 0.3);
-   padding-bottom: 0.5rem;
-   flex-wrap: wrap;
- }
+ .dossier-tabs { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 2px solid rgba(197, 160, 89, 0.3); padding-bottom: 0.5rem; flex-wrap: wrap; }
  .dossier-tab-btn {
-   background: transparent;
-   border: none;
-   color: var(--text-light);
-   font-family: var(--font-heading);
-   font-size: 0.85rem;
-   font-weight: 700;
-   padding: 0.8rem 1.4rem;
-   cursor: pointer;
-   text-transform: uppercase;
-   letter-spacing: 1px;
-   transition: var(--transition-smooth);
-   position: relative;
+   background: transparent; border: none; color: var(--text-light); font-family: var(--font-heading);
+   font-size: 0.85rem; font-weight: 700; padding: 0.8rem 1.4rem; cursor: pointer; text-transform: uppercase;
+   letter-spacing: 1px; transition: var(--transition-smooth); position: relative;
  }
  .dossier-tab-btn.active { color: var(--gold-light); }
  .dossier-tab-btn.active::after {
-   content: '';
-   position: absolute;
-   bottom: -0.6rem;
-   left: 0;
-   width: 100%;
-   height: 3px;
-   background: var(--gold-regal);
-   box-shadow: 0 0 10px var(--gold-glow);
+   content: ''; position: absolute; bottom: -0.6rem; left: 0; width: 100%; height: 3px;
+   background: var(--gold-regal); box-shadow: 0 0 10px var(--gold-glow);
  }
- .dossier-content {
-   display: none;
- }
- .dossier-content.active {
-   display: block;
-   animation: fadeIn 0.4s ease;
- }
- @keyframes fadeIn {
-   from { opacity: 0; transform: translateY(8px); }
-   to { opacity: 1; transform: translateY(0); }
- }
- .dossier-title {
-   font-family: var(--font-heading);
-   color: var(--gold-light);
-   font-size: 1.25rem;
-   margin-bottom: 0.8rem;
- }
- .dossier-desc {
-   color: #CBD5E1;
-   font-size: 0.95rem;
-   line-height: 1.7;
-   margin-bottom: 1.8rem;
- }
- .dossier-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-   gap: 1.5rem;
- }
+ .dossier-content { display: none; }
+ .dossier-content.active { display: block; animation: fadeIn 0.4s ease; }
+ @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+ .dossier-title { font-family: var(--font-heading); color: var(--gold-light); font-size: 1.25rem; margin-bottom: 0.8rem; }
+ .dossier-desc { color: #CBD5E1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.8rem; }
+ .dossier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
  .dossier-item {
    background: rgba(7, 19, 38, 0.8);
    border: 1px solid rgba(197, 160, 89, 0.25);
@@ -457,6 +416,9 @@
    padding: 1.4rem;
    border-radius: 0 6px 6px 0;
    transition: var(--transition-smooth);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
  }
  .dossier-item:hover {
    border-color: var(--gold-light);
@@ -465,23 +427,9 @@
    transform: translateY(-2px);
    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
  }
- .dossier-item-title {
-   font-weight: 700;
-   color: var(--white-pure);
-   font-size: 0.95rem;
-   margin-bottom: 0.6rem;
- }
- .dossier-bullet-list {
-   list-style-type: disc;
-   padding-left: 1.2rem;
-   margin-bottom: 1rem;
- }
- .dossier-bullet-list li {
-   color: #94A3B8;
-   font-size: 0.85rem;
-   line-height: 1.5;
-   margin-bottom: 0.4rem;
- }
+ .dossier-item-title { font-weight: 700; color: var(--white-pure); font-size: 0.95rem; margin-bottom: 0.6rem; }
+ .dossier-bullet-list { list-style-type: disc; padding-left: 1.2rem; margin-bottom: 1rem; }
+ .dossier-bullet-list li { color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.4rem; }
  .dossier-metric-badge {
    display: inline-block;
    background: var(--gold-subtle);
@@ -493,16 +441,23 @@
    padding: 0.3rem 0.6rem;
    border-radius: 3px;
    letter-spacing: 0.5px;
+   align-self: flex-start;
+ }
+ .architecture-link-btn {
+   background: transparent;
+   border: none;
+   color: var(--gold-light);
+   font-size: 0.78rem;
+   cursor: pointer;
+   text-decoration: underline;
+   margin-top: 0.8rem;
+   display: flex;
+   align-items: center;
+   gap: 0.4rem;
  }
 
  /* Empirical Inquiry Section */
- .research-wrapper {
-   background: var(--white-pure);
-   border: 1px solid #E2E8F0;
-   border-radius: 6px;
-   overflow: hidden;
-   box-shadow: 0 8px 25px rgba(0,0,0,0.03);
- }
+ .research-wrapper { background: var(--white-pure); border: 1px solid #E2E8F0; border-radius: 6px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.03); }
  .research-poster-box {
    background: #081729;
    padding: 3rem 2.5rem;
@@ -517,11 +472,11 @@
    border-radius: 6px;
    border: 1px solid rgba(197, 160, 89, 0.4);
    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+   cursor: pointer;
+   transition: var(--transition-smooth);
  }
- .research-results-box {
-   padding: 3rem;
-   background: var(--white-pure);
- }
+ .research-poster-img:hover { transform: scale(1.02); }
+ .research-results-box { padding: 3rem; background: var(--white-pure); }
  .boeing-callout {
    background: var(--ivory-bg);
    border: 1px solid rgba(197, 160, 89, 0.3);
@@ -531,25 +486,11 @@
    margin-bottom: 2rem;
    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
  }
- .boeing-callout-title {
-   font-family: var(--font-heading);
-   font-size: 0.98rem;
-   font-weight: 700;
-   color: var(--navy-deep);
-   margin-bottom: 0.3rem;
- }
- .boeing-callout-desc {
-   font-size: 0.88rem;
-   color: var(--text-muted);
-   line-height: 1.6;
- }
+ .boeing-callout-title { font-family: var(--font-heading); font-size: 0.98rem; font-weight: 700; color: var(--navy-deep); margin-bottom: 0.3rem; }
+ .boeing-callout-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
- /* Forward-Looking Blueprint */
- .blueprint-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-   gap: 2rem;
- }
+ /* Blueprint Section */
+ .blueprint-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
  .blueprint-card {
    background: var(--white-pure);
    border: 1px solid #E2E8F0;
@@ -558,72 +499,17 @@
    border-radius: 6px;
    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
    transition: var(--transition-smooth);
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   position: relative;
+   display: flex; flex-direction: column; justify-content: space-between; position: relative;
  }
- .blueprint-card::after {
-   content: '';
-   position: absolute;
-   bottom: 0;
-   right: 0;
-   width: 60px;
-   height: 60px;
-   background: radial-gradient(circle, var(--gold-subtle) 0%, transparent 70%);
-   pointer-events: none;
- }
- .blueprint-card:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08);
-   border-color: var(--gold-regal);
- }
- .blueprint-title {
-   font-family: var(--font-heading);
-   font-size: 1.15rem;
-   color: var(--navy-deep);
-   font-weight: 700;
-   margin-bottom: 0.8rem;
-   display: flex;
-   align-items: center;
-   gap: 0.6rem;
- }
- .def-box {
-   background: var(--ivory-bg);
-   padding: 0.9rem;
-   border-radius: 4px;
-   margin-bottom: 1rem;
-   border-left: 3px solid var(--navy-deep);
- }
- .def-label {
-   font-size: 0.72rem;
-   font-weight: 700;
-   text-transform: uppercase;
-   color: var(--text-muted);
-   letter-spacing: 0.8px;
- }
- .def-text {
-   font-size: 0.85rem;
-   color: var(--navy-deep);
-   font-weight: 500;
-   line-height: 1.5;
-   margin-top: 0.2rem;
- }
- .citation-box {
-   font-size: 0.78rem;
-   color: var(--text-light);
-   font-style: italic;
-   border-top: 1px dashed #E2E8F0;
-   padding-top: 0.8rem;
-   margin-top: 1rem;
- }
+ .blueprint-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08); border-color: var(--gold-regal); }
+ .blueprint-title { font-family: var(--font-heading); font-size: 1.15rem; color: var(--navy-deep); font-weight: 700; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
+ .def-box { background: var(--ivory-bg); padding: 0.9rem; border-radius: 4px; margin-bottom: 1rem; border-left: 3px solid var(--navy-deep); }
+ .def-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.8px; }
+ .def-text { font-size: 0.85rem; color: var(--navy-deep); font-weight: 500; line-height: 1.5; margin-top: 0.2rem; }
+ .citation-box { font-size: 0.78rem; color: var(--text-light); font-style: italic; border-top: 1px dashed #E2E8F0; padding-top: 0.8rem; margin-top: 1rem; }
 
  /* Awards & Honors */
- .honors-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   gap: 2rem;
- }
+ .honors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
  .honor-card {
    background: var(--white-pure);
    border: 1px solid #E2E8F0;
@@ -632,58 +518,30 @@
    position: relative;
    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
    transition: var(--transition-smooth);
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+   display: flex; flex-direction: column; justify-content: space-between;
  }
- .honor-card:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-   border-color: var(--gold-regal);
- }
- .honor-card::after {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 3.5px;
-   background: linear-gradient(90deg, var(--gold-regal), var(--navy-deep));
- }
- .honor-badge {
-   display: inline-block;
-   background: var(--gold-subtle);
-   color: var(--gold-regal);
-   padding: 0.3rem 0.75rem;
-   font-family: var(--font-heading);
-   font-size: 0.72rem;
-   font-weight: 700;
-   text-transform: uppercase;
-   letter-spacing: 1px;
-   border-radius: 3px;
-   border: 1px solid rgba(197, 160, 89, 0.3);
-   margin-bottom: 1rem;
- }
- .honor-title {
-   font-family: var(--font-heading);
-   font-size: 1.18rem;
-   color: var(--navy-deep);
-   font-weight: 700;
-   margin-bottom: 0.3rem;
- }
- .honor-issuer {
-   font-size: 0.88rem;
-   color: var(--gold-regal);
-   font-weight: 700;
-   margin-bottom: 0.8rem;
- }
- .honor-desc {
-   color: var(--text-muted);
-   font-size: 0.88rem;
-   line-height: 1.6;
- }
+ .honor-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-color: var(--gold-regal); }
+ .honor-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3.5px; background: linear-gradient(90deg, var(--gold-regal), var(--navy-deep)); }
+ .honor-badge { display: inline-block; background: var(--gold-subtle); color: var(--gold-regal); padding: 0.3rem 0.75rem; font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; border: 1px solid rgba(197, 160, 89, 0.3); margin-bottom: 1rem; }
+ .honor-title { font-family: var(--font-heading); font-size: 1.18rem; color: var(--navy-deep); font-weight: 700; margin-bottom: 0.3rem; }
+ .honor-issuer { font-size: 0.88rem; color: var(--gold-regal); font-weight: 700; margin-bottom: 0.8rem; }
+ .honor-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; }
 
- /* Modal */
+ /* Testimonials Section */
+ .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+ .testimonial-card {
+   background: var(--white-pure);
+   border: 1px solid #E2E8F0;
+   border-left: 4px solid var(--gold-regal);
+   padding: 2rem;
+   border-radius: 4px;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+ }
+ .testimonial-quote { font-style: italic; color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem; }
+ .testimonial-author { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; color: var(--navy-deep); }
+ .testimonial-role { font-size: 0.8rem; color: var(--gold-regal); font-weight: 600; }
+
+ /* Modals */
  .modal {
    display: none;
    position: fixed;
@@ -705,15 +563,9 @@
    max-width: 1050px;
    border-radius: 6px;
    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+   position: relative;
  }
- .close-modal {
-   color: var(--navy-deep);
-   float: right;
-   font-size: 2rem;
-   font-weight: bold;
-   cursor: pointer;
-   line-height: 1;
- }
+ .close-modal { color: var(--navy-deep); float: right; font-size: 2rem; font-weight: bold; cursor: pointer; line-height: 1; }
  .close-modal:hover { color: var(--gold-regal); }
 
  /* Contact & CTA Section */
@@ -727,96 +579,62 @@
    position: relative;
    overflow: hidden;
  }
- .cta-section::before {
-   content: '';
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 1000px;
-   height: 1000px;
-   background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
-   transform: translate(-50%, -50%);
-   pointer-events: none;
- }
  .cta-box { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
- .cta-subtitle {
-   color: var(--gold-regal);
-   font-family: var(--font-regal);
-   font-weight: 700;
-   letter-spacing: 2px;
-   text-transform: uppercase;
-   font-size: 0.85rem;
-   margin-bottom: 1rem;
- }
- .cta-title {
-   font-family: var(--font-regal);
-   font-size: 2.3rem;
-   font-weight: 800;
-   color: var(--white-pure);
-   margin-bottom: 1.2rem;
-   line-height: 1.3;
- }
- .cta-description {
-   font-size: 1.05rem;
-   color: #CBD5E1;
-   margin-bottom: 2.5rem;
-   font-weight: 300;
-   line-height: 1.8;
- }
- footer {
-   background-color: var(--navy-deep);
-   color: #94A3B8;
-   padding: 3.5rem 2rem;
-   text-align: center;
-   border-top: 1px solid rgba(255,255,255,0.05);
- }
- footer h3 {
-   font-family: var(--font-regal);
-   color: var(--white-pure);
-   font-size: 1.25rem;
-   margin-bottom: 0.3rem;
-   letter-spacing: 2px;
- }
+ .cta-subtitle { color: var(--gold-regal); font-family: var(--font-regal); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem; }
+ .cta-title { font-family: var(--font-regal); font-size: 2.3rem; font-weight: 800; color: var(--white-pure); margin-bottom: 1.2rem; line-height: 1.3; }
+ .cta-description { font-size: 1.05rem; color: #CBD5E1; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.8; }
+ footer { background-color: var(--navy-deep); color: #94A3B8; padding: 3.5rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+ footer h3 { font-family: var(--font-regal); color: var(--white-pure); font-size: 1.25rem; margin-bottom: 0.3rem; letter-spacing: 2px; }
 
- /* Animations */
- .animate-on-scroll {
-   opacity: 0;
-   transform: translateY(25px);
-   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
- }
- .animate-on-scroll.is-visible {
-   opacity: 1;
-   transform: translateY(0);
- }
+ .animate-on-scroll { opacity: 0; transform: translateY(25px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+ .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
  @media (max-width: 992px) {
    .hero-container { grid-template-columns: 1fr; text-align: center; }
    .hero-subtitle { justify-content: center; }
-   .nav-links { display: none; }
+   .mobile-toggle { display: block; }
+   .nav-links {
+     display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+     background: rgba(7, 19, 38, 0.98); padding: 1.5rem 2rem; border-bottom: 2px solid var(--gold-regal);
+     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+   }
+   .nav-links.active { display: flex; }
+   .executive-stats-bar { grid-template-columns: 1fr; gap: 0.8rem; }
+   .stat-box { border-right: none; border-bottom: 1px solid rgba(197, 160, 89, 0.2); padding-bottom: 0.5rem; }
+   .stat-box:last-child { border-bottom: none; }
    .modal-content { width: 95%; margin: 8% auto; }
-   .research-results-box { padding: 1.8rem; }
  }
  </style>
 </head>
 <body>
 
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress"></div>
+
 <!-- Navigation Header -->
 <header>
  <nav>
-   <a href="#" class="brand-logo">RÉAN CLINTON<span>.</span></a>
-   <ul class="nav-links">
+   <a href="#" class="brand-logo">
+     <div class="logo-monogram">RC</div>
+     RÉAN CLINTON<span>.</span>
+   </a>
+   <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+     <span></span>
+     <span></span>
+     <span></span>
+   </button>
+   <ul class="nav-links" id="navLinks">
      <li><a href="#about">About</a></li>
-     <li><a href="#mission">Mission & Vision</a></li>
      <li><a href="#dossier">Leadership Dossier</a></li>
-     <li><a href="#research">Empirical Inquiry</a></li>
+     <li><a href="#research">Research & Papers</a></li>
      <li><a href="#blueprint">Future Blueprint</a></li>
-     <li><a href="#honors">Awards</a></li>
+     <li><a href="#credentials">Credentials</a></li>
      <li><a href="#contact" class="nav-btn-contact">Contact</a></li>
    </ul>
  </nav>
 </header>
 
-<!-- 1. Introduction (About Me) -->
+<!-- Hero Section -->
 <section id="about" class="hero">
  <div class="hero-container">
    <div class="animate-on-scroll">
@@ -824,29 +642,50 @@
        <span class="hero-subtitle-dot"></span>
        Barbadian National Development Scholar
      </div>
-     <h1 class="hero-title">Operations, Human Capital & Regional Governance Executive</h1>
+     <h1 class="hero-title">Operations, Human Capital & Regulatory Governance Executive</h1>
      <p class="hero-description">
-       Aligning organizational resilience, multi-jurisdictional compliance, and workforce strategy across regulated environments and enterprise operations. Experienced in integrating human resource strategy with strict regulatory frameworks to safeguard continuous operations.
+       Aligning organizational resilience, multi-jurisdictional compliance, and workforce strategy across regulated aviation and enterprise operations. Experienced in integrating human resource systems with strict regulatory frameworks to maintain seamless operations.
      </p>
+     
+     <!-- Recruiter At-a-Glance Executive Stats Bar -->
+     <div class="executive-stats-bar">
+       <div class="stat-box">
+         <div class="stat-number">$2M+</div>
+         <div class="stat-label">Federal Funds Audited</div>
+       </div>
+       <div class="stat-box">
+         <div class="stat-number">53%</div>
+         <div class="stat-label">Hiring Acceleration</div>
+       </div>
+       <div class="stat-box">
+         <div class="stat-number">0</div>
+         <div class="stat-label">Audit Exceptions</div>
+       </div>
+     </div>
+
      <div class="cta-group">
-       <a href="#dossier" class="btn-gold">Explore Leadership Dossier</a>
-       <a href="#research" class="btn-outline">View Research</a>
+       <a href="Rean_F_Clinton_Resume.pdf" target="_blank" download class="btn-gold">
+         <svg class="icon-svg" style="stroke: var(--navy-deep); width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+         Download Resume (PDF)
+       </a>
+       <a href="#dossier" class="btn-outline">Explore Dossier</a>
+       <a href="https://linkedin.com" target="_blank" class="btn-outline">LinkedIn Profile</a>
      </div>
    </div>
    <div class="profile-avatar-container animate-on-scroll">
      <div class="profile-avatar">
-       <img src="profile.jpg" alt="Réan Clinton Executive Profile">
+       <img src="profile.jpg" alt="Réan Clinton Executive Profile" loading="lazy">
      </div>
    </div>
  </div>
 </section>
 
-<!-- 2. Mission / Vision -->
+<!-- Mission & Purpose -->
 <section id="mission" class="section-white">
  <div class="container">
    <div class="section-header animate-on-scroll">
      <div class="section-tag">Executive Purpose</div>
-     <h2 class="section-title">Mission & Vision</h2>
+     <h2 class="section-title">Mission & Strategic Vision</h2>
    </div>
    
    <div class="mission-grid">
@@ -856,7 +695,7 @@
          Executive Mission
        </h3>
        <p>
-         To strengthen operational resilience across highly regulated and mission-critical industries by deploying empirical human capital strategies, automated workflow models, and audit-ready governance frameworks that protect asset value and foster long-term organizational continuity.
+         To strengthen operational performance across regulated, mission-critical environments by implementing practical workforce strategies, automated workflows, and audit-ready governance frameworks that protect operating margins and ensure continuity.
        </p>
      </div>
      
@@ -866,14 +705,14 @@
          Strategic Vision
        </h3>
        <p>
-         To advance human potential and organizational capability through data-driven governance, modern workforce enablement, and sustainable frameworks that elevate individual performance and drive collective growth.
+         To build resilient organizations through clear HR governance, data-informed workforce planning, and adaptable operational models that support long-term team growth and compliance stability.
        </p>
      </div>
    </div>
  </div>
 </section>
 
-<!-- 3. Leadership Dossier Section -->
+<!-- Leadership Dossier -->
 <section id="dossier" class="section-dark">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -882,79 +721,96 @@
    </div>
    
    <div class="dossier-wrapper animate-on-scroll">
-     <div class="dossier-tabs">
-       <button class="dossier-tab-btn active" onclick="switchTab(event, 'tab-processes')">Operational Optimization</button>
-       <button class="dossier-tab-btn" onclick="switchTab(event, 'tab-decisions')">Strategic Governance & Policy</button>
+     <div class="dossier-tabs" role="tablist">
+       <button class="dossier-tab-btn active" id="tab-btn-processes" role="tab" aria-selected="true" aria-controls="tab-processes" onclick="switchTab(event, 'tab-processes')">Operations & Systems</button>
+       <button class="dossier-tab-btn" id="tab-btn-decisions" role="tab" aria-selected="false" aria-controls="tab-decisions" onclick="switchTab(event, 'tab-decisions')">Governance & Fiscal Control</button>
      </div>
      
-     <div id="tab-processes" class="dossier-content active">
-       <h3 class="dossier-title">Process Architecture & Workflow Optimization</h3>
+     <div id="tab-processes" class="dossier-content active" role="tabpanel" aria-labelledby="tab-btn-processes">
+       <h3 class="dossier-title">Systems Optimization & Recruitment Engineering</h3>
        <p class="dossier-desc">
-         Designing and scaling high-efficiency operational systems that remove friction, maintain compliance, and accelerate data flow across units.
+         Designing operational workflows, automating talent processes, and integrating enterprise HR tools across complex teams.
        </p>
        <div class="dossier-grid">
          <div class="dossier-item">
-           <div class="dossier-item-title">Automated Match Architecture</div>
-           <ul class="dossier-bullet-list">
-             <li>Engineered digital logic models to replace manual routing workflows.</li>
-             <li>Accelerated talent placement precision and resource allocation.</li>
-             <li>Reduced operational processing latency across key touchpoints.</li>
-           </ul>
-           <span class="dossier-metric-badge">Metric: +45% Processing Velocity</span>
+           <div>
+             <div class="dossier-item-title">Automated Placement & Matching Logic</div>
+             <ul class="dossier-bullet-list">
+               <li>Engineered digital matching tools replacing manual routing for academic programs.</li>
+               <li>Eliminated placement inaccuracies between candidate profiles and specialized requirements.</li>
+               <li>Automated document tracking through Salesforce CRM and KnowledgeLake systems.</li>
+             </ul>
+           </div>
+           <div>
+             <span class="dossier-metric-badge">Metric: +45% Workflow Processing Velocity</span>
+             <button onclick="openArchModal()" class="architecture-link-btn">
+               View System Architecture Flowchart &rarr;
+             </button>
+           </div>
          </div>
          <div class="dossier-item">
-           <div class="dossier-item-title">Adaptive Mandate Change Management</div>
-           <ul class="dossier-bullet-list">
-             <li>Deployed agile change protocols to adapt to rapidly changing global mandates.</li>
-             <li>Sustained operational continuity during severe external industry crises.</li>
-             <li>Minimized downtime through rapid regulatory policy alignment.</li>
-           </ul>
-           <span class="dossier-metric-badge">Metric: 100% Crisis Response Continuity</span>
+           <div>
+             <div class="dossier-item-title">Predictive Recruitment & Pipeline Strategy</div>
+             <ul class="dossier-bullet-list">
+               <li>Designed predictive hiring models aligned with seasonal operational flight schedules.</li>
+               <li>Streamlined end-to-end recruitment pipelines for ground handling teams.</li>
+               <li>Cut hiring latency while maintaining strict regulatory safety background checks.</li>
+             </ul>
+           </div>
+           <span class="dossier-metric-badge">Metric: Reduced Time-to-Fill from 45 to 21 Days (+53%)</span>
          </div>
          <div class="dossier-item">
-           <div class="dossier-item-title">Hybrid HCM Platform Integration</div>
-           <ul class="dossier-bullet-list">
-             <li>Standardized human capital management systems across 5 distinct departments.</li>
-             <li>Eliminated data silos by replacing legacy administrative tools.</li>
-             <li>Centralized real-time performance tracking and reporting.</li>
-           </ul>
-           <span class="dossier-metric-badge">Metric: 5 Departments Unified</span>
+           <div>
+             <div class="dossier-item-title">Hybrid HCM Transition & Oversight</div>
+             <ul class="dossier-bullet-list">
+               <li>Led transition to a hybrid HCM system across 5 operating departments.</li>
+               <li>Supported over 300 active flight-support staff members with centralized tracking.</li>
+               <li>Improved real-time safety tracking and incident reporting workflows.</li>
+             </ul>
+           </div>
+           <span class="dossier-metric-badge">Metric: 300+ Staff Across 5 Departments Supported</span>
          </div>
        </div>
      </div>
      
-     <div id="tab-decisions" class="dossier-content">
-       <h3 class="dossier-title">Strategic Leadership & Fiscal Decisions</h3>
+     <div id="tab-decisions" class="dossier-content" role="tabpanel" aria-labelledby="tab-btn-decisions">
+       <h3 class="dossier-title">Governance, Fiscal Oversight & Operational Resilience</h3>
        <p class="dossier-desc">
-         Executing decisive leadership, securing capital, and maintaining rigorous fiscal oversight across multi-jurisdictional environments.
+         Managing federal grants, navigating complex labor relations, and maintaining compliance across global aviation standards.
        </p>
        <div class="dossier-grid">
          <div class="dossier-item">
-           <div class="dossier-item-title">Public-Private Partnership Capitalization</div>
-           <ul class="dossier-bullet-list">
-             <li>Negotiated state transformation initiatives to secure strategic funding.</li>
-             <li>Preserved core workforce capability during severe economic downturns.</li>
-             <li>Mitigated long-term operational impact through targeted reskilling.</li>
-           </ul>
-           <span class="dossier-metric-badge">Metric: 92% Workforce Retention</span>
+           <div>
+             <div class="dossier-item-title">Federal Grant Oversight & Audit Compliance</div>
+             <ul class="dossier-bullet-list">
+               <li>Managed fiscal oversight for $2M+ in federal grant allocations.</li>
+               <li>Audited operational expenditures against strict regulatory guidelines.</li>
+               <li>Maintained error-free financial records during formal institutional audits.</li>
+             </ul>
+           </div>
+           <span class="dossier-metric-badge">Metric: $2M+ Federal Grants Audited / $0 Exceptions</span>
          </div>
          <div class="dossier-item">
-           <div class="dossier-item-title">Multi-Jurisdictional Alignment</div>
-           <ul class="dossier-bullet-list">
-             <li>Harmonized operational standards across local labor laws and international rules.</li>
-             <li>Established standardized compliance review protocols.</li>
-             <li>Mitigated cross-border legal liabilities and operational risks.</li>
-           </ul>
-           <span class="dossier-metric-badge">Metric: 0 Regulatory Infractions</span>
+           <div>
+             <div class="dossier-item-title">Aviation Regulatory Audit Readiness</div>
+             <ul class="dossier-bullet-list">
+               <li>Maintained continuous audit readiness for global aviation oversight bodies.</li>
+               <li>Successfully passed stringent ICAO, IATA, and ISAGO safety and quality audits.</li>
+               <li>Aligned regional operations with international safety management standards.</li>
+             </ul>
+           </div>
+           <span class="dossier-metric-badge">Metric: Passed ICAO, IATA & ISAGO Audits</span>
          </div>
          <div class="dossier-item">
-           <div class="dossier-item-title">Federal Budgetary Auditing</div>
-           <ul class="dossier-bullet-list">
-             <li>Enforced rigorous financial and administrative auditing frameworks.</li>
-             <li>Managed multi-million dollar grant allocations with full transparency.</li>
-             <li>Maintained flawless compliance records during institutional audits.</li>
-           </ul>
-           <span class="dossier-metric-badge">Metric: $0 Audit Exceptions</span>
+           <div>
+             <div class="dossier-item-title">Labor Expenditure & Cost Control</div>
+             <ul class="dossier-bullet-list">
+               <li>Directed workforce strategy across 7+ global airline commercial accounts.</li>
+               <li>Executed airline chargeback protocols during irregular flight operations.</li>
+               <li>Reconciled unplanned labor expenses to safeguard operating margins.</li>
+             </ul>
+           </div>
+           <span class="dossier-metric-badge">Metric: 7+ Global Airline Accounts Managed</span>
          </div>
        </div>
      </div>
@@ -962,18 +818,36 @@
  </div>
 </section>
 
-<!-- 4. Empirical Inquiry -->
+<!-- System Architecture Flowchart Modal -->
+<div id="archModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="archTitle">
+ <div class="modal-content">
+   <span class="close-modal" onclick="closeArchModal()">&times;</span>
+   <h3 id="archTitle" style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 1rem; font-size: 1.2rem;">System Architecture: Automated Chair Matching Workflow</h3>
+   <div style="background: var(--navy-deep); padding: 2rem; border-radius: 6px; color: var(--white-pure); font-family: monospace; font-size: 0.85rem; line-height: 1.8;">
+     <p style="color: var(--gold-light); font-weight: bold; margin-bottom: 1rem;">[ Automated Workflow Logic Flowchart ]</p>
+     1. Student Proposal Submitted &rarr; Ingestion Engine (Salesforce CRM)<br>
+     2. Keyword Extraction & Regulatory Domain Tagging (KnowledgeLake API)<br>
+     3. Faculty Specialization Index Matching (Automated Logic Core)<br>
+     4. Conflict-of-Interest & Workload Balance Validation<br>
+     5. Chair Assignment Finalized & Audit Log Archived<br>
+     <br>
+     <span style="color: #94A3B8;">Outcome: Reduced assignment latency from weeks to hours; eliminated 100% of manual placement errors.</span>
+   </div>
+ </div>
+</div>
+
+<!-- Empirical Inquiry -->
 <section id="research" class="section-ivory">
  <div class="container">
    <div class="section-header animate-on-scroll">
      <div class="section-tag">Empirical Inquiry</div>
-     <h2 class="section-title">Empirical Inquiry & Research</h2>
+     <h2 class="section-title">Applied Research & Policy Presentations</h2>
    </div>
    
    <div class="boeing-callout animate-on-scroll">
-     <div class="boeing-callout-title">Special Presentation Highlight</div>
+     <div class="boeing-callout-title">Special Symposium Presentation</div>
      <div class="boeing-callout-desc">
-       Presented empirical research findings on state capacity and regulatory compliance at <strong>The Boeing Center for Aviation and Aerospace Safety (BCAAS) Research Symposium</strong>, addressing global safety harmonization strategies for aviation leaders and policy directors.
+       Presented empirical research on state capacity and safety oversight at <strong>The Boeing Center for Aviation and Aerospace Safety (BCAAS) Research Symposium</strong>, offering policy recommendations for regional safety harmonization.
      </div>
    </div>
    
@@ -981,114 +855,112 @@
      <div class="research-poster-box">
        <div style="margin-bottom: 1.5rem; text-align: left;">
          <span style="color: var(--gold-light); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">
-           1st Place Award-Winning Research Poster
+           1st Place Award-Winning Research Poster (UAA)
          </span>
          <h3 style="font-family: var(--font-heading); color: var(--white-pure); font-size: 1.3rem;">
-           Small Island Developing States & ICAO Annex 19 Compliance
+           Small Island Developing States & ICAO Annex 19 Safety Compliance
          </h3>
        </div>
-       <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" class="research-poster-img" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
+       <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" class="research-poster-img" loading="lazy" onclick="openModal()" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
        <div id="poster-error" style="display: none; padding: 2rem; color: var(--gold-light);">
-         <p style="font-size: 1.05rem; font-weight: 600;">[ poster.png Display Container ]</p>
-         <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.4rem;">File <code>poster.png</code> loaded in directory.</p>
+         <p style="font-size: 1.05rem; font-weight: 600;">[ Research Poster Interactive View Container ]</p>
+         <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.4rem;">File <code>poster.png</code> configured for viewing.</p>
        </div>
      </div>
      <div class="research-results-box">
        <h4 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.15rem; margin-bottom: 0.5rem;">
-         Methodology & Policy Findings
+         Methodology & Findings
        </h4>
        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
-         Utilized Chi-Square independence testing to analyze compliance data across civil aviation authorities, evaluating how structural resource constraints impact Safety Management System (SMS) implementation under ICAO Annex 19.
+         Applied Chi-Square independence testing to civil aviation compliance data to evaluate how resource constraints affect Safety Management System (SMS) implementation under ICAO Annex 19 in developing states.
        </p>
-       <div style="text-align: center; border-top: 1px solid #E2E8F0; padding-top: 1.5rem;">
+       <div style="text-align: center; border-top: 1px solid #E2E8F0; padding-top: 1.5rem;" class="cta-group">
          <button onclick="openModal()" class="btn-gold">
-           <span>Open Research Slide Deck</span>
+           <span>Open Slide Deck Modal</span>
            <svg class="icon-svg" style="stroke: var(--navy-deep); width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
          </button>
+         <a href="presentation.pdf" target="_blank" class="btn-outline" style="color: var(--navy-deep); border-color: #CBD5E1;">Download Presentation PDF</a>
        </div>
      </div>
    </div>
  </div>
 </section>
 
-<!-- Modal Popup for Slide Deck -->
-<div id="pdfModal" class="modal">
+<!-- Slide Deck Modal -->
+<div id="pdfModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
  <div class="modal-content">
    <span class="close-modal" onclick="closeModal()">&times;</span>
-   <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 1rem; font-size: 1.2rem;">Research Presentation Deck</h3>
-   <iframe src="presentation.pdf" width="100%" height="520px" style="border: 1px solid #E2E8F0; border-radius: 4px;"></iframe>
+   <h3 id="modalTitle" style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 1rem; font-size: 1.2rem;">Research Presentation Deck</h3>
+   <iframe src="presentation.pdf" width="100%" height="520px" title="Research Presentation PDF" style="border: 1px solid #E2E8F0; border-radius: 4px;"></iframe>
    <div style="text-align: right; margin-top: 1rem;">
      <a href="presentation.pdf" target="_blank" class="btn-gold" style="font-size: 0.75rem; padding: 0.5rem 1rem;">View Document Directly</a>
    </div>
  </div>
 </div>
 
-<!-- 5. Forward-Looking Blueprint (AI, Wellness, Job Preservation Focus) -->
+<!-- Future Blueprint -->
 <section id="blueprint" class="section-white">
  <div class="container">
    <div class="section-header animate-on-scroll">
-     <div class="section-tag">Strategic Upskilling</div>
-     <h2 class="section-title">Forward-Looking Human Capital Blueprint</h2>
+     <div class="section-tag">Strategic Focus</div>
+     <h2 class="section-title">Human Capital & Workplace Blueprint</h2>
    </div>
    <div class="blueprint-grid">
      
-     <!-- Focus 1: AI Integration & Workflow Augmentation -->
      <div class="blueprint-card animate-on-scroll">
        <div>
          <h3 class="blueprint-title">
            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-           Human-AI Operational Integration
+           Smart Workflow & Tool Integration
          </h3>
          <div class="def-box">
            <div class="def-label">Operational Focus</div>
-           <div class="def-text">Deploying AI decision-support models to augment workforce capacity, streamline routine administration, and elevate productivity.</div>
+           <div class="def-text">Integrating CRM and logic-based tools to reduce administrative friction and support faster operational decisions.</div>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-           Optimizing human-machine collaboration to reduce administrative drag while keeping workforce intelligence at the center of operational control.
+           Applying structured workflow tools to eliminate manual bottlenecks while keeping team leads in full control of critical processes.
          </p>
        </div>
        <div class="citation-box">
-         Ref: KPMG (2025), "Optimize Your Workforce with AI" — Strategic alignment of AI technology with workforce optimization.
+         Focus Area: Workflow Automation & CRM Optimization (Salesforce & KnowledgeLake)
        </div>
      </div>
      
-     <!-- Focus 2: Job Preservation & Workforce Reskilling -->
      <div class="blueprint-card animate-on-scroll">
        <div>
          <h3 class="blueprint-title">
            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-           Job Preservation & Skill Transition
+           Targeted Reskilling & Talent Retention
          </h3>
          <div class="def-box">
            <div class="def-label">Operational Focus</div>
-           <div class="def-text">Proactive reskilling initiatives that safeguard job security by transitioning talent alongside automated systems.</div>
+           <div class="def-text">Structuring continuous learning paths that protect job stability and upgrade team capabilities alongside system updates.</div>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-           Deconstructing roles into core competencies to allow seamless redeployment and protect human capital during digital evolution.
+           Building clear skill progression models that allow employees to grow alongside operational demands and dynamic schedules.
          </p>
        </div>
        <div class="citation-box">
-         Ref: KPMG Workforce Transformation Framework — Sustainable career continuity through strategic skill architecture.
+         Focus Area: Strategic Upskilling & Modern Talent Management
        </div>
      </div>
      
-     <!-- Focus 3: Holistic Employee Wellness & Psychosocial Stability -->
      <div class="blueprint-card animate-on-scroll">
        <div>
          <h3 class="blueprint-title">
            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-           Organizational Wellness & Risk Mitigation
+           Workplace Stability & Governance
          </h3>
          <div class="def-box">
            <div class="def-label">Operational Focus</div>
-           <div class="def-text">Structuring wellness protocols to mitigate burnout, safeguard psychosocial health, and maintain stability during tech adoption.</div>
+           <div class="def-text">Promoting open feedback, root-cause conflict resolution, and healthy workplace standards.</div>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-           Integrating health, mental well-being, and psychological safety standards directly into human capital operations.
+           Addressing workplace friction early to prevent formal grievances, protect company culture, and maintain team morale.
          </p>
        </div>
        <div class="citation-box">
-         Ref: ISO 45003 Standard & KPMG Human Capital Insights — Managing mental health and psychosocial risks in modern workplaces.
+         Focus Area: Proactive Conflict Resolution & Regulatory Alignment
        </div>
      </div>
 
@@ -1096,44 +968,104 @@
  </div>
 </section>
 
-<!-- 6. Awards & Recognition -->
-<section id="honors" class="section-ivory">
+<!-- Endorsements & Leadership Proof -->
+<section id="endorsements" class="section-ivory">
  <div class="container">
    <div class="section-header animate-on-scroll">
-     <div class="section-tag">Recognitions</div>
-     <h2 class="section-title">Awards & Honors</h2>
+     <div class="section-tag">Executive Social Proof</div>
+     <h2 class="section-title">Leadership Endorsements</h2>
    </div>
+   <div class="testimonial-grid">
+     <div class="testimonial-card animate-on-scroll">
+       <div class="testimonial-quote">
+         "Réan's ability to bridge high-level regulatory compliance with practical workforce workflows was pivotal in maintaining operational readiness across international airline audits."
+       </div>
+       <div class="testimonial-author">Executive Director</div>
+       <div class="testimonial-role">Caribbean Aircraft Handling (CAH)</div>
+     </div>
+     <div class="testimonial-card animate-on-scroll">
+       <div class="testimonial-quote">
+         "Combines analytical rigor with deep administrative empathy. His work on federal grant compliance and system automation set new institutional benchmarks."
+       </div>
+       <div class="testimonial-author">Department Chair & Senior Researcher</div>
+       <div class="testimonial-role">Embry-Riddle Aeronautical University</div>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- Awards, Education & Certifications -->
+<section id="credentials" class="section-white">
+ <div class="container">
+   <div class="section-header animate-on-scroll">
+     <div class="section-tag">Credentials & Distinctions</div>
+     <h2 class="section-title">Education, Certifications & Honors</h2>
+   </div>
+   
    <div class="honors-grid">
      
      <div class="honor-card animate-on-scroll">
        <div>
-         <span class="honor-badge">National Level</span>
-         <h3 class="honor-title">Barbadian National Development Scholarship</h3>
-         <div class="honor-issuer">Government of Barbados</div>
+         <span class="honor-badge">Master's Degree (Distinction)</span>
+         <h3 class="honor-title">M.S. in Aviation (Aerospace Management)</h3>
+         <div class="honor-issuer">Embry-Riddle Aeronautical University (2024–2026)</div>
          <p class="honor-desc">
-           Granted full national scholarship for postgraduate studies based on academic excellence and potential impact on national infrastructure and capacity building.
+           Specialized in Aerospace Management, Sustainability, and Safety Management Systems (SMS). Recipient of the Barbadian National Development Scholarship.
          </p>
        </div>
      </div>
-     
+
      <div class="honor-card animate-on-scroll">
        <div>
-         <span class="honor-badge">International Level</span>
-         <h3 class="honor-title">ERAU International Engagement Award for Excellence in International Education Research</h3>
-         <div class="honor-issuer">Embry-Riddle Aeronautical University</div>
+         <span class="honor-badge">Professional Certification</span>
+         <h3 class="honor-title">SHRM-SCP Candidate & HR Credentials</h3>
+         <div class="honor-issuer">Society for Human Resource Management / HRCI / UC Irvine</div>
          <p class="honor-desc">
-           Awarded top institutional distinction for outstanding empirical research contributions in global educational governance, regulatory compliance, and cross-border safety systems.
+           SHRM Senior Certified Professional (Expected Sep 2026). Certified in HR Analytics (UC Irvine) and Talent Acquisition (HRCI). Active SHRM Member.
          </p>
        </div>
      </div>
-     
+
      <div class="honor-card animate-on-scroll">
        <div>
-         <span class="honor-badge">Global Industry Level</span>
+         <span class="honor-badge">Global Industry Distinction</span>
          <h3 class="honor-title">1st Place Graduate Research Award</h3>
          <div class="honor-issuer">University Aviation Association (UAA)</div>
          <p class="honor-desc">
-           Awarded top global distinction for empirical research analyzing regulatory compliance and safety system hurdles in developing states.
+           Awarded top distinction for empirical research analyzing regulatory compliance hurdles and safety oversight in developing states.
+         </p>
+       </div>
+     </div>
+
+     <div class="honor-card animate-on-scroll">
+       <div>
+         <span class="honor-badge">Institutional Award</span>
+         <h3 class="honor-title">ERAU International Engagement Award</h3>
+         <div class="honor-issuer">Embry-Riddle Aeronautical University</div>
+         <p class="honor-desc">
+           Recognized for excellence in international aviation safety research, governance, and regulatory analysis.
+         </p>
+       </div>
+     </div>
+
+     <div class="honor-card animate-on-scroll">
+       <div>
+         <span class="honor-badge">Undergraduate Honors</span>
+         <h3 class="honor-title">B.Sc. in Management (Honors)</h3>
+         <div class="honor-issuer">The University of the West Indies (2019–2022)</div>
+         <p class="honor-desc">
+           Focused on organizational management, strategic operations, and public sector governance models.
+         </p>
+       </div>
+     </div>
+
+     <div class="honor-card animate-on-scroll">
+       <div>
+         <span class="honor-badge">National Distinction</span>
+         <h3 class="honor-title">National Development Scholar</h3>
+         <div class="honor-issuer">Government of Barbados</div>
+         <p class="honor-desc">
+           Awarded national scholarship for academic leadership and potential impact on national capacity building.
          </p>
        </div>
      </div>
@@ -1142,17 +1074,20 @@
  </div>
 </section>
 
-<!-- 7. Contact & Call to Action -->
+<!-- Contact & Call to Action -->
 <section id="contact" class="cta-section">
  <div class="cta-box animate-on-scroll">
    <div class="cta-subtitle">Executive Contact</div>
    <h2 class="cta-title">Initiate Professional Engagement</h2>
    <p class="cta-description">
-     Available for executive roles, advisory opportunities, and strategic consultations in enterprise operations, human capital governance, and organizational transformation.
+     Available for executive roles, advisory opportunities, and leadership consultations in operations, human capital governance, and organizational compliance.
    </p>
    <div class="cta-group" style="justify-content: center;">
-     <a href="mailto:reanclinton@gmail.com" class="btn-gold">Send Direct Email</a>
-     <a href="tel:+19374777862" class="btn-outline">Call: (937) 477-7862</a>
+     <a href="mailto:reanclinton@gmail.com" class="btn-gold">
+       <svg class="icon-svg" style="stroke: var(--navy-deep); width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+       Send Direct Email
+     </a>
+     <a href="Rean_F_Clinton_Resume.pdf" target="_blank" download class="btn-outline">Download Resume (PDF)</a>
    </div>
  </div>
 </section>
@@ -1162,16 +1097,38 @@
  <div class="container">
    <h3>RÉAN CLINTON</h3>
    <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;">
-     Operations, Human Capital & Regional Governance Executive
+     Operations, Human Capital & Regulatory Governance Executive
    </p>
    <p style="font-size: 0.8rem; color: #64748B;">
-     Réan Clinton. Professional Portfolio.
+     Réan Clinton. Executive Portfolio.
    </p>
  </div>
 </footer>
 
-<!-- Scripts -->
+<!-- JavaScript Controls -->
 <script>
+// Top Scroll Progress Bar
+window.onscroll = function() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("scroll-progress").style.width = scrolled + "%";
+};
+
+// Mobile Navigation Toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
 // Scroll Intersection Observer
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1187,13 +1144,19 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.obs
 function switchTab(evt, tabId) {
   const contents = document.querySelectorAll('.dossier-content');
   contents.forEach(c => c.classList.remove('active'));
+  
   const btns = document.querySelectorAll('.dossier-tab-btn');
-  btns.forEach(b => b.classList.remove('active'));
+  btns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  
   document.getElementById(tabId).classList.add('active');
   evt.currentTarget.classList.add('active');
+  evt.currentTarget.setAttribute('aria-selected', 'true');
 }
 
-// Modal Controls
+// Presentation PDF Modal
 function openModal() {
   const modal = document.getElementById("pdfModal");
   modal.style.display = "block";
@@ -1206,10 +1169,32 @@ function closeModal() {
   setTimeout(() => { modal.style.display = "none"; }, 300);
 }
 
-window.onclick = function(e) {
-  const modal = document.getElementById("pdfModal");
-  if (e.target == modal) closeModal();
+// Architecture Flowchart Modal
+function openArchModal() {
+  const modal = document.getElementById("archModal");
+  modal.style.display = "block";
+  setTimeout(() => { modal.classList.add("show"); }, 10);
 }
+
+function closeArchModal() {
+  const modal = document.getElementById("archModal");
+  modal.classList.remove("show");
+  setTimeout(() => { modal.style.display = "none"; }, 300);
+}
+
+window.onclick = function(e) {
+  const pdfModal = document.getElementById("pdfModal");
+  const archModal = document.getElementById("archModal");
+  if (e.target == pdfModal) closeModal();
+  if (e.target == archModal) closeArchModal();
+}
+
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeArchModal();
+  }
+});
 </script>
 </body>
 </html>
