@@ -62,7 +62,7 @@
    max-width: 1280px;
    margin: 0 auto;
    display: flex;
-   justify-content: space-between;
+   justify-space: space-between;
    align-items: center;
    padding: 1.1rem 2rem;
  }
@@ -331,81 +331,6 @@
    stroke-linejoin: round;
    display: inline-block;
    vertical-align: middle;
- }
-
- /* Intro Video Component */
- .intro-video-wrapper {
-   background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
-   border: 2px solid var(--gold-regal);
-   border-radius: 8px;
-   overflow: hidden;
-   box-shadow: 0 12px 35px rgba(0,0,0,0.15), 0 0 20px var(--gold-subtle);
-   margin-bottom: 3rem;
-   position: relative;
- }
- .intro-video-wrapper::before {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   height: 4px;
-   background: linear-gradient(90deg, var(--gold-regal), var(--gold-light), var(--gold-bright));
- }
- .video-container {
-   padding: 2.5rem;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 2.5rem;
-   align-items: center;
- }
- .video-player-box {
-   width: 100%;
-   aspect-ratio: 16 / 9;
-   background: var(--navy-muted);
-   border-radius: 6px;
-   border: 1px solid rgba(197, 160, 89, 0.3);
-   overflow: hidden;
-   position: relative;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
- }
- .video-placeholder {
-   text-align: center;
-   color: var(--white-pure);
-   padding: 1.5rem;
- }
- .video-play-btn {
-   width: 60px;
-   height: 60px;
-   border-radius: 50%;
-   background: var(--gold-regal);
-   color: var(--navy-deep);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin: 0 auto 1rem auto;
-   box-shadow: 0 0 20px var(--gold-glow);
-   cursor: pointer;
-   transition: var(--transition-smooth);
- }
- .video-play-btn:hover {
-   transform: scale(1.1);
-   background: var(--gold-light);
- }
- .video-info h3 {
-   font-family: var(--font-regal);
-   color: var(--gold-light);
-   font-size: 1.5rem;
-   margin-bottom: 0.8rem;
- }
- .video-info p {
-   color: #CBD5E1;
-   font-size: 0.95rem;
-   line-height: 1.7;
-   margin-bottom: 1.2rem;
  }
 
  /* Mission & Vision Section */
@@ -870,7 +795,6 @@
    .nav-links { display: none; }
    .modal-content { width: 95%; margin: 8% auto; }
    .research-results-box { padding: 1.8rem; }
-   .video-container { grid-template-columns: 1fr; }
  }
  </style>
 </head>
@@ -882,7 +806,6 @@
    <a href="#" class="brand-logo">RÉAN CLINTON<span>.</span></a>
    <ul class="nav-links">
      <li><a href="#about">About</a></li>
-     <li><a href="#intro-video">Executive Briefing</a></li>
      <li><a href="#mission">Mission & Vision</a></li>
      <li><a href="#dossier">Leadership Dossier</a></li>
      <li><a href="#research">Empirical Inquiry</a></li>
@@ -918,36 +841,7 @@
  </div>
 </section>
 
-<!-- 2. Personal Introductory Video Section -->
-<section id="intro-video" class="section-ivory">
- <div class="container">
-   <div class="intro-video-wrapper animate-on-scroll">
-     <div class="video-container">
-       <div class="video-info">
-         <div class="section-tag" style="color: var(--gold-light);">Executive Perspective</div>
-         <h3>Executive Vision & Leadership Briefing</h3>
-         <p>
-           A concise personal introduction detailing strategic methodologies in human capital optimization, cross-jurisdictional governance, and empowering workforce transformation.
-         </p>
-         <a href="#contact" class="btn-gold" style="font-size: 0.75rem;">Schedule Direct Consultation</a>
-       </div>
-       <div class="video-player-box">
-         <div class="video-placeholder">
-           <div class="video-play-btn">
-             <svg class="icon-svg" style="stroke: var(--navy-deep); margin-left: 3px;" viewBox="0 0 24 24">
-               <polygon points="5 3 19 12 5 21 5 3"></polygon>
-             </svg>
-           </div>
-           <p style="font-size: 0.9rem; font-weight: 600; color: var(--gold-light);">Watch Executive Briefing</p>
-           <span style="font-size: 0.75rem; color: var(--text-light);">(2:15 Min Video)</span>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-</section>
-
-<!-- 3. Mission / Vision -->
+<!-- 2. Mission / Vision -->
 <section id="mission" class="section-white">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -979,7 +873,7 @@
  </div>
 </section>
 
-<!-- 4. Leadership Dossier Section -->
+<!-- 3. Leadership Dossier Section -->
 <section id="dossier" class="section-dark">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -1068,7 +962,7 @@
  </div>
 </section>
 
-<!-- 5. Empirical Inquiry (Formerly Strategic Research Vault) -->
+<!-- 4. Empirical Inquiry (Formerly Strategic Research Vault) -->
 <section id="research" class="section-ivory">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -1129,7 +1023,7 @@
  </div>
 </div>
 
-<!-- 6. Forward-Looking Blueprint (AI, Wellness, Job Preservation Focus) -->
+<!-- 5. Forward-Looking Blueprint (AI, Wellness, Job Preservation Focus) -->
 <section id="blueprint" class="section-white">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -1202,7 +1096,7 @@
  </div>
 </section>
 
-<!-- 7. Awards & Recognition -->
+<!-- 6. Awards & Recognition -->
 <section id="honors" class="section-ivory">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -1248,7 +1142,7 @@
  </div>
 </section>
 
-<!-- 8. Contact & Call to Action -->
+<!-- 7. Contact & Call to Action -->
 <section id="contact" class="cta-section">
  <div class="cta-box animate-on-scroll">
    <div class="cta-subtitle">Executive Contact</div>
