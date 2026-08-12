@@ -659,7 +659,7 @@
                 <li><a href="#summary">Overview</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#competencies">Capabilities</a></li>
-                <li><a href="#documents">Resume & Briefings</a></li>
+                <li><a href="#documents">Resume & Research</a></li>
                 <li><a href="#education">Education & Certs</a></li>
                 <li><a href="#honors">Recognition</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -678,7 +678,7 @@
                 </p>
                 <div class="cta-group">
                     <a href="#experience" class="btn-gold">View Leadership Track Record</a>
-                    <a href="#documents" class="btn-outline">Access Resume & Briefings</a>
+                    <a href="#documents" class="btn-outline">Access Resume & Research</a>
                 </div>
             </div>
             <div class="profile-frame">
@@ -828,18 +828,17 @@
         </div>
     </section>
 
-    <!-- 4. Interactive Resume & Strategic Vault -->
+    <!-- 4. Interactive Resume & Research Vault -->
     <section id="documents" class="section-ivory">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Executive Vault</div>
-                <h2 class="section-title">Resume & Strategic Briefings</h2>
+                <h2 class="section-title">Resume & Strategic Research</h2>
             </div>
 
             <div class="asset-viewer-container">
                 <div class="asset-tabs">
                     <button class="tab-btn active" onclick="switchTab('resume-tab', this)">Official Resume</button>
-                    <button class="tab-btn" onclick="switchTab('presentation-tab', this)">Aviation Slide Deck</button>
                     <button class="tab-btn" onclick="switchTab('poster-tab', this)">Research Poster</button>
                 </div>
 
@@ -847,7 +846,7 @@
                 <div id="resume-tab" class="tab-content active">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                         <h3 style="font-family: var(--font-heading); color: var(--navy-deep);">Curriculum Vitae Preview</h3>
-                        <button onclick="downloadResume()" class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Download Resume File</button>
+                        <button onclick="downloadResume()" class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Download Resume Text</button>
                     </div>
                     
                     <div class="resume-text-view" id="resumeTextContainer">
@@ -896,31 +895,18 @@
                     </div>
                 </div>
 
-                <!-- Tab 2: Presentation Briefing -->
-                <div id="presentation-tab" class="tab-content">
-                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Empirical Evaluation of Regulatory Compliance & Institutional Capacity</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                        An executive research presentation detailing aviation safety compliance, state capacity trends, and strategic policy recommendations for regional oversight organizations.
-                    </p>
-                    <div style="background: var(--navy-deep); color: var(--white-pure); padding: 3rem 2rem; border-radius: 4px; text-align: center;">
-                        <h4 style="font-family: var(--font-regal); color: var(--gold-regal); font-size: 1.3rem; margin-bottom: 0.5rem;">Executive Briefing Deck</h4>
-                        <p style="color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.9rem;">
-                            Prepared for presentation at Embry-Riddle Aeronautical University and regional aviation symposia.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Tab 3: Poster -->
+                <!-- Tab 2: Research Poster Viewer -->
                 <div id="poster-tab" class="tab-content">
                     <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS Compliance</h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
                         Award-winning quantitative synthesis evaluating Safety Management System (SMS) implementation hurdles across Small Island Developing States.
                     </p>
-                    <div style="background: var(--navy-deep); color: var(--white-pure); padding: 3rem 2rem; border-radius: 4px; text-align: center;">
-                        <h4 style="font-family: var(--font-regal); color: var(--gold-regal); font-size: 1.3rem; margin-bottom: 0.5rem;">1st Place UAA Research Poster</h4>
-                        <p style="color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.9rem;">
-                            Recognized by the University Aviation Association for excellence in empirical safety methodology.
-                        </p>
+                    
+                    <!-- Embedded PDF Viewer for poster.pdf -->
+                    <iframe src="poster.pdf" width="100%" height="520px" style="border: 1px solid #CBD5E1; border-radius: 4px; margin-bottom: 1.2rem;"></iframe>
+                    
+                    <div style="text-align: center;">
+                        <a href="poster.pdf" target="_blank" class="btn-gold" style="font-size: 0.8rem; padding: 0.6rem 1.5rem;">Open / Download Full Poster (PDF)</a>
                     </div>
                 </div>
             </div>
@@ -1005,7 +991,7 @@
         </div>
     </section>
 
-    <!-- 7. Call to Action / Executive Contact Section -->
+    <!-- 7. Executive Contact & Call to Action Section -->
     <section id="contact" class="cta-section">
         <div class="cta-box">
             <div class="cta-subtitle">Initiate Strategic Engagement</div>
