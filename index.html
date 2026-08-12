@@ -48,12 +48,12 @@
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Header */
+        /* Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(7, 19, 38, 0.92);
+            background: rgba(7, 19, 38, 0.94);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             z-index: 1000;
@@ -124,7 +124,7 @@
             width: 100%;
         }
 
-        /* Hero Section with Animated Mesh Overlay */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 60%, #0F172A 100%);
             color: var(--white-pure);
@@ -141,7 +141,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.12) 0%, transparent 60%);
+            background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.15) 0%, transparent 60%);
             animation: rotateGlow 25s linear infinite;
             pointer-events: none;
         }
@@ -208,7 +208,6 @@
             line-height: 1.8;
         }
 
-        /* Strategic Skill Tags */
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
@@ -242,7 +241,6 @@
             justify-content: center;
         }
 
-        /* Animated Gradient Border Frame around Profile Headshot */
         .profile-avatar-container {
             position: relative;
             padding: 5px;
@@ -350,6 +348,13 @@
             padding: 6.5rem 2rem;
         }
 
+        .section-dark {
+            background-color: var(--navy-deep);
+            color: var(--white-pure);
+            padding: 6.5rem 2rem;
+            position: relative;
+        }
+
         .container {
             max-width: 1280px;
             margin: 0 auto;
@@ -376,6 +381,10 @@
             color: var(--navy-deep);
             font-weight: 700;
             position: relative;
+        }
+
+        .section-title.light {
+            color: var(--white-pure);
         }
 
         .section-title::after {
@@ -453,7 +462,6 @@
             color: var(--text-muted);
         }
 
-        /* Executive Value Statement Box */
         .executive-summary-box {
             background: linear-gradient(135deg, rgba(10, 25, 47, 0.02) 0%, rgba(197, 160, 89, 0.07) 100%);
             border: 1px solid rgba(197, 160, 89, 0.35);
@@ -468,6 +476,104 @@
             color: var(--navy-deep);
             font-weight: 500;
             line-height: 1.85;
+        }
+
+        /* NEW SECTION: Interactive Strategic Leadership Dossier */
+        .dossier-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(197, 160, 89, 0.2);
+            padding-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .dossier-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .dossier-tab-btn.active {
+            color: var(--gold-regal);
+        }
+
+        .dossier-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-regal);
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .dossier-content {
+            display: none;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 6px;
+            padding: 2.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .dossier-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dossier-title {
+            font-family: var(--font-heading);
+            color: var(--gold-regal);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .dossier-desc {
+            color: #CBD5E1;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .dossier-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .dossier-highlight-box {
+            background: rgba(10, 25, 47, 0.6);
+            border-left: 3px solid var(--gold-regal);
+            padding: 1.2rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .dossier-highlight-title {
+            font-weight: 700;
+            color: var(--white-pure);
+            font-size: 0.92rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .dossier-highlight-text {
+            color: var(--text-light);
+            font-size: 0.85rem;
         }
 
         /* Timeline */
@@ -551,10 +657,10 @@
             font-size: 1.2rem;
         }
 
-        /* Strategic Blueprint Cards */
+        /* Blueprint Cards */
         .blueprint-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -566,17 +672,24 @@
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
             transition: var(--transition-smooth);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .blueprint-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(10, 25, 47, 0.08);
+            box-shadow: 0 20px 35px rgba(10, 25, 47, 0.09);
             border-color: var(--gold-regal);
+        }
+
+        .blueprint-header {
+            margin-bottom: 1rem;
         }
 
         .blueprint-icon {
             font-size: 2.2rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             display: inline-block;
         }
 
@@ -586,15 +699,41 @@
             color: var(--navy-deep);
             font-weight: 700;
             margin-bottom: 0.8rem;
+            line-height: 1.35;
         }
 
         .blueprint-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
-        /* Research Section Styling */
+        .blueprint-target-box {
+            background: var(--ivory-bg);
+            border-left: 3px solid var(--gold-regal);
+            padding: 0.9rem 1.1rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .blueprint-target-label {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold-regal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+
+        .blueprint-target-text {
+            font-size: 0.88rem;
+            color: var(--navy-deep);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* Research Section */
         .research-wrapper {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
@@ -662,7 +801,67 @@
             color: var(--text-muted);
         }
 
-        /* Modal Popup Styling */
+        /* NEW SECTION: Keynote Presentations Grid */
+        .keynote-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .keynote-card {
+            background: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 2.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .keynote-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08);
+            border-color: var(--gold-regal);
+        }
+
+        .keynote-badge {
+            display: inline-block;
+            background: var(--gold-subtle);
+            color: var(--gold-regal);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .keynote-title {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .keynote-event {
+            color: var(--gold-regal);
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .keynote-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -711,7 +910,7 @@
             color: var(--gold-regal);
         }
 
-        /* Eye-Catching Education Hub Redesign */
+        /* Education Hub */
         .edu-hub-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -807,7 +1006,7 @@
             border-radius: 0 4px 4px 0;
         }
 
-        /* Honors Section Visual Cards */
+        /* Honors Section */
         .honors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -962,7 +1161,7 @@
             letter-spacing: 2px;
         }
 
-        /* Scroll Animation Utility */
+        /* Scroll Animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -990,12 +1189,13 @@
 </head>
 <body>
 
-    <!-- Executive Top Glassmorphism Header -->
+    <!-- Header -->
     <header>
         <nav>
             <a href="#" class="brand-logo">RÉAN CLINTON<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#summary">Overview</a></li>
+                <li><a href="#dossier">Leadership Dossier</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#competencies">Capabilities</a></li>
                 <li><a href="#research">Research & Results</a></li>
@@ -1019,7 +1219,6 @@
                     Aligning organizational resilience, multi-jurisdictional compliance, and high-performance workforce strategies across regulated aviation environments and international enterprise operations.
                 </p>
 
-                <!-- Core Competency Matrix Tags -->
                 <div class="skill-tags">
                     <span class="skill-tag">Multi-Jurisdictional Governance</span>
                     <span class="skill-tag">ICAO & ISAGO Compliance</span>
@@ -1035,7 +1234,6 @@
             </div>
             
             <div class="profile-frame animate-on-scroll">
-                <!-- Profile Headshot Container with Gold Animated Border Flow -->
                 <div class="profile-avatar-container">
                     <div class="profile-avatar">
                         <img src="profile.jpg" alt="Réan Clinton Executive Headshot">
@@ -1076,11 +1274,77 @@
                 </div>
             </div>
 
-            <!-- Executive Value Statement -->
             <div class="executive-summary-box animate-on-scroll">
                 <p>
                     <strong>Executive Value Proposition:</strong> Operating at the intersection of regulatory policy, cross-functional leadership, and human capital transformation. Proven ability to insulate complex organizations from systemic regulatory friction, optimize multi-million dollar operational budgets, and build resilient, high-performing teams across sovereign and private-sector jurisdictions.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Strategic Leadership Dossier -->
+    <section id="dossier" class="section-dark">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">Executive Pillars</div>
+                <h2 class="section-title light">Strategic Leadership Dossier</h2>
+            </div>
+
+            <div class="dossier-tabs animate-on-scroll">
+                <button class="dossier-tab-btn active" onclick="switchTab(event, 'tab-crisis')">Crisis & Resilience</button>
+                <button class="dossier-tab-btn" onclick="switchTab(event, 'tab-digital')">Digital HR & Automation</button>
+                <button class="dossier-tab-btn" onclick="switchTab(event, 'tab-policy')">Cross-Border Governance</button>
+            </div>
+
+            <div id="tab-crisis" class="dossier-content active">
+                <h3 class="dossier-title">Business Continuity & Operational Resilience</h3>
+                <p class="dossier-desc">
+                    Architected and deployed enterprise-wide crisis management frameworks during macro-level industry disruptions. Secured state-funded support through the Barbados BEST Program to retain and upskill critical infrastructure personnel without operational downtime.
+                </p>
+                <div class="dossier-highlights">
+                    <div class="dossier-highlight-box">
+                        <div class="dossier-highlight-title">300+ Workforce Retrained</div>
+                        <div class="dossier-highlight-text">Retooled ground support and administrative teams to meet updated safety protocols.</div>
+                    </div>
+                    <div class="dossier-highlight-box">
+                        <div class="dossier-highlight-title">Zero Audit Discrepancies</div>
+                        <div class="dossier-highlight-text">Maintained strict compliance standards during active regulatory audits during disruption.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-digital" class="dossier-content">
+                <h3 class="dossier-title">Enterprise Systems Integration & Automation</h3>
+                <p class="dossier-desc">
+                    Engineered custom matching algorithms and integrated multi-platform enterprise software (Salesforce, KnowledgeLake) across academic and corporate environments to streamline complex decision workflows.
+                </p>
+                <div class="dossier-highlights">
+                    <div class="dossier-highlight-box">
+                        <div class="dossier-highlight-title">Algorithm-Driven Operations</div>
+                        <div class="dossier-highlight-text">Eliminated structural bottlenecks in faculty-doctoral matching, reducing cycle times.</div>
+                    </div>
+                    <div class="dossier-highlight-box">
+                        <div class="dossier-highlight-title">Hybrid HCM Deployment</div>
+                        <div class="dossier-highlight-text">Modernized talent acquisition and employee lifecycle tracking across 5 operational departments.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-policy" class="dossier-content">
+                <h3 class="dossier-title">International Aviation Policy & Governance</h3>
+                <p class="dossier-desc">
+                    Pioneered empirical quantitative research evaluating Small Island Developing States (SIDS) compliance with ICAO Annex 19 safety frameworks, bridging state capacity gaps with scalable governance models.
+                </p>
+                <div class="dossier-highlights">
+                    <div class="dossier-highlight-box">
+                        <div class="dossier-highlight-title">Award-Winning Research</div>
+                        <div class="dossier-highlight-text">Recognized globally by the University Aviation Association for policy-relevant analysis.</div>
+                    </div>
+                    <div class="dossier-highlight-box">
+                        <div class="dossier-highlight-title">Multi-Jurisdictional Scope</div>
+                        <div class="dossier-highlight-text">Engineered solutions adaptable to sovereign civil aviation authorities and private operators alike.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1151,51 +1415,75 @@
         </div>
     </section>
 
-    <!-- 3. Strategic Vision & Executive Blueprint -->
+    <!-- 3. Forward-Looking Blueprint -->
     <section id="competencies" class="section-white">
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">Strategic Vision</div>
-                <h2 class="section-title">Forward-Looking Executive Blueprint</h2>
+                <h2 class="section-title">Forward-Looking Human Capital Blueprint</h2>
             </div>
 
             <div class="blueprint-grid">
                 <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--gold-regal);">
-                    <div class="blueprint-icon">🌐</div>
-                    <h3 class="blueprint-title">Global Regulatory Horizon</h3>
+                    <div class="blueprint-header">
+                        <div class="blueprint-icon">🤖</div>
+                        <h3 class="blueprint-title">Human-AI Workforce Synergy & Work Redesign</h3>
+                    </div>
                     <p class="blueprint-desc">
-                        Anticipating shift patterns in international civil aviation governance to design adaptive compliance models before statutory mandates take effect, insulating enterprise operations from systemic regulatory friction.
+                        Redesigning core operational workflows to orchestrate dynamic collaboration between human judgment and artificial intelligence, shifting talent management from simple task execution to exponential value creation.
                     </p>
+                    <div class="blueprint-target-box">
+                        <div class="blueprint-target-label">Strategic Potential Outcome</div>
+                        <div class="blueprint-target-text">Establishes clear decision rights and human oversight guardrails across 5 operational business units.</div>
+                    </div>
                 </div>
 
                 <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--navy-deep);">
-                    <div class="blueprint-icon">🏛️</div>
-                    <h3 class="blueprint-title">Institutional Ecosystem Cohesion</h3>
+                    <div class="blueprint-header">
+                        <div class="blueprint-icon">🎯</div>
+                        <h3 class="blueprint-title">Auditable Capability Frameworks & Reskilling</h3>
+                    </div>
                     <p class="blueprint-desc">
-                        Bridging macro-level state policy with micro-level operational execution, transforming potentially conflicting public oversight and private commercial incentives into unified, high-performing regional ecosystems.
+                        Transitioning from static job descriptions to a dynamic, skill-based architecture that maps internal talent capabilities directly against evolving market demands and technological shifts.
                     </p>
+                    <div class="blueprint-target-box">
+                        <div class="blueprint-target-label">Strategic Potential Outcome</div>
+                        <div class="blueprint-target-text">Reduces internal talent redeployment timelines to under 30 days while creating auditable workforce readiness models.</div>
+                    </div>
                 </div>
 
                 <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--gold-regal);">
-                    <div class="blueprint-icon">🛡️</div>
-                    <h3 class="blueprint-title">Resilience & Crisis Architecture</h3>
+                    <div class="blueprint-header">
+                        <div class="blueprint-icon">🛡️</div>
+                        <h3 class="blueprint-title">Continuous Changeability & Psychosocial Safety</h3>
+                    </div>
                     <p class="blueprint-desc">
-                        Architecting preemptive operational structures that allow complex organizational supply chains to absorb geopolitical, environmental, and economic shocks without compromising core capabilities or human safety.
+                        Replacing episodic change management with embedded workplace "changefulness", integrating continuous learning and psychosocial health protocols directly into daily operations.
                     </p>
+                    <div class="blueprint-target-box">
+                        <div class="blueprint-target-label">Strategic Potential Outcome</div>
+                        <div class="blueprint-target-text">Prevents change fatigue, minimizes turnover during structural pivots, and safeguards critical institutional knowledge.</div>
+                    </div>
                 </div>
 
                 <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--navy-deep);">
-                    <div class="blueprint-icon">⚡</div>
-                    <h3 class="blueprint-title">Human Capital Modernization</h3>
+                    <div class="blueprint-header">
+                        <div class="blueprint-icon">🏛️</div>
+                        <h3 class="blueprint-title">Algorithmic Governance & Pay Transparency</h3>
+                    </div>
                     <p class="blueprint-desc">
-                        Positioning workforce strategy as a core value engine rather than a back-office support function, driving technological transformation, workforce readiness, and long-term organizational sustainability.
+                        Architecting enforceable human resource governance models that comply with emerging pay transparency legislation, statutory worker rights, and international AI risk regulations.
                     </p>
+                    <div class="blueprint-target-box">
+                        <div class="blueprint-target-label">Strategic Potential Outcome</div>
+                        <div class="blueprint-target-text">Ensures legal defensibility, eliminates systemic bias, and maintains zero non-compliance exposure across sovereign borders.</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Strategic Research Poster & Results Vault -->
+    <!-- 4. Strategic Research & Keynotes Vault -->
     <section id="research" class="section-ivory">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1203,7 +1491,6 @@
                 <h2 class="section-title">Strategic Research & Policy Results</h2>
             </div>
 
-            <!-- Context Banner -->
             <div class="animate-on-scroll" style="background: var(--navy-deep); color: var(--white-pure); padding: 2.2rem; border-radius: 6px; margin-bottom: 2.5rem; border-left: 5px solid var(--gold-regal); box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
                 <h3 style="font-family: var(--font-heading); color: var(--gold-regal); font-size: 1.2rem; margin-bottom: 0.6rem;">The Imperative of Global Aviation Safety Harmonization</h3>
                 <p style="font-size: 0.98rem; color: #CBD5E1; line-height: 1.8;">
@@ -1212,7 +1499,6 @@
             </div>
 
             <div class="research-wrapper animate-on-scroll">
-                <!-- Research Poster Focus -->
                 <div class="research-poster-box">
                     <div style="margin-bottom: 1.8rem; text-align: left;">
                         <span style="color: var(--gold-regal); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.8px; display: block; margin-bottom: 0.4rem;">
@@ -1223,7 +1509,6 @@
                         </h3>
                     </div>
 
-                    <!-- High-Resolution Poster Image Frame -->
                     <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" class="research-poster-img" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
                     
                     <div id="poster-error" style="display:none; padding: 2.5rem; color: var(--gold-light);">
@@ -1232,7 +1517,6 @@
                     </div>
                 </div>
 
-                <!-- Blended Research Results & Interactive Modal Button -->
                 <div class="research-results-box">
                     <h4 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.2rem; margin-bottom: 0.6rem;">
                         Key Research Findings & Policy Impact
@@ -1264,6 +1548,35 @@
                     </div>
                 </div>
             </div>
+
+            <!-- NEW SUB-SECTION: Keynotes & Presentations Grid -->
+            <div style="margin-top: 4rem;">
+                <div class="section-tag">Thought Leadership</div>
+                <h3 style="font-family: var(--font-regal); font-size: 1.8rem; color: var(--navy-deep); margin-bottom: 1.5rem;">Keynote Presentations & Speaking Engagements</h3>
+                
+                <div class="keynote-grid">
+                    <div class="keynote-card animate-on-scroll">
+                        <span class="keynote-badge">International Symposium</span>
+                        <h4 class="keynote-title">State Capacity & Global Aviation Harmonization</h4>
+                        <div class="keynote-event">University Aviation Association Annual Conference</div>
+                        <p class="keynote-desc">Presented quantitative findings on SMS implementation hurdles across developing nations to international civil aviation researchers and policy directors.</p>
+                    </div>
+
+                    <div class="keynote-card animate-on-scroll">
+                        <span class="keynote-badge">Regional Governance Panel</span>
+                        <h4 class="keynote-title">Human Capital Resilience in High-Disruption Sectors</h4>
+                        <div class="keynote-event">Caribbean Operational Leadership Forum</div>
+                        <p class="keynote-desc">Delivered actionable frameworks on utilizing public-private partnerships (such as the BEST program) to retain critical talent during economic contractions.</p>
+                    </div>
+
+                    <div class="keynote-card animate-on-scroll">
+                        <span class="keynote-badge">Executive Workshop</span>
+                        <h4 class="keynote-title">Algorithmic Workflows & Digital HR Transformation</h4>
+                        <div class="keynote-event">Embry-Riddle Leadership Seminar Series</div>
+                        <p class="keynote-desc">Led interactive workshops on designing human-in-the-loop matching algorithms and deploying enterprise CRM systems for academic and corporate governance.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1279,7 +1592,7 @@
         </div>
     </div>
 
-    <!-- 5. Redesigned Visual Education & Credential Hub -->
+    <!-- 5. Visual Education & Credential Hub -->
     <section id="education" class="section-white">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1288,7 +1601,6 @@
             </div>
 
             <div class="edu-hub-grid">
-                <!-- Degree 1 -->
                 <div class="edu-hub-card animate-on-scroll">
                     <div>
                         <div class="edu-card-top">
@@ -1308,7 +1620,6 @@
                     </div>
                 </div>
 
-                <!-- Degree 2 -->
                 <div class="edu-hub-card animate-on-scroll">
                     <div>
                         <div class="edu-card-top">
@@ -1328,7 +1639,6 @@
                     </div>
                 </div>
 
-                <!-- Professional Certifications -->
                 <div class="edu-hub-card animate-on-scroll" style="border-top: 4px solid var(--gold-regal);">
                     <div>
                         <div class="edu-card-top">
@@ -1418,7 +1728,7 @@
         </div>
     </section>
 
-    <!-- 7. Executive Contact & Call to Action Section -->
+    <!-- 7. Call to Action Section -->
     <section id="contact" class="cta-section">
         <div class="cta-box animate-on-scroll">
             <div class="cta-subtitle">Initiate Strategic Engagement</div>
@@ -1446,9 +1756,9 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+    <!-- Scripts -->
     <script>
-        // Intersection Observer for Scroll Animations
+        // Scroll Animations
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1461,7 +1771,7 @@
             scrollObserver.observe(element);
         });
 
-        // Counter Animation Script
+        // Metric Counters
         const metricObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1489,7 +1799,19 @@
 
         metricObserver.observe(document.querySelector('#summary'));
 
-        // Modal Presentation Popup Script
+        // Tab Switching Logic for Leadership Dossier
+        function switchTab(evt, tabId) {
+            const tabContents = document.querySelectorAll('.dossier-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            const tabBtns = document.querySelectorAll('.dossier-tab-btn');
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Modal Controls
         function openModal() {
             const modal = document.getElementById("pdfModal");
             modal.style.display = "block";
