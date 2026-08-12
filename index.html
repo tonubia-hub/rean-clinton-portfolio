@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réan Clinton | Operations, Human Capital & Regional Governance Specialist</title>
-    <!-- Executive Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <title>Réan Clinton | Operations, Human Capital & Regional Governance Executive</title>
+    <!-- Executive & Regal Google Fonts: Cinzel (Regal), Montserrat (Corporate Headings), Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --navy-dark: #07111E;
-            --navy-main: #0A192F;
-            --navy-card: #112240;
-            --navy-light: #233554;
-            --gold-accent: #D4AF37;
-            --gold-hover: #F3E5AB;
-            --slate-text: #8892B0;
-            --light-slate: #A8B2D1;
-            --white-text: #E6F1FF;
+            --navy-deep: #0A192F;
+            --navy-muted: #1E293B;
+            --gold-regal: #C5A059;
+            --gold-light: #DFC07F;
+            --gold-subtle: rgba(197, 160, 89, 0.15);
+            --ivory-bg: #F8F9FA;
+            --white-pure: #FFFFFF;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --text-light: #94A3B8;
+            --font-regal: 'Cinzel', serif;
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -31,44 +33,44 @@
         }
 
         body {
-            background-color: var(--navy-main);
-            color: var(--light-slate);
+            background-color: var(--ivory-bg);
+            color: var(--text-dark);
             font-family: var(--font-body);
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Executive Header / Navbar */
+        /* Executive Top Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 25, 47, 0.95);
+            background: rgba(10, 25, 47, 0.96);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 2px solid var(--gold-regal);
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 2rem;
+            padding: 1.1rem 2rem;
         }
 
         .brand-logo {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--white-text);
+            font-family: var(--font-regal);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--white-pure);
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .brand-logo span {
-            color: var(--gold-accent);
+            color: var(--gold-regal);
         }
 
         .nav-links {
@@ -78,238 +80,372 @@
         }
 
         .nav-links a {
-            color: var(--light-slate);
+            color: #CBD5E1;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--gold-accent);
+            color: var(--gold-regal);
         }
 
-        /* Hero Section */
+        /* Hero Section (Deep Navy canvas with Regal Accents) */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 2rem 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, #0F172A 100%);
+            color: var(--white-pure);
+            padding: 9rem 2rem 6rem 2rem;
+            border-bottom: 4px solid var(--gold-regal);
         }
 
-        .hero-content {
-            max-width: 800px;
+        .hero-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
         }
 
         .hero-subtitle {
-            color: var(--gold-accent);
-            font-family: var(--font-heading);
-            font-weight: 600;
+            color: var(--gold-regal);
+            font-family: var(--font-regal);
+            font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
         .hero-title {
-            font-family: var(--font-heading);
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--white-text);
-            line-height: 1.2;
+            font-family: var(--font-regal);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: 1.25;
             margin-bottom: 1.5rem;
         }
 
         .hero-description {
-            font-size: 1.15rem;
-            color: var(--slate-text);
+            font-size: 1.1rem;
+            color: #CBD5E1;
             margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .profile-frame {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 320px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid var(--gold-regal);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            background: var(--navy-muted);
         }
 
         .cta-group {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
+        .btn-gold {
+            background-color: var(--gold-regal);
+            color: var(--navy-deep);
+            padding: 0.85rem 2rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gold-regal);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
             background-color: transparent;
-            color: var(--gold-accent);
-            border: 2px solid var(--gold-accent);
+            color: var(--white-pure);
             padding: 0.85rem 2rem;
             font-family: var(--font-heading);
             font-weight: 600;
-            font-size: 0.9rem;
-            border-radius: 4px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: rgba(212, 175, 55, 0.1);
-            color: var(--gold-hover);
-            border-color: var(--gold-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--navy-card);
-            color: var(--white-text);
-            padding: 0.85rem 2rem;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 0.9rem;
-            border-radius: 4px;
-            text-decoration: none;
-            border: 1px solid var(--navy-light);
+            border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--gold-accent);
-            color: var(--gold-accent);
+        .btn-outline:hover {
+            border-color: var(--gold-regal);
+            color: var(--gold-regal);
             transform: translateY(-2px);
         }
 
-        /* Section Layouts */
-        section {
+        /* Section Wrappers & Content */
+        .section-white {
+            background-color: var(--white-pure);
             padding: 6rem 2rem;
-            max-width: 1200px;
+        }
+
+        .section-ivory {
+            background-color: var(--ivory-bg);
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1240px;
             margin: 0 auto;
         }
 
         .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
-            gap: 1rem;
+            margin-bottom: 3.5rem;
+            text-align: left;
+        }
+
+        .section-tag {
+            font-family: var(--font-regal);
+            color: var(--gold-regal);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
         }
 
         .section-title {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            color: var(--white-text);
+            font-family: var(--font-regal);
+            font-size: 2.2rem;
+            color: var(--navy-deep);
             font-weight: 700;
-            white-space: nowrap;
+            position: relative;
         }
 
-        .section-line {
-            height: 1px;
-            background-color: var(--navy-light);
-            width: 100%;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-regal);
+            margin-top: 0.8rem;
         }
 
-        /* Metric Counters (Interactive Visual Impact) */
+        /* Metric Highlights Grid */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
         }
 
         .metric-card {
-            background-color: var(--navy-card);
-            border: 1px solid var(--navy-light);
-            padding: 2rem;
-            border-radius: 6px;
-            text-align: center;
-            transition: border-color 0.3s ease;
+            background: var(--white-pure);
+            border-top: 4px solid var(--navy-deep);
+            border-right: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            border-left: 1px solid #E2E8F0;
+            padding: 2.5rem 1.8rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, border-top-color 0.3s ease;
         }
 
         .metric-card:hover {
-            border-color: var(--gold-accent);
+            transform: translateY(-4px);
+            border-top-color: var(--gold-regal);
         }
 
         .metric-number {
-            font-family: var(--font-heading);
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--gold-accent);
-            margin-bottom: 0.5rem;
+            font-family: var(--font-regal);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--navy-deep);
+            line-height: 1;
+            margin-bottom: 0.8rem;
         }
 
         .metric-label {
-            font-size: 0.9rem;
-            color: var(--light-slate);
-        }
-
-        /* Accordion / Interactive Case Studies */
-        .interactive-case-study {
-            background-color: var(--navy-card);
-            border: 1px solid var(--navy-light);
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-
-        .accordion-header {
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            background-color: var(--navy-card);
-            transition: background-color 0.3s ease;
-        }
-
-        .accordion-header:hover {
-            background-color: var(--navy-light);
-        }
-
-        .accordion-title {
             font-family: var(--font-heading);
-            font-size: 1.2rem;
-            color: var(--white-text);
+            font-size: 0.9rem;
             font-weight: 600;
-        }
-
-        .accordion-icon {
-            color: var(--gold-accent);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-            padding: 0 2rem;
-            background-color: rgba(10, 25, 47, 0.4);
-        }
-
-        .accordion-content.active {
-            max-height: 1000px;
-            padding: 1.5rem 2rem 2rem 2rem;
-            transition: max-height 0.4s ease-in-out;
-        }
-
-        /* Star Framework Layout inside Accordion */
-        .star-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .star-box {
-            background: var(--navy-main);
-            padding: 1.2rem;
-            border-left: 3px solid var(--gold-accent);
-            border-radius: 0 4px 4px 0;
-        }
-
-        .star-box h4 {
-            color: var(--gold-accent);
-            font-family: var(--font-heading);
-            font-size: 0.9rem;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
-            text-transform: uppercase;
         }
 
-        /* Clean Text-Based Honors Section */
+        .metric-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Core Executive Competencies */
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .competency-card {
+            background-color: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            padding: 2.5rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .competency-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border-color: var(--gold-regal);
+        }
+
+        .competency-icon {
+            color: var(--gold-regal);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-regal);
+        }
+
+        .competency-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .competency-list {
+            list-style: none;
+        }
+
+        .competency-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .competency-list li::before {
+            content: "■";
+            position: absolute;
+            left: 0;
+            color: var(--gold-regal);
+            font-size: 0.6rem;
+            top: 0.2rem;
+        }
+
+        /* Structured Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #E2E8F0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.55rem;
+            top: 0.2rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--gold-regal);
+            border: 3px solid var(--white-pure);
+        }
+
+        .timeline-role {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+        }
+
+        .timeline-org {
+            font-family: var(--font-regal);
+            font-size: 0.95rem;
+            color: var(--gold-regal);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-body {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.8rem;
+        }
+
+        /* Thoughtful Assets Viewer (Poster & Presentation Tabs) */
+        .asset-viewer-container {
+            background: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .asset-tabs {
+            display: flex;
+            background: var(--navy-deep);
+            border-bottom: 2px solid var(--gold-regal);
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: #94A3B8;
+            border: none;
+            padding: 1.2rem 2rem;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--gold-regal);
+            background: rgba(197, 160, 89, 0.1);
+            border-bottom: 3px solid var(--gold-regal);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2.5rem;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .asset-meta {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Honors Section (Executive Text Cards) */
         .honors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -317,108 +453,85 @@
         }
 
         .honor-card {
-            background-color: var(--navy-card);
-            border: 1px solid var(--navy-light);
+            background: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            border-top: 3px solid var(--gold-regal);
             padding: 2.5rem;
-            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
             position: relative;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-top-color 0.3s ease;
         }
 
         .honor-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-accent);
+            transform: translateY(-4px);
+            border-top-color: var(--navy-deep);
         }
 
         .honor-badge {
-            color: var(--gold-accent);
-            font-family: var(--font-heading);
+            font-family: var(--font-regal);
+            color: var(--gold-regal);
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .honor-title {
             font-family: var(--font-heading);
-            font-size: 1.3rem;
-            color: var(--white-text);
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
         }
 
         .honor-issuer {
             font-size: 0.9rem;
-            color: var(--slate-text);
+            color: var(--text-muted);
             margin-bottom: 1.2rem;
+            font-weight: 600;
         }
 
-        /* Modal Overlay for Interactive View */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(7, 17, 30, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 2000;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-body {
-            background: var(--navy-card);
-            border: 1px solid var(--gold-accent);
-            padding: 2.5rem;
-            max-width: 600px;
-            width: 90%;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            color: var(--light-slate);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
+        /* Footer */
         footer {
+            background-color: var(--navy-deep);
+            color: #94A3B8;
+            padding: 4rem 2rem;
+            border-top: 3px solid var(--gold-regal);
             text-align: center;
-            padding: 3rem 2rem;
-            background-color: var(--navy-dark);
-            border-top: 1px solid var(--navy-light);
-            font-size: 0.85rem;
-            color: var(--slate-text);
         }
 
-        @media (max-width: 768px) {
+        footer h3 {
+            font-family: var(--font-regal);
+            color: var(--white-pure);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
             .hero-title { font-size: 2.2rem; }
+            .profile-img { width: 260px; height: 310px; margin: 0 auto; }
+            .cta-group { justify-content: center; }
+            .asset-meta { grid-template-columns: 1fr; }
             .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Executive Top Header -->
     <header>
         <nav>
             <a href="#" class="brand-logo">RÉAN CLINTON<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="#summary">Executive Summary</a></li>
-                <li><a href="#case-studies">Governance & Analytics</a></li>
-                <li><a href="#honors">Honors & Recognition</a></li>
+                <li><a href="#summary">Overview</a></li>
+                <li><a href="#competencies">Capabilities</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research-assets">Research Assets</a></li>
+                <li><a href="#honors">Recognition</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -426,190 +539,241 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-subtitle">Barbadian National Development Scholar</div>
-            <h1 class="hero-title">Operations, Human Capital & Regional Governance Specialist</h1>
-            <p class="hero-description">
-                Bridging Small Island Developing States (SIDS) policy frameworks, remote workforce management, multi-jurisdictional compliance, and data-driven human capital strategy.
-            </p>
-            <div class="cta-group">
-                <a href="#case-studies" class="btn-primary">Explore Strategic Deliverables</a>
-                <a href="#honors" class="btn-secondary">View Honors & Credentials</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content Summary & Metrics -->
-    <section id="summary">
-        <div class="section-header">
-            <h2 class="section-title">Executive Metrics</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-number" data-target="57">0</div>
-                <div class="metric-label">SIDS Jurisdictions Analyzed in Empirical Studies</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number" data-target="300">0</div>
-                <div class="metric-label">+ Personnel Managed Across Regulated Operations</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number" data-target="787">0</div>
-                <div class="metric-label">ICAO EFOD Compliance Differences Evaluated</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-number" data-target="100">0</div>
-                <div class="metric-label">% Audit Readiness & Workforce Compliance Maintained</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Case Studies / Deliverables -->
-    <section id="case-studies">
-        <div class="section-header">
-            <h2 class="section-title">Governance & Research Case Studies</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <!-- Accordion Case Study 1 -->
-        <div class="interactive-case-study">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <div class="accordion-title">Quantitative Analysis of Global Aviation Safety Compliance (ICAO Annex 19 & SIDS)</div>
-                <div class="accordion-icon">+</div>
-            </div>
-            <div class="accordion-content">
-                <div class="star-grid">
-                    <div class="star-box">
-                        <h4>Situation</h4>
-                        <p>Small Island Developing States (SIDS) face acute resource and technical constraints balancing rigorous ICAO Annex 19 safety mandates against state capacity limitations.</p>
-                    </div>
-                    <div class="star-box">
-                        <h4>Task & Methodology</h4>
-                        <p>Executed Pearson’s Chi-Square Tests ($\chi^2$) and Cramer’s V in SPSS ($N = 65$ states, $n = 787$ differences) applying Resource Dependency & Policy Implementation theories.</p>
-                    </div>
-                    <div class="star-box">
-                        <h4>Key Findings</h4>
-                        <p>Proved statistically significant dependencies between state status and compliance ($\chi^2(3) = 2.18, p < .001$), identifying Chapter 5 (Safety Data) as a primary SIDS bottleneck.</p>
-                    </div>
-                    <div class="star-box">
-                        <h4>Strategic Recommendation</h4>
-                        <p>Designed the COMPASS Model to enable regional asset-pooling via Regional Safety Oversight Organizations (RSOOs) under ICAO's No Country Left Behind initiative.</p>
-                    </div>
+        <div class="hero-container">
+            <div>
+                <div class="hero-subtitle">Barbadian National Development Scholar</div>
+                <h1 class="hero-title">Operations, Human Capital & Regional Governance Executive</h1>
+                <p class="hero-description">
+                    Driving organizational resilience, multi-jurisdictional compliance, and high-performance talent strategies across Small Island Developing States (SIDS) and regulated international environments.
+                </p>
+                <div class="cta-group">
+                    <a href="#experience" class="btn-gold">View Leadership Track Record</a>
+                    <a href="#research-assets" class="btn-outline">Explore Research & Strategy</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Accordion Case Study 2 -->
-        <div class="interactive-case-study">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <div class="accordion-title">Remote & Independent Contractor Workforce Optimization Architecture</div>
-                <div class="accordion-icon">+</div>
+            <div class="profile-frame">
+                <!-- Profile Photo -->
+                <img src="profile.jpg" alt="Réan Clinton" class="profile-img" onerror="this.src='https://via.placeholder.com/320x380/1E293B/C5A059?text=Rean+Clinton'">
             </div>
-            <div class="accordion-content">
-                <div class="star-grid">
-                    <div class="star-box">
-                        <h4>Situation</h4>
-                        <p>Managing large, geographically dispersed teams across multi-jurisdictional operating models requiring strict labor compliance and zero operational downtime.</p>
-                    </div>
-                    <div class="star-box">
-                        <h4>Action</h4>
-                        <p>Engineered predictive labor analytics and digitized onboarding/offboarding workflows designed for remote contractor lifecycle tracking and service level management.</p>
-                    </div>
-                    <div class="star-box">
-                        <h4>Impact</h4>
-                        <p>Achieved 100% audit compliance, optimized operational labor expenditures, and streamlined cross-border contractor management pipelines.</p>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Metric Overview (Canvas White) -->
+    <section id="summary" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Leadership at Scale</div>
+                <h2 class="section-title">Strategic Impact Metrics</h2>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number" data-target="300">0</div>
+                    <div class="metric-label">Personnel Commanded</div>
+                    <div class="metric-desc">Multidisciplinary teams directed across complex operational environments.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" data-target="57">0</div>
+                    <div class="metric-label">SIDS Jurisdictions</div>
+                    <div class="metric-desc">UN-recognized states evaluated for governance and state capacity compliance.</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" data-target="787">0</div>
+                    <div class="metric-label">Regulatory Baseline Data Points</div>
+                    <div class="metric-desc">ICAO EFOD reported differences structured and statistically analyzed[cite: 1].</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" data-target="100">0</div>
+                    <div class="metric-label">% Audit Compliance</div>
+                    <div class="metric-desc">Maintained across multi-jurisdictional workforce and operations.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Clean Text-Based Honors Section -->
-    <section id="honors">
-        <div class="section-header">
-            <h2 class="section-title">Honors & Recognition</h2>
-            <div class="section-line"></div>
-        </div>
-
-        <div class="honors-grid">
-            <div class="honor-card">
-                <div class="honor-badge">National Level Recognition</div>
-                <h3 class="honor-title">Barbadian National Development Scholar</h3>
-                <p class="honor-issuer">Government of Barbados</p>
-                <p>Awarded prestigious national postgraduate scholarship based on academic excellence and strategic alignment with national development priorities in regional infrastructure and governance.</p>
-                <br>
-                <button class="btn-primary" onclick="openModal('scholar-modal')" style="padding: 0.4rem 1rem; font-size: 0.8rem;">View Citation Details</button>
+    <!-- Executive Competencies (Canvas Ivory) -->
+    <section id="competencies" class="section-ivory">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Core Capabilities</div>
+                <h2 class="section-title">Governance & Operational Focus</h2>
             </div>
 
-            <div class="honor-card">
-                <div class="honor-badge">International Research Award</div>
-                <h3 class="honor-title">1st Place Graduate Research Award</h3>
-                <p class="honor-issuer">University Aviation Association (UAA)</p>
-                <p>Recognized internationally for empirical quantitative research evaluating institutional state capacity and safety management compliance across 57 UN-recognized SIDS.</p>
-                <br>
-                <button class="btn-primary" onclick="openModal('uaa-modal')" style="padding: 0.4rem 1rem; font-size: 0.8rem;">View Research Scope</button>
+            <div class="competency-grid">
+                <div class="competency-card">
+                    <div class="competency-icon">🏛️</div>
+                    <h3 class="competency-title">Multi-Jurisdictional Governance</h3>
+                    <ul class="competency-list">
+                        <li>SIDS institutional capacity evaluation and policy alignment.</li>
+                        <li>Regulatory framework implementation and service-level agreement oversight.</li>
+                        <li>Resource Dependency & Policy Implementation theoretical modeling[cite: 1].</li>
+                    </ul>
+                </div>
+
+                <div class="competency-card">
+                    <div class="competency-icon">👥</div>
+                    <h3 class="competency-title">Human Capital Strategy & Contractor Lifecycle</h3>
+                    <ul class="competency-list">
+                        <li>End-to-end management of independent contractor and remote team networks.</li>
+                        <li>SHRM-SCP aligned strategic workforce planning and succession design.</li>
+                        <li>High-trust performance management and multi-disciplinary leadership.</li>
+                    </ul>
+                </div>
+
+                <div class="competency-card">
+                    <div class="competency-icon">📊</div>
+                    <h3 class="competency-title">Data Analytics & Process Optimization</h3>
+                    <ul class="competency-list">
+                        <li>Predictive labor analytics and capacity demand forecasting.</li>
+                        <li>Statistical hypothesis testing (Pearson's $\chi^2$, Cramer's V) via IBM SPSS[cite: 1].</li>
+                        <li>Streamlined onboarding pipelines and operational risk mitigation.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal 1 -->
-    <div class="modal-overlay" id="scholar-modal">
-        <div class="modal-body">
-            <span class="modal-close" onclick="closeModal('scholar-modal')">&times;</span>
-            <h3 style="color: var(--gold-accent); margin-bottom: 0.5rem; font-family: var(--font-heading);">National Development Scholar</h3>
-            <p style="color: var(--white-text); margin-bottom: 1rem;">Awarded by the Ministry of Education, Technological and Vocational Training (Barbados).</p>
-            <p>This scholarship represents the highest national academic distinction for postgraduate studies, granted to individuals demonstrating capacity for high-impact regional leadership and research driving Caribbean infrastructure and policy development.</p>
-        </div>
-    </div>
+    <!-- Professional Track Record (Canvas White) -->
+    <section id="experience" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Career Progression</div>
+                <h2 class="section-title">Leadership Track Record</h2>
+            </div>
 
-    <!-- Modal 2 -->
-    <div class="modal-overlay" id="uaa-modal">
-        <div class="modal-body">
-            <span class="modal-close" onclick="closeModal('uaa-modal')">&times;</span>
-            <h3 style="color: var(--gold-accent); margin-bottom: 0.5rem; font-family: var(--font-heading);">UAA 1st Place Graduate Research Competition</h3>
-            <p style="color: var(--white-text); margin-bottom: 1rem;">Awarded at Embry-Riddle Aeronautical University / UAA Conference.</p>
-            <p>Evaluating $n = 787$ reported differences across 65 states, this paper established the first empirical baseline for Small Island Developing States (SIDS) compliance in the ICAO EFOD database, directly informing regional policy framework design.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-role">Operations & Human Capital Strategy Lead</div>
+                    <div class="timeline-org">Regional & Regulated Infrastructure Operations</div>
+                    <div class="timeline-body">
+                        Direct workforce planning, operational scheduling, and compliance workflows for teams of up to 300+ personnel. Engineered data-driven scheduling frameworks that optimized labor budgets while ensuring 100% adherence to regulatory standards and safety management systems.
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">National Development Scholar & Principal Governance Researcher</div>
+                    <div class="timeline-org">Embry-Riddle Aeronautical University / Ministry of Education, Barbados</div>
+                    <div class="timeline-body">
+                        Conducted groundbreaking quantitative research on global aviation safety compliance across 57 UN-recognized SIDS[cite: 1]. Created the COMPASS Model to facilitate asset-pooling through Regional Safety Oversight Organizations (RSOOs)[cite: 1].
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Integrated Research & Strategy Assets (Canvas Ivory) -->
+    <section id="research-assets" class="section-ivory">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Evidence of Expertise</div>
+                <h2 class="section-title">Featured Research & Executive Briefings</h2>
+            </div>
+
+            <div class="asset-viewer-container">
+                <div class="asset-tabs">
+                    <button class="tab-btn active" onclick="switchTab('presentation-tab', this)">Executive Slide Deck</button>
+                    <button class="tab-btn" onclick="switchTab('poster-tab', this)">Visual Research Poster</button>
+                </div>
+
+                <!-- Tab 1: Presentation Deck -->
+                <div id="presentation-tab" class="tab-content active">
+                    <div class="asset-meta">
+                        <div>
+                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Empirical Evaluation of ICAO Annex 19 Compliance & NCLB Alignment[cite: 1]</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                                A 17-slide executive brief detailing empirical findings on SIDS state capacity, statistical dependencies in EFOD compliance data, and actionable institutional recommendations for regional risk pools and regulatory bodies[cite: 1].
+                            </p>
+                            <a href="presentation.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download Full Presentation Deck (PDF)[cite: 1]</a>
+                        </div>
+                        <div>
+                            <iframe src="presentation.pdf" style="width: 100%; height: 220px; border: 1px solid #CBD5E1; border-radius: 2px;" title="Presentation Preview"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Poster -->
+                <div id="poster-tab" class="tab-content">
+                    <div class="asset-meta">
+                        <div>
+                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS & Annex 19 Compliance</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                                Visual synthesis presented at Embry-Riddle Aeronautical University. Maps state capacity constraints against Safety Management System (SMS) implementation hurdles across global SIDS.
+                            </p>
+                            <a href="poster.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download High-Res Research Poster (PDF)</a>
+                        </div>
+                        <div>
+                            <iframe src="poster.pdf" style="width: 100%; height: 220px; border: 1px solid #CBD5E1; border-radius: 2px;" title="Poster Preview"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors & Recognition (Canvas White) -->
+    <section id="honors" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Distinctions</div>
+                <h2 class="section-title">Honors & Recognition</h2>
+            </div>
+
+            <div class="honors-grid">
+                <div class="honor-card">
+                    <div class="honor-badge">National Distinction</div>
+                    <h3 class="honor-title">Barbadian National Development Scholar</h3>
+                    <div class="honor-issuer">Government of Barbados</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Granted full national postgraduate scholarship for academic excellence and strategic alignment with Caribbean infrastructure, policy, and regional development goals.
+                    </p>
+                </div>
+
+                <div class="honor-card">
+                    <div class="honor-badge">International First Prize</div>
+                    <h3 class="honor-title">1st Place Graduate Research Award</h3>
+                    <div class="honor-issuer">University Aviation Association (UAA)</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Recognized globally for empirical quantitative research establishing the baseline for SIDS regulatory compliance and state capacity constraints in global aviation[cite: 1].
+                    </p>
+                </div>
+
+                <div class="honor-card">
+                    <div class="honor-badge">Institutional Excellence</div>
+                    <h3 class="honor-title">International Engagement Award for Excellence in International Education Research</h3>
+                    <div class="honor-issuer">Embry-Riddle Aeronautical University (ERAU)</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        Honored for research excellence in international education, state capacity modeling across Small Island Developing States, and multi-jurisdictional governance frameworks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer / Contact -->
     <footer id="contact">
-        <p style="color: var(--white-text); font-family: var(--font-heading); font-weight: 600; margin-bottom: 0.5rem;">RÉAN CLINTON</p>
-        <p>Operations, Human Capital & Regional Governance Specialist</p>
-        <p style="margin-top: 1rem;">
-            <a href="mailto:reanclinton@gmail.com" style="color: var(--gold-accent); text-decoration: none;">reanclinton@gmail.com</a> | (937) 477-7862 | Barbados / Regional
-        </p>
+        <div class="container">
+            <h3>RÉAN CLINTON</h3>
+            <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1.5rem;">
+                Operations, Human Capital & Regional Governance Specialist
+            </p>
+            <p style="color: #CBD5E1; font-size: 0.95rem;">
+                Barbados / Regional | (937) 477-7862 | <a href="mailto:reanclinton@gmail.com" style="color: var(--gold-regal); text-decoration: none;">reanclinton@gmail.com</a>
+            </p>
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: #64748B;">
+                © Réan Clinton. Built for Executive & Regional Governance Excellence.
+            </p>
+        </div>
     </footer>
 
     <!-- Interactive JavaScript -->
     <script>
-        // Interactive Accordions
-        function toggleAccordion(element) {
-            const content = element.nextElementSibling;
-            const icon = element.querySelector('.accordion-icon');
+        // Interactive Tab Switcher for Presentation & Poster
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                icon.textContent = '+';
-            } else {
-                // Close all other accordions
-                document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
-                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = '+');
-                
-                content.classList.add('active');
-                icon.textContent = '-';
-            }
-        }
-
-        // Modals
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
         }
 
         // Animated Metric Counters
@@ -620,13 +784,13 @@
                     counters.forEach(counter => {
                         const target = +counter.getAttribute('data-target');
                         let count = 0;
-                        const speed = target / 50;
+                        const speed = target / 40;
                         
                         const updateCount = () => {
                             count += speed;
                             if (count < target) {
                                 counter.innerText = Math.ceil(count);
-                                setTimeout(updateCount, 25);
+                                setTimeout(updateCount, 30);
                             } else {
                                 counter.innerText = target + (target === 300 ? '+' : '');
                             }
@@ -636,7 +800,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.4 });
 
         observer.observe(document.querySelector('#summary'));
     </script>
