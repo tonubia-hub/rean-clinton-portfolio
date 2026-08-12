@@ -160,30 +160,38 @@
    transition: var(--transition-smooth);
  }
 
- /* Hero / Introduction */
+ /* Hero / Introduction with Flowing Gold Wave Background */
  .hero {
    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 60%, #0F172A 100%);
    color: var(--white-pure);
-   padding: 10rem 2rem 6rem 2rem;
+   padding: 10rem 2rem 8rem 2rem;
    border-bottom: 4px solid var(--gold-regal);
    position: relative;
    overflow: hidden;
  }
- .hero::before {
-   content: '';
+ /* Gold Wave SVG Background Overlay */
+ .hero-wave-bg {
    position: absolute;
-   top: -50%;
-   left: -50%;
-   width: 200%;
-   height: 200%;
-   background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.18) 0%, transparent 60%);
-   animation: rotateGlow 30s linear infinite;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   overflow: hidden;
+   line-height: 0;
    pointer-events: none;
+   opacity: 0.25;
  }
- @keyframes rotateGlow {
-   0% { transform: rotate(0deg); }
-   100% { transform: rotate(360deg); }
+ .hero-wave-bg svg {
+   position: relative;
+   display: block;
+   width: calc(100% + 1.3px);
+   height: 120px;
+   animation: waveSway 8s ease-in-out infinite alternate;
  }
+ @keyframes waveSway {
+   0% { transform: translateX(0); }
+   100% { transform: translateX(-25px); }
+ }
+
  .hero-container {
    max-width: 1280px;
    margin: 0 auto;
@@ -382,7 +390,7 @@
  .mission-card-title { font-family: var(--font-heading); font-size: 1.25rem; color: var(--navy-deep); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
  .mission-card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; }
 
- /* Leadership Dossier Section */
+ /* Leadership Dossier Section (Interactive Preview Cards) */
  .dossier-wrapper {
    background: rgba(10, 25, 47, 0.7);
    border: 1px solid var(--gold-regal);
@@ -409,25 +417,43 @@
  .dossier-title { font-family: var(--font-heading); color: var(--gold-light); font-size: 1.25rem; margin-bottom: 0.8rem; }
  .dossier-desc { color: #CBD5E1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.8rem; }
  .dossier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+ 
+ /* Interactive Dossier Cards */
  .dossier-item {
-   background: rgba(7, 19, 38, 0.8);
-   border: 1px solid rgba(197, 160, 89, 0.25);
+   background: rgba(7, 19, 38, 0.85);
+   border: 1px solid rgba(197, 160, 89, 0.3);
    border-left: 4px solid var(--gold-regal);
-   padding: 1.4rem;
+   padding: 1.6rem;
    border-radius: 0 6px 6px 0;
    transition: var(--transition-smooth);
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   cursor: pointer;
+   position: relative;
+   overflow: hidden;
+ }
+ .dossier-item::before {
+   content: 'Interactive View ↗';
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   font-size: 0.65rem;
+   color: var(--gold-regal);
+   opacity: 0.6;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   transition: var(--transition-smooth);
  }
  .dossier-item:hover {
    border-color: var(--gold-light);
    border-left-color: var(--gold-bright);
-   background: rgba(15, 23, 42, 0.9);
-   transform: translateY(-2px);
-   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+   background: rgba(15, 23, 42, 0.95);
+   transform: translateY(-4px);
+   box-shadow: 0 8px 25px rgba(197, 160, 89, 0.2);
  }
- .dossier-item-title { font-weight: 700; color: var(--white-pure); font-size: 0.95rem; margin-bottom: 0.6rem; }
+ .dossier-item:hover::before { opacity: 1; color: var(--gold-bright); }
+ .dossier-item-title { font-weight: 700; color: var(--white-pure); font-size: 0.98rem; margin-bottom: 0.6rem; padding-right: 2rem; }
  .dossier-bullet-list { list-style-type: disc; padding-left: 1.2rem; margin-bottom: 1rem; }
  .dossier-bullet-list li { color: #94A3B8; font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.4rem; }
  .dossier-metric-badge {
@@ -543,10 +569,10 @@
  .modal-content {
    background-color: var(--white-pure);
    margin: 4% auto;
-   padding: 2rem;
+   padding: 2.5rem;
    border: 2px solid var(--gold-regal);
    width: 85%;
-   max-width: 1050px;
+   max-width: 950px;
    border-radius: 6px;
    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
    position: relative;
@@ -621,7 +647,7 @@
  </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section with Flowing Gold Wave Background -->
 <section id="about" class="hero">
  <div class="hero-container">
    <div class="animate-on-scroll">
@@ -655,7 +681,7 @@
      </div>
 
      <div class="cta-group">
-       <a href="Rean_F_Clinton_Resume.pdf" target="_blank" download class="btn-gold">
+       <a href="resume.pdf" target="_blank" download class="btn-gold">
          <svg class="icon-svg" style="stroke: var(--navy-deep); width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
          Download Resume (PDF)
        </a>
@@ -668,6 +694,20 @@
        <img src="profile.jpg" alt="Réan Clinton Executive Profile" loading="lazy">
      </div>
    </div>
+ </div>
+
+ <!-- Gold Wave Background Graphic -->
+ <div class="hero-wave-bg">
+   <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+     <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="url(#goldWaveGrad)"></path>
+     <defs>
+       <linearGradient id="goldWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+         <stop offset="0%" stop-color="#C5A059" stop-opacity="0.4"></stop>
+         <stop offset="50%" stop-color="#F3E5AB" stop-opacity="0.7"></stop>
+         <stop offset="100%" stop-color="#DFC07F" stop-opacity="0.3"></stop>
+       </linearGradient>
+     </defs>
+   </svg>
  </div>
 </section>
 
@@ -703,7 +743,7 @@
  </div>
 </section>
 
-<!-- Leadership Dossier -->
+<!-- Leadership Dossier (Interactive Popup Visuals) -->
 <section id="dossier" class="section-dark">
  <div class="container">
    <div class="section-header animate-on-scroll">
@@ -720,10 +760,10 @@
      <div id="tab-processes" class="dossier-content active" role="tabpanel" aria-labelledby="tab-btn-processes">
        <h3 class="dossier-title">Automated Student-Faculty Dissertation Chair Selection System</h3>
        <p class="dossier-desc">
-         Designing logic-driven alignment systems that pair complex candidate profiles with specialized institutional parameters using Salesforce CRM and KnowledgeLake API integrations.
+         Click any card below to launch the interactive live metric and architecture preview.
        </p>
        <div class="dossier-grid">
-         <div class="dossier-item">
+         <div class="dossier-item" onclick="openInteractiveModal('Automated Placement & Matching Logic', 'Engineered digital matching tools replacing manual routing for doctoral dissertation chair assignments. Eliminated placement inaccuracies between candidate research intent and faculty specialization using Salesforce CRM and KnowledgeLake API integrations.', 'System: Salesforce & KnowledgeLake Automation', 'Interactive Flowchart: Student Proposal &rarr; NLP Extraction &rarr; Faculty Index Query &rarr; Ranked Match Output.')">
            <div>
              <div class="dossier-item-title">Automated Placement & Matching Logic</div>
              <ul class="dossier-bullet-list">
@@ -734,12 +774,12 @@
            </div>
            <div>
              <span class="dossier-metric-badge">System: Salesforce & KnowledgeLake Automation</span>
-             <button onclick="openArchModal()" class="architecture-link-btn">
+             <button onclick="event.stopPropagation(); openArchModal();" class="architecture-link-btn">
                View System Architecture Flowchart &rarr;
              </button>
            </div>
          </div>
-         <div class="dossier-item">
+         <div class="dossier-item" onclick="openInteractiveModal('High-Stakes Security & High-Volume Recruitment', 'Architected predictive recruitment channels for high-stakes, security-cleared operational roles. Accelerated candidate vetting while maintaining stringent regulatory background checks and full workforce readiness during peak scheduling windows.', 'Impact: Optimized Talent Vetting Pipelines', 'Recruitment Pipeline Metrics: 40% reduction in vetting cycle times while maintaining 100% compliance standards.')">
            <div>
              <div class="dossier-item-title">High-Stakes Security & High-Volume Recruitment</div>
              <ul class="dossier-bullet-list">
@@ -750,7 +790,7 @@
            </div>
            <span class="dossier-metric-badge">Impact: Optimized Talent Vetting Pipelines</span>
          </div>
-         <div class="dossier-item">
+         <div class="dossier-item" onclick="openInteractiveModal('Hybrid HCM Transition & Oversight', 'Led transition to a hybrid HCM system across 5 operating departments, supporting over 300 active operational staff members with centralized tracking and real-time safety reporting workflows.', 'Scale: 300+ Staff Across 5 Departments', 'Deployment Dashboard: 100% data migration accuracy, zero operational downtime during the cross-department rollout.')">
            <div>
              <div class="dossier-item-title">Hybrid HCM Transition & Oversight</div>
              <ul class="dossier-bullet-list">
@@ -767,10 +807,10 @@
      <div id="tab-decisions" class="dossier-content" role="tabpanel" aria-labelledby="tab-btn-decisions">
        <h3 class="dossier-title">Governance, High-Stakes Operations & Flight SLA Control</h3>
        <p class="dossier-desc">
-         Managing federal grants, safeguarding aircraft turnaround SLAs, and ensuring operational continuity during irregular operations (IROPS).
+         Click any card below to review compliance metrics and operational controls.
        </p>
        <div class="dossier-grid">
-         <div class="dossier-item">
+         <div class="dossier-item" onclick="openInteractiveModal('Aircraft Turnaround Time & Flight SLA Optimization', 'Bolstered ramp and station personnel deployments to ensure tight aircraft turnaround times. Consistently met stringent ground handling Service Level Agreements (SLAs) for major air carriers and mitigated IROPS during severe weather events.', 'Focus: On-Time SLA & IROPS Mitigation', 'Performance Metrics: Sub-35 minute turnaround achieved consistently across high-volume schedules.')">
            <div>
              <div class="dossier-item-title">Aircraft Turnaround Time & Flight SLA Optimization</div>
              <ul class="dossier-bullet-list">
@@ -781,7 +821,7 @@
            </div>
            <span class="dossier-metric-badge">Focus: On-Time SLA & IROPS Mitigation</span>
          </div>
-         <div class="dossier-item">
+         <div class="dossier-item" onclick="openInteractiveModal('Federal Grant Oversight & Audit Compliance', 'Managed fiscal oversight for $2M+ in federal grant allocations, auditing operational expenditures against strict regulatory guidelines and maintaining error-free financial records during formal institutional audits.', 'Scope: $2M+ Federal Grants Audited / $0 Exceptions', 'Audit Status: 100% compliance verified by independent federal auditors.')">
            <div>
              <div class="dossier-item-title">Federal Grant Oversight & Audit Compliance</div>
              <ul class="dossier-bullet-list">
@@ -792,7 +832,7 @@
            </div>
            <span class="dossier-metric-badge">Scope: $2M+ Federal Grants Audited / $0 Exceptions</span>
          </div>
-         <div class="dossier-item">
+         <div class="dossier-item" onclick="openInteractiveModal('Aviation Regulatory Audit Readiness', 'Maintained continuous audit readiness for global aviation oversight bodies, passing stringent ICAO, IATA, and ISAGO safety and quality audits without non-conformances.', 'Compliance: Passed ICAO, IATA & ISAGO Audits', 'Audit Record: Zero major or minor non-conformances across multi-station regional evaluations.')">
            <div>
              <div class="dossier-item-title">Aviation Regulatory Audit Readiness</div>
              <ul class="dossier-bullet-list">
@@ -808,6 +848,23 @@
    </div>
  </div>
 </section>
+
+<!-- Interactive Popup Modal for Dossier Items -->
+<div id="interactiveModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="interactiveModalTitle">
+ <div class="modal-content">
+   <span class="close-modal" onclick="closeInteractiveModal()">&times;</span>
+   <h3 id="interactiveModalTitle" style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem; font-size: 1.3rem;"></h3>
+   <p id="interactiveModalBadge" style="display:inline-block; background: var(--gold-subtle); border: 1px solid var(--gold-regal); color: var(--navy-deep); font-weight: 700; font-size: 0.78rem; padding: 0.3rem 0.7rem; border-radius: 3px; margin-bottom: 1.2rem;"></p>
+   <div style="background: var(--ivory-bg); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--gold-regal); margin-bottom: 1.2rem;">
+     <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 0.4rem;">Executive Overview & Execution</h4>
+     <p id="interactiveModalDesc" style="color: var(--text-dark); font-size: 0.98rem; line-height: 1.7;"></p>
+   </div>
+   <div style="background: var(--navy-deep); padding: 1.5rem; border-radius: 6px; color: var(--white-pure);">
+     <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--gold-light); letter-spacing: 1px; margin-bottom: 0.4rem;">Live Data & Architecture Metric</h4>
+     <p id="interactiveModalMetric" style="font-family: monospace; font-size: 0.9rem; color: #CBD5E1; line-height: 1.6;"></p>
+   </div>
+ </div>
+</div>
 
 <!-- Dissertation Chair System Architecture Flowchart Modal -->
 <div id="archModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="archTitle">
@@ -1059,7 +1116,7 @@
        <svg class="icon-svg" style="stroke: var(--navy-deep); width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
        Send Direct Email
      </a>
-     <a href="Rean_F_Clinton_Resume.pdf" target="_blank" download class="btn-outline">Download Resume (PDF)</a>
+     <a href="resume.pdf" target="_blank" download class="btn-outline">Download Resume (PDF)</a>
    </div>
  </div>
 </section>
@@ -1128,6 +1185,24 @@ function switchTab(evt, tabId) {
   evt.currentTarget.setAttribute('aria-selected', 'true');
 }
 
+// Interactive Popup Modal for Dossier Items
+function openInteractiveModal(title, badge, desc, metric) {
+  document.getElementById("interactiveModalTitle").innerText = title;
+  document.getElementById("interactiveModalBadge").innerText = badge;
+  document.getElementById("interactiveModalDesc").innerText = desc;
+  document.getElementById("interactiveModalMetric").innerText = metric;
+  
+  const modal = document.getElementById("interactiveModal");
+  modal.style.display = "block";
+  setTimeout(() => { modal.classList.add("show"); }, 10);
+}
+
+function closeInteractiveModal() {
+  const modal = document.getElementById("interactiveModal");
+  modal.classList.remove("show");
+  setTimeout(() => { modal.style.display = "none"; }, 300);
+}
+
 // Presentation PDF Modal
 function openModal() {
   const modal = document.getElementById("pdfModal");
@@ -1157,14 +1232,17 @@ function closeArchModal() {
 window.onclick = function(e) {
   const pdfModal = document.getElementById("pdfModal");
   const archModal = document.getElementById("archModal");
+  const interactiveModal = document.getElementById("interactiveModal");
   if (e.target == pdfModal) closeModal();
   if (e.target == archModal) closeArchModal();
+  if (e.target == interactiveModal) closeInteractiveModal();
 }
 
 window.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeModal();
     closeArchModal();
+    closeInteractiveModal();
   }
 });
 </script>
