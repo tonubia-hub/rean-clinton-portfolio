@@ -148,13 +148,15 @@
             border-radius: 50%;
             border: 4px solid var(--gold-regal);
             background: var(--navy-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-regal);
-            font-size: 4rem;
-            color: var(--gold-regal);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .cta-group {
@@ -458,73 +460,14 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Asset Viewer */
+        /* Asset Viewer Container */
         .asset-viewer-container {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
             border-radius: 4px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             overflow: hidden;
-        }
-
-        .asset-tabs {
-            display: flex;
-            background: var(--navy-deep);
-            border-bottom: 2px solid var(--gold-regal);
-        }
-
-        .tab-btn {
-            background: transparent;
-            color: #94A3B8;
-            border: none;
-            padding: 1.2rem 2rem;
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active {
-            color: var(--gold-regal);
-            background: rgba(197, 160, 89, 0.1);
-            border-bottom: 3px solid var(--gold-regal);
-        }
-
-        .tab-content {
-            display: none;
             padding: 2.5rem;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .resume-text-view {
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            padding: 2rem;
-            border-radius: 4px;
-            max-height: 480px;
-            overflow-y: auto;
-            font-size: 0.9rem;
-            color: var(--text-dark);
-        }
-
-        .resume-text-view h3 {
-            font-family: var(--font-heading);
-            color: var(--navy-deep);
-            border-bottom: 1px solid var(--gold-regal);
-            padding-bottom: 0.3rem;
-            margin: 1.2rem 0 0.6rem 0;
-            font-size: 1rem;
-        }
-
-        .resume-text-view ul {
-            padding-left: 1.2rem;
-            margin-bottom: 0.8rem;
         }
 
         /* Honors Section */
@@ -642,7 +585,7 @@
         @media (max-width: 992px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; }
             .hero-title { font-size: 2.2rem; }
-            .profile-avatar { width: 200px; height: 200px; font-size: 3rem; }
+            .profile-avatar { width: 220px; height: 220px; }
             .cta-group { justify-content: center; }
             .nav-links { display: none; }
             .cta-title { font-size: 1.8rem; }
@@ -659,7 +602,7 @@
                 <li><a href="#summary">Overview</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#competencies">Capabilities</a></li>
-                <li><a href="#documents">Resume & Research</a></li>
+                <li><a href="#research">Research & Deck</a></li>
                 <li><a href="#education">Education & Certs</a></li>
                 <li><a href="#honors">Recognition</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -678,11 +621,13 @@
                 </p>
                 <div class="cta-group">
                     <a href="#experience" class="btn-gold">View Leadership Track Record</a>
-                    <a href="#documents" class="btn-outline">Access Resume & Research</a>
+                    <a href="#research" class="btn-outline">Access Strategic Research</a>
                 </div>
             </div>
             <div class="profile-frame">
-                <div class="profile-avatar">RC</div>
+                <div class="profile-avatar">
+                    <img src="profile.jpg" alt="Réan Clinton Headshot">
+                </div>
             </div>
         </div>
     </section>
@@ -828,85 +773,41 @@
         </div>
     </section>
 
-    <!-- 4. Interactive Resume & Research Vault -->
-    <section id="documents" class="section-ivory">
+    <!-- 4. Strategic Research & Presentation Vault -->
+    <section id="research" class="section-ivory">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Executive Vault</div>
-                <h2 class="section-title">Resume & Strategic Research</h2>
+                <h2 class="section-title">Strategic Research & Briefings</h2>
             </div>
 
             <div class="asset-viewer-container">
-                <div class="asset-tabs">
-                    <button class="tab-btn active" onclick="switchTab('resume-tab', this)">Official Resume</button>
-                    <button class="tab-btn" onclick="switchTab('poster-tab', this)">Research Poster</button>
-                </div>
-
-                <!-- Tab 1: Embedded Interactive Resume -->
-                <div id="resume-tab" class="tab-content active">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                        <h3 style="font-family: var(--font-heading); color: var(--navy-deep);">Curriculum Vitae Preview</h3>
-                        <button onclick="downloadResume()" class="btn-gold" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Download Resume Text</button>
-                    </div>
-                    
-                    <div class="resume-text-view" id="resumeTextContainer">
-                        <strong style="font-size: 1.2rem; color: var(--navy-deep);">Réan Clinton</strong><br>
-                        Bridgetown, Barbados | 937-477-7862 | reanclinton@gmail.com
-                        
-                        <h3>PROFESSIONAL EXPERIENCE</h3>
-                        <strong>Graduate Research Coordinator</strong> | College of Aviation, ERAU (Aug 2024 – Apr 2026)
-                        <ul>
-                            <li>Managed fiscal oversight for $2M+ in federal grant funds, auditing expenditures against operational budgets to ensure compliance.</li>
-                            <li>Integrated Salesforce CRM and KnowledgeLake across 5 academic programs to automate document processing, track satisfaction KPIs, and accelerate resolution timelines.</li>
-                            <li>Led the development and rollout of an automated dissertation chair matching tool.</li>
-                            <li>Conducted comprehensive global aviation safety research evaluating international civil aviation standards.</li>
-                        </ul>
-
-                        <strong>Human Resources Business Partner</strong> | DSPS HR Solutions (Jan 2024 – Aug 2024)
-                        <ul>
-                            <li>Championed business initiatives across a portfolio of clients, ensuring company policies and SOPs reflected core business objectives.</li>
-                            <li>Implemented performance management frameworks and clear KPI evaluation processes for operational teams.</li>
-                            <li>Developed workforce analytics dashboards to track key people metrics for C-suite leadership.</li>
-                        </ul>
-
-                        <strong>Acting Human Resources Manager</strong> | Caribbean Aircraft Handling (Feb 2023 – Apr 2023)
-                        <ul>
-                            <li>Directed human capital strategy across 7+ global airline accounts for 24/7 service execution.</li>
-                            <li>Maintained audit-readiness to pass ICAO, IATA, and ISAGO safety and quality audits.</li>
-                            <li>Reconciled unplanned labor expenditures during irregular operations by executing airline chargebacks.</li>
-                        </ul>
-
-                        <strong>Human Resources Coordinator</strong> | Caribbean Aircraft Handling (Jul 2019 – Jul 2023)
-                        <ul>
-                            <li>Reduced Time-to-Fill from 45 to 21 days via predictive recruitment models.</li>
-                            <li>Served as a trusted HR advisor addressing workforce grievances and conflict resolution.</li>
-                            <li>Drove transition to a hybrid HCM system across 5 departments supporting 300+ staff.</li>
-                        </ul>
-
-                        <h3>EDUCATION</h3>
-                        • <strong>Master of Science in Aviation (Distinction)</strong> – Embry-Riddle Aeronautical University (2024 – 2026)<br>
-                        • <strong>Bachelor of Science in Management (Honors)</strong> – The University of the West Indies (2019 – 2022)<br>
-                        • <strong>Associate Degrees in Accounts/IT & Law/Sociology</strong> – Barbados Community College
-
-                        <h3>CERTIFICATIONS</h3>
-                        • <strong>SHRM-SCP</strong> (Senior Certified Professional) – Expected Sep 2026<br>
-                        • <strong>HR Analytics Certificate</strong> – UC Irvine (Feb 2026)<br>
-                        • <strong>Talent Acquisition Certificate</strong> – HRCI (Feb 2026)
-                    </div>
-                </div>
-
-                <!-- Tab 2: Research Poster Viewer -->
-                <div id="poster-tab" class="tab-content">
-                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS Compliance</h3>
+                <!-- Poster Section -->
+                <div style="margin-bottom: 4rem;">
+                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.3rem; margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS Compliance</h3>
                     <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
                         Award-winning quantitative synthesis evaluating Safety Management System (SMS) implementation hurdles across Small Island Developing States.
                     </p>
                     
-                    <!-- Embedded PDF Viewer for poster.pdf -->
-                    <iframe src="poster.pdf" width="100%" height="520px" style="border: 1px solid #CBD5E1; border-radius: 4px; margin-bottom: 1.2rem;"></iframe>
+                    <div style="background: #0F172A; padding: 1rem; border-radius: 4px; text-align: center; border: 1px solid var(--gold-regal);">
+                        <img src="poster.jpg" alt="Research Poster: State Capacity & Global Aviation Safety" style="max-width: 100%; height: auto; border-radius: 2px; display: block; margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+                    </div>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #E2E8F0; margin-bottom: 4rem;">
+
+                <!-- Presentation Slide Deck Section -->
+                <div>
+                    <h3 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.3rem; margin-bottom: 0.5rem;">Empirical Evaluation of Regulatory Compliance & Institutional Capacity</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        An executive research presentation detailing aviation safety compliance, state capacity trends, and strategic policy recommendations for regional oversight organizations.
+                    </p>
+                    
+                    <!-- Embedded PDF Viewer -->
+                    <iframe src="presentation.pdf" width="100%" height="520px" style="border: 1px solid #CBD5E1; border-radius: 4px; margin-bottom: 1.2rem;"></iframe>
                     
                     <div style="text-align: center;">
-                        <a href="poster.pdf" target="_blank" class="btn-gold" style="font-size: 0.8rem; padding: 0.6rem 1.5rem;">Open / Download Full Poster (PDF)</a>
+                        <a href="presentation.pdf" target="_blank" class="btn-gold" style="font-size: 0.8rem; padding: 0.6rem 1.5rem;">Open / Download Presentation Deck (PDF)</a>
                     </div>
                 </div>
             </div>
@@ -1019,25 +920,8 @@
         </div>
     </footer>
 
-    <!-- Interactive JavaScript -->
+    <!-- Interactive Counter Script -->
     <script>
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            
-            document.getElementById(tabId).classList.add('active');
-            btn.classList.add('active');
-        }
-
-        function downloadResume() {
-            const text = document.getElementById('resumeTextContainer').innerText;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const anchor = document.createElement('a');
-            anchor.download = 'Rean_Clinton_Resume.txt';
-            anchor.href = window.URL.createObjectURL(blob);
-            anchor.click();
-        }
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
