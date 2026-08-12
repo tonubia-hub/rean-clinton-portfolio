@@ -231,8 +231,8 @@
  /* Recruiter At-a-Glance Metrics Grid */
  .executive-stats-bar {
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 1rem;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 0.8rem;
    margin-bottom: 2rem;
    background: rgba(10, 25, 47, 0.8);
    border: 1px solid rgba(197, 160, 89, 0.3);
@@ -241,8 +241,8 @@
  }
  .stat-box { text-align: center; border-right: 1px solid rgba(197, 160, 89, 0.2); }
  .stat-box:last-child { border-right: none; }
- .stat-number { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--gold-bright); }
- .stat-label { font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.8px; }
+ .stat-number { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--gold-bright); }
+ .stat-label { font-size: 0.68rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 0.2rem; }
 
  .profile-avatar-container {
    position: relative;
@@ -527,20 +527,6 @@
  .honor-issuer { font-size: 0.88rem; color: var(--gold-regal); font-weight: 700; margin-bottom: 0.8rem; }
  .honor-desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; }
 
- /* Testimonials Section */
- .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
- .testimonial-card {
-   background: var(--white-pure);
-   border: 1px solid #E2E8F0;
-   border-left: 4px solid var(--gold-regal);
-   padding: 2rem;
-   border-radius: 4px;
-   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
- }
- .testimonial-quote { font-style: italic; color: var(--text-dark); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem; }
- .testimonial-author { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; color: var(--navy-deep); }
- .testimonial-role { font-size: 0.8rem; color: var(--gold-regal); font-weight: 600; }
-
  /* Modals */
  .modal {
    display: none;
@@ -599,8 +585,9 @@
      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
    }
    .nav-links.active { display: flex; }
-   .executive-stats-bar { grid-template-columns: 1fr; gap: 0.8rem; }
+   .executive-stats-bar { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
    .stat-box { border-right: none; border-bottom: 1px solid rgba(197, 160, 89, 0.2); padding-bottom: 0.5rem; }
+   .stat-box:nth-child(2) { border-right: none; }
    .stat-box:last-child { border-bottom: none; }
    .modal-content { width: 95%; margin: 8% auto; }
  }
@@ -644,22 +631,26 @@
      </div>
      <h1 class="hero-title">Operations, Human Capital & Regulatory Governance Executive</h1>
      <p class="hero-description">
-       Aligning organizational resilience, multi-jurisdictional compliance, and workforce strategy across regulated aviation and enterprise operations. Experienced in integrating human resource systems with strict regulatory frameworks to maintain seamless operations.
+       Pioneering visionary human capital strategies designed to equip future global workforces. Aligning organizational resilience, multi-jurisdictional compliance, and operational execution across high-stakes security, aviation turnarounds, and regulated enterprise environments.
      </p>
      
      <!-- Recruiter At-a-Glance Executive Stats Bar -->
      <div class="executive-stats-bar">
        <div class="stat-box">
+         <div class="stat-number">300+</div>
+         <div class="stat-label">Personnel Led</div>
+       </div>
+       <div class="stat-box">
          <div class="stat-number">$2M+</div>
-         <div class="stat-label">Federal Funds Audited</div>
+         <div class="stat-label">Budgets Managed</div>
        </div>
        <div class="stat-box">
-         <div class="stat-number">53%</div>
-         <div class="stat-label">Hiring Acceleration</div>
+         <div class="stat-number">100%</div>
+         <div class="stat-label">Audit Readiness</div>
        </div>
        <div class="stat-box">
-         <div class="stat-number">0</div>
-         <div class="stat-label">Audit Exceptions</div>
+         <div class="stat-number">Multi-Sector</div>
+         <div class="stat-label">Leadership</div>
        </div>
      </div>
 
@@ -695,7 +686,7 @@
          Executive Mission
        </h3>
        <p>
-         To strengthen operational performance across regulated, mission-critical environments by implementing practical workforce strategies, automated workflows, and audit-ready governance frameworks that protect operating margins and ensure continuity.
+         To strengthen operational performance across regulated, high-stakes safety and security environments by developing visionary human capital strategies, automated workflow systems, and audit-ready governance frameworks that ensure organizational continuity and SLA compliance.
        </p>
      </div>
      
@@ -705,7 +696,7 @@
          Strategic Vision
        </h3>
        <p>
-         To build resilient organizations through clear HR governance, data-informed workforce planning, and adaptable operational models that support long-term team growth and compliance stability.
+         To build highly adaptable future workforces across the globe. By aligning cutting-edge HR analytics, proactive skill development, and strict regulatory compliance, I prepare organizations to navigate complex global disruption with agility and operational resilience.
        </p>
      </div>
    </div>
@@ -723,26 +714,26 @@
    <div class="dossier-wrapper animate-on-scroll">
      <div class="dossier-tabs" role="tablist">
        <button class="dossier-tab-btn active" id="tab-btn-processes" role="tab" aria-selected="true" aria-controls="tab-processes" onclick="switchTab(event, 'tab-processes')">Operations & Systems</button>
-       <button class="dossier-tab-btn" id="tab-btn-decisions" role="tab" aria-selected="false" aria-controls="tab-decisions" onclick="switchTab(event, 'tab-decisions')">Governance & Fiscal Control</button>
+       <button class="dossier-tab-btn" id="tab-btn-decisions" role="tab" aria-selected="false" aria-controls="tab-decisions" onclick="switchTab(event, 'tab-decisions')">Governance & Aviation SLA Control</button>
      </div>
      
      <div id="tab-processes" class="dossier-content active" role="tabpanel" aria-labelledby="tab-btn-processes">
-       <h3 class="dossier-title">Systems Optimization & Recruitment Engineering</h3>
+       <h3 class="dossier-title">Automated Student-Faculty Dissertation Chair Selection System</h3>
        <p class="dossier-desc">
-         Designing operational workflows, automating talent processes, and integrating enterprise HR tools across complex teams.
+         Designing logic-driven alignment systems that pair complex candidate profiles with specialized institutional parameters using Salesforce CRM and KnowledgeLake API integrations.
        </p>
        <div class="dossier-grid">
          <div class="dossier-item">
            <div>
              <div class="dossier-item-title">Automated Placement & Matching Logic</div>
              <ul class="dossier-bullet-list">
-               <li>Engineered digital matching tools replacing manual routing for academic programs.</li>
-               <li>Eliminated placement inaccuracies between candidate profiles and specialized requirements.</li>
+               <li>Engineered digital matching tools replacing manual routing for doctoral dissertation chair assignments.</li>
+               <li>Eliminated placement inaccuracies between candidate research intent and faculty specialization.</li>
                <li>Automated document tracking through Salesforce CRM and KnowledgeLake systems.</li>
              </ul>
            </div>
            <div>
-             <span class="dossier-metric-badge">Metric: +45% Workflow Processing Velocity</span>
+             <span class="dossier-metric-badge">System: Salesforce & KnowledgeLake Automation</span>
              <button onclick="openArchModal()" class="architecture-link-btn">
                View System Architecture Flowchart &rarr;
              </button>
@@ -750,35 +741,46 @@
          </div>
          <div class="dossier-item">
            <div>
-             <div class="dossier-item-title">Predictive Recruitment & Pipeline Strategy</div>
+             <div class="dossier-item-title">High-Stakes Security & High-Volume Recruitment</div>
              <ul class="dossier-bullet-list">
-               <li>Designed predictive hiring models aligned with seasonal operational flight schedules.</li>
-               <li>Streamlined end-to-end recruitment pipelines for ground handling teams.</li>
-               <li>Cut hiring latency while maintaining strict regulatory safety background checks.</li>
+               <li>Architected predictive recruitment channels for high-stakes, security-cleared operational roles.</li>
+               <li>Accelerated candidate vetting while maintaining stringent regulatory background checks.</li>
+               <li>Ensured critical ground operations teams were fully bolstered during peak scheduling windows.</li>
              </ul>
            </div>
-           <span class="dossier-metric-badge">Metric: Reduced Time-to-Fill from 45 to 21 Days (+53%)</span>
+           <span class="dossier-metric-badge">Impact: Optimized Talent Vetting Pipelines</span>
          </div>
          <div class="dossier-item">
            <div>
              <div class="dossier-item-title">Hybrid HCM Transition & Oversight</div>
              <ul class="dossier-bullet-list">
                <li>Led transition to a hybrid HCM system across 5 operating departments.</li>
-               <li>Supported over 300 active flight-support staff members with centralized tracking.</li>
+               <li>Supported over 300 active operational staff members with centralized tracking.</li>
                <li>Improved real-time safety tracking and incident reporting workflows.</li>
              </ul>
            </div>
-           <span class="dossier-metric-badge">Metric: 300+ Staff Across 5 Departments Supported</span>
+           <span class="dossier-metric-badge">Scale: 300+ Staff Across 5 Departments</span>
          </div>
        </div>
      </div>
      
      <div id="tab-decisions" class="dossier-content" role="tabpanel" aria-labelledby="tab-btn-decisions">
-       <h3 class="dossier-title">Governance, Fiscal Oversight & Operational Resilience</h3>
+       <h3 class="dossier-title">Governance, High-Stakes Operations & Flight SLA Control</h3>
        <p class="dossier-desc">
-         Managing federal grants, navigating complex labor relations, and maintaining compliance across global aviation standards.
+         Managing federal grants, safeguarding aircraft turnaround SLAs, and ensuring operational continuity during irregular operations (IROPS).
        </p>
        <div class="dossier-grid">
+         <div class="dossier-item">
+           <div>
+             <div class="dossier-item-title">Aircraft Turnaround Time & Flight SLA Optimization</div>
+             <ul class="dossier-bullet-list">
+               <li>Bolstered ramp and station personnel deployments to ensure tight aircraft turnaround times.</li>
+               <li>Consistently met stringent ground handling Service Level Agreements (SLAs) for major air carriers.</li>
+               <li>Mitigated costly delays and minimized Irregular Operations (IROPS) during severe weather events.</li>
+             </ul>
+           </div>
+           <span class="dossier-metric-badge">Focus: On-Time SLA & IROPS Mitigation</span>
+         </div>
          <div class="dossier-item">
            <div>
              <div class="dossier-item-title">Federal Grant Oversight & Audit Compliance</div>
@@ -788,29 +790,18 @@
                <li>Maintained error-free financial records during formal institutional audits.</li>
              </ul>
            </div>
-           <span class="dossier-metric-badge">Metric: $2M+ Federal Grants Audited / $0 Exceptions</span>
+           <span class="dossier-metric-badge">Scope: $2M+ Federal Grants Audited / $0 Exceptions</span>
          </div>
          <div class="dossier-item">
            <div>
              <div class="dossier-item-title">Aviation Regulatory Audit Readiness</div>
              <ul class="dossier-bullet-list">
                <li>Maintained continuous audit readiness for global aviation oversight bodies.</li>
-               <li>Successfully passed stringent ICAO, IATA, and ISAGO safety and quality audits.</li>
-               <li>Aligned regional operations with international safety management standards.</li>
+               <li>Passed stringent ICAO, IATA, and ISAGO safety and quality audits without non-conformances.</li>
+               <li>Aligned regional safety management systems with international standards.</li>
              </ul>
            </div>
-           <span class="dossier-metric-badge">Metric: Passed ICAO, IATA & ISAGO Audits</span>
-         </div>
-         <div class="dossier-item">
-           <div>
-             <div class="dossier-item-title">Labor Expenditure & Cost Control</div>
-             <ul class="dossier-bullet-list">
-               <li>Directed workforce strategy across 7+ global airline commercial accounts.</li>
-               <li>Executed airline chargeback protocols during irregular flight operations.</li>
-               <li>Reconciled unplanned labor expenses to safeguard operating margins.</li>
-             </ul>
-           </div>
-           <span class="dossier-metric-badge">Metric: 7+ Global Airline Accounts Managed</span>
+           <span class="dossier-metric-badge">Compliance: Passed ICAO, IATA & ISAGO Audits</span>
          </div>
        </div>
      </div>
@@ -818,20 +809,24 @@
  </div>
 </section>
 
-<!-- System Architecture Flowchart Modal -->
+<!-- Dissertation Chair System Architecture Flowchart Modal -->
 <div id="archModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="archTitle">
  <div class="modal-content">
    <span class="close-modal" onclick="closeArchModal()">&times;</span>
-   <h3 id="archTitle" style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 1rem; font-size: 1.2rem;">System Architecture: Automated Chair Matching Workflow</h3>
+   <h3 id="archTitle" style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 1rem; font-size: 1.2rem;">System Architecture: Dissertation Chair Selection & Match Logic</h3>
    <div style="background: var(--navy-deep); padding: 2rem; border-radius: 6px; color: var(--white-pure); font-family: monospace; font-size: 0.85rem; line-height: 1.8;">
-     <p style="color: var(--gold-light); font-weight: bold; margin-bottom: 1rem;">[ Automated Workflow Logic Flowchart ]</p>
-     1. Student Proposal Submitted &rarr; Ingestion Engine (Salesforce CRM)<br>
-     2. Keyword Extraction & Regulatory Domain Tagging (KnowledgeLake API)<br>
-     3. Faculty Specialization Index Matching (Automated Logic Core)<br>
-     4. Conflict-of-Interest & Workload Balance Validation<br>
-     5. Chair Assignment Finalized & Audit Log Archived<br>
+     <p style="color: var(--gold-light); font-weight: bold; margin-bottom: 1rem;">[ Automated Match Generation Workflow ]</p>
+     1. Student Proposal Submission (Ingested via Salesforce CRM)<br>
+     2. Natural Language Processing / Keyword Extraction (KnowledgeLake API)<br>
+     &nbsp;&nbsp;&nbsp;&rarr; Extract Methodology, Topic Domain, Research Intent<br>
+     3. Faculty Specialization Mapping Core<br>
+     &nbsp;&nbsp;&nbsp;&rarr; Query Active Faculty Research Indexes & Historical Publications<br>
+     &nbsp;&nbsp;&nbsp;&rarr; Validate Real-Time Faculty Capacity & Workload Balance<br>
+     4. Conflict-of-Interest & Compliance Verification<br>
+     5. Ranked Dissertation Chair Alignment Result Output<br>
+     &nbsp;&nbsp;&nbsp;&rarr; Automated Notification & Profile Dispatch to Department Chair<br>
      <br>
-     <span style="color: #94A3B8;">Outcome: Reduced assignment latency from weeks to hours; eliminated 100% of manual placement errors.</span>
+     <span style="color: #94A3B8;">Outcome: Aligns research intent with faculty expertise instantly and eliminates manual routing bottlenecks.</span>
    </div>
  </div>
 </div>
@@ -841,13 +836,13 @@
  <div class="container">
    <div class="section-header animate-on-scroll">
      <div class="section-tag">Empirical Inquiry</div>
-     <h2 class="section-title">Applied Research & Policy Presentations</h2>
+     <h2 class="section-title">Applied Research & Global Policy Presentations</h2>
    </div>
    
    <div class="boeing-callout animate-on-scroll">
      <div class="boeing-callout-title">Special Symposium Presentation</div>
      <div class="boeing-callout-desc">
-       Presented empirical research on state capacity and safety oversight at <strong>The Boeing Center for Aviation and Aerospace Safety (BCAAS) Research Symposium</strong>, offering policy recommendations for regional safety harmonization.
+       Presented empirical research on state capacity and safety oversight at <strong>The Boeing Center for Aviation and Aerospace Safety (BCAAS) Research Symposium</strong>, advancing regional safety harmonization and regulatory frameworks.
      </div>
    </div>
    
@@ -858,7 +853,7 @@
            1st Place Award-Winning Research Poster (UAA)
          </span>
          <h3 style="font-family: var(--font-heading); color: var(--white-pure); font-size: 1.3rem;">
-           Small Island Developing States & ICAO Annex 19 Safety Compliance
+           Small Island Developing States (SIDS) & ICAO Annex 19 Safety Compliance
          </h3>
        </div>
        <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" class="research-poster-img" loading="lazy" onclick="openModal()" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
@@ -869,10 +864,13 @@
      </div>
      <div class="research-results-box">
        <h4 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.15rem; margin-bottom: 0.5rem;">
-         Methodology & Findings
+         SIDS, Global Aviation Connectivity & Statistical Methodology
        </h4>
+       <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">
+         Small Island Developing States (SIDS) play a critical role in maintaining global aviation networks, serving as key transit hubs and air routes. This research emphasizes that <strong>SIDS are not a monolith</strong>—their distinct economic, geographic, and institutional profiles require tailored safety oversight strategies rather than one-size-fits-all policies.
+       </p>
        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
-         Applied Chi-Square independence testing to civil aviation compliance data to evaluate how resource constraints affect Safety Management System (SMS) implementation under ICAO Annex 19 in developing states.
+         Applied Chi-Square independence testing to civil aviation compliance data to evaluate how state capacity influences Safety Management System (SMS) implementation under ICAO Annex 19 across diverse island jurisdictions.
        </p>
        <div style="text-align: center; border-top: 1px solid #E2E8F0; padding-top: 1.5rem;" class="cta-group">
          <button onclick="openModal()" class="btn-gold">
@@ -903,7 +901,7 @@
  <div class="container">
    <div class="section-header animate-on-scroll">
      <div class="section-tag">Strategic Focus</div>
-     <h2 class="section-title">Human Capital & Workplace Blueprint</h2>
+     <h2 class="section-title">Human Capital & Global Workforce Blueprint</h2>
    </div>
    <div class="blueprint-grid">
      
@@ -915,14 +913,14 @@
          </h3>
          <div class="def-box">
            <div class="def-label">Operational Focus</div>
-           <div class="def-text">Integrating CRM and logic-based tools to reduce administrative friction and support faster operational decisions.</div>
+           <div class="def-text">Integrating CRM, AI-assisted decision frameworks, and logic-based tools to reduce administrative friction and support faster operational decisions.</div>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-           Applying structured workflow tools to eliminate manual bottlenecks while keeping team leads in full control of critical processes.
+           Applying structured workflow tools and artificial intelligence to eliminate manual bottlenecks while keeping human team leads in full control of critical processes and preserving workforce capability.
          </p>
        </div>
        <div class="citation-box">
-         Focus Area: Workflow Automation & CRM Optimization (Salesforce & KnowledgeLake)
+         Focus Area: Enterprise CRM, AI Integration & Decision-Support Automation
        </div>
      </div>
      
@@ -930,18 +928,18 @@
        <div>
          <h3 class="blueprint-title">
            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-           Targeted Reskilling & Talent Retention
+           Visionary Global Workforce Strategy
          </h3>
          <div class="def-box">
            <div class="def-label">Operational Focus</div>
-           <div class="def-text">Structuring continuous learning paths that protect job stability and upgrade team capabilities alongside system updates.</div>
+           <div class="def-text">Pioneering forward-looking people strategies that prepare cross-border workforces for technological and industry shifts.</div>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-           Building clear skill progression models that allow employees to grow alongside operational demands and dynamic schedules.
+           Building agile talent pipelines, reskilling programs, and human capital frameworks tailored for high-stakes enterprise environments worldwide.
          </p>
        </div>
        <div class="citation-box">
-         Focus Area: Strategic Upskilling & Modern Talent Management
+         Focus Area: Future Workforce Architecture & Strategic Capability Building
        </div>
      </div>
      
@@ -949,53 +947,27 @@
        <div>
          <h3 class="blueprint-title">
            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-           Workplace Stability & Governance
+           Workplace Resilience & Governance
          </h3>
          <div class="def-box">
            <div class="def-label">Operational Focus</div>
-           <div class="def-text">Promoting open feedback, root-cause conflict resolution, and healthy workplace standards.</div>
+           <div class="def-text">Promoting open communication, root-cause resolution, and proactive compliance in high-security settings.</div>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-           Addressing workplace friction early to prevent formal grievances, protect company culture, and maintain team morale.
+           Addressing operational friction early to safeguard organizational culture, protect margins, and uphold global regulatory standards.
          </p>
        </div>
        <div class="citation-box">
-         Focus Area: Proactive Conflict Resolution & Regulatory Alignment
+         Focus Area: Multi-Jurisdictional Regulatory Alignment & Conflict Resolution
        </div>
      </div>
 
-   </div>
- </div>
-</section>
-
-<!-- Endorsements & Leadership Proof -->
-<section id="endorsements" class="section-ivory">
- <div class="container">
-   <div class="section-header animate-on-scroll">
-     <div class="section-tag">Executive Social Proof</div>
-     <h2 class="section-title">Leadership Endorsements</h2>
-   </div>
-   <div class="testimonial-grid">
-     <div class="testimonial-card animate-on-scroll">
-       <div class="testimonial-quote">
-         "Réan's ability to bridge high-level regulatory compliance with practical workforce workflows was pivotal in maintaining operational readiness across international airline audits."
-       </div>
-       <div class="testimonial-author">Executive Director</div>
-       <div class="testimonial-role">Caribbean Aircraft Handling (CAH)</div>
-     </div>
-     <div class="testimonial-card animate-on-scroll">
-       <div class="testimonial-quote">
-         "Combines analytical rigor with deep administrative empathy. His work on federal grant compliance and system automation set new institutional benchmarks."
-       </div>
-       <div class="testimonial-author">Department Chair & Senior Researcher</div>
-       <div class="testimonial-role">Embry-Riddle Aeronautical University</div>
-     </div>
    </div>
  </div>
 </section>
 
 <!-- Awards, Education & Certifications -->
-<section id="credentials" class="section-white">
+<section id="credentials" class="section-ivory">
  <div class="container">
    <div class="section-header animate-on-scroll">
      <div class="section-tag">Credentials & Distinctions</div>
@@ -1032,7 +1004,7 @@
          <h3 class="honor-title">1st Place Graduate Research Award</h3>
          <div class="honor-issuer">University Aviation Association (UAA)</div>
          <p class="honor-desc">
-           Awarded top distinction for empirical research analyzing regulatory compliance hurdles and safety oversight in developing states.
+           Awarded top distinction for empirical research evaluating ICAO Annex 19 compliance and the critical role of SIDS in global aviation networks.
          </p>
        </div>
      </div>
@@ -1080,7 +1052,7 @@
    <div class="cta-subtitle">Executive Contact</div>
    <h2 class="cta-title">Initiate Professional Engagement</h2>
    <p class="cta-description">
-     Available for executive roles, advisory opportunities, and leadership consultations in operations, human capital governance, and organizational compliance.
+     Available for executive roles, advisory opportunities, and leadership consultations in global operations, human capital strategy, and organizational compliance.
    </p>
    <div class="cta-group" style="justify-content: center;">
      <a href="mailto:reanclinton@gmail.com" class="btn-gold">
