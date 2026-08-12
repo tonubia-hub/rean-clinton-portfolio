@@ -162,7 +162,7 @@
    transition: var(--transition-smooth);
  }
 
- /* Hero Section with ACTIVE Fluid Moving Gold Overlay */
+ /* Hero Section with SUBTLE Ambient Gold Glow */
  .hero {
    background-color: var(--navy-deep);
    color: var(--white-pure);
@@ -178,22 +178,22 @@
    left: -50%;
    width: 200%;
    height: 200%;
-   background: radial-gradient(circle at 30% 30%, rgba(223, 192, 127, 0.25) 0%, rgba(197, 160, 89, 0.08) 40%, transparent 70%),
-               radial-gradient(circle at 70% 70%, rgba(197, 160, 89, 0.18) 0%, transparent 60%);
-   animation: fluidGoldRotate 18s ease-in-out infinite alternate;
+   background: radial-gradient(circle at 30% 30%, rgba(223, 192, 127, 0.08) 0%, rgba(197, 160, 89, 0.03) 40%, transparent 70%),
+               radial-gradient(circle at 70% 70%, rgba(197, 160, 89, 0.05) 0%, transparent 60%);
+   animation: subtleGoldRotate 35s ease-in-out infinite alternate;
    pointer-events: none;
    z-index: 1;
  }
 
- @keyframes fluidGoldRotate {
+ @keyframes subtleGoldRotate {
    0% {
      transform: scale(1) translate(0%, 0%) rotate(0deg);
    }
    50% {
-     transform: scale(1.15) translate(-3%, 4%) rotate(180deg);
+     transform: scale(1.08) translate(-1.5%, 2%) rotate(180deg);
    }
    100% {
-     transform: scale(1) translate(3%, -2%) rotate(360deg);
+     transform: scale(1) translate(1.5%, -1%) rotate(360deg);
    }
  }
  
@@ -201,8 +201,8 @@
    max-width: 1280px;
    margin: 0 auto;
    display: grid;
-   grid-template-columns: 1.2fr 0.8fr;
-   gap: 4rem;
+   grid-template-columns: 1.3fr 0.7fr;
+   gap: 3.5rem;
    align-items: center;
    position: relative;
    z-index: 2;
@@ -258,21 +258,22 @@
  .stat-number { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--gold-bright); }
  .stat-label { font-size: 0.68rem; color: #CBD5E1; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 0.2rem; }
 
+ /* Compact Profile Avatar Container */
  .profile-avatar-container {
    position: relative;
-   padding: 5px;
+   padding: 4px;
    border-radius: 8px;
    background: linear-gradient(135deg, var(--gold-light), rgba(255,255,255,0.2), var(--gold-regal));
-   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(197, 160, 89, 0.3);
+   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(197, 160, 89, 0.2);
+   max-width: 260px;
+   margin: 0 auto;
  }
  .profile-avatar {
    width: 100%;
-   max-width: 330px;
-   height: 410px;
+   height: 325px;
    border-radius: 6px;
    background: var(--navy-muted);
    overflow: hidden;
-   margin: 0 auto;
  }
  .profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
@@ -383,7 +384,7 @@
  .mission-card-title { font-family: var(--font-heading); font-size: 1.25rem; color: var(--navy-deep); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
  .mission-card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.8; }
 
- /* Leadership Dossier - Re-infused Blue & Simplified Layout */
+ /* Simplified Leadership Dossier (Blue Accents) */
  .dossier-section {
    background-color: var(--navy-deep);
    color: var(--white-pure);
@@ -419,7 +420,7 @@
  .dossier-title { font-family: var(--font-heading); color: var(--white-pure); font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; }
  .dossier-desc { color: #CBD5E1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; }
 
- /* Clean Simple Dossier Cards */
+ /* Simple Dossier Cards */
  .dossier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
  .dossier-card {
    background: rgba(11, 25, 44, 0.7);
@@ -632,7 +633,7 @@
  </nav>
 </header>
 
-<!-- Hero Section with Moving Fluid Gold Animation -->
+<!-- Hero Section with SUBTLE Ambient Gold Animation -->
 <section id="about" class="hero">
  <div class="hero-fluid-bg"></div>
  <div class="hero-container">
@@ -715,7 +716,7 @@
  </div>
 </section>
 
-<!-- Simplified Leadership Dossier (Re-infused Blue Theme) -->
+<!-- Simplified Leadership Dossier -->
 <section id="dossier" class="dossier-section">
  <div class="container">
    <div class="section-header animate-on-scroll">
