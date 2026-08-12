@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réan Clinton | Operations, Human Capital & Regional Governance Executive</title>
-    <!-- Executive Fonts: Cinzel, Montserrat, Inter -->
+    <!-- Executive Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --navy-deep: #0A192F;
+            --navy-deep: #071326;
+            --navy-mid: #0A192F;
             --navy-muted: #1E293B;
             --gold-regal: #C5A059;
             --gold-light: #DFC07F;
-            --gold-subtle: rgba(197, 160, 89, 0.12);
+            --gold-glow: rgba(197, 160, 89, 0.35);
+            --gold-subtle: rgba(197, 160, 89, 0.08);
             --ivory-bg: #F8F9FA;
             --white-pure: #FFFFFF;
             --text-dark: #0F172A;
@@ -24,12 +26,18 @@
             --font-regal: 'Cinzel', serif;
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Reset & Smooth Scroll */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -40,19 +48,22 @@
             overflow-x: hidden;
         }
 
-        /* Executive Header */
+        /* Glassmorphism Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 25, 47, 0.96);
-            backdrop-filter: blur(10px);
+            background: rgba(7, 19, 38, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 1000;
             border-bottom: 2px solid var(--gold-regal);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-smooth);
         }
 
         nav {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -62,11 +73,14 @@
 
         .brand-logo {
             font-family: var(--font-regal);
-            font-weight: 700;
-            font-size: 1.3rem;
+            font-weight: 800;
+            font-size: 1.35rem;
             color: var(--white-pure);
             text-decoration: none;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .brand-logo span {
@@ -82,59 +96,143 @@
         .nav-links a {
             color: #CBD5E1;
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: 0.82rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
+            letter-spacing: 1.2px;
+            position: relative;
+            padding-bottom: 0.3rem;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gold-regal);
+            transition: var(--transition-smooth);
         }
 
         .nav-links a:hover {
             color: var(--gold-regal);
         }
 
-        /* Hero Section */
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section with Animated Mesh Overlay */
         .hero {
-            background: linear-gradient(135deg, var(--navy-deep) 0%, #0F172A 100%);
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 60%, #0F172A 100%);
             color: var(--white-pure);
-            padding: 9rem 2rem 6rem 2rem;
+            padding: 10rem 2rem 7rem 2rem;
             border-bottom: 4px solid var(--gold-regal);
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.12) 0%, transparent 60%);
+            animation: rotateGlow 25s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .hero-container {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-subtitle {
             color: var(--gold-regal);
             font-family: var(--font-regal);
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.88rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-subtitle-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold-regal);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--gold-regal);
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
         }
 
         .hero-title {
             font-family: var(--font-regal);
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 2.9rem;
+            font-weight: 800;
             color: var(--white-pure);
             line-height: 1.25;
             margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .hero-description {
             font-size: 1.1rem;
             color: #CBD5E1;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.2rem;
             font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Strategic Skill Tags */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            color: #E2E8F0;
+            padding: 0.4rem 0.95rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .skill-tag:hover {
+            background: rgba(197, 160, 89, 0.15);
+            border-color: var(--gold-regal);
+            transform: translateY(-2px);
+            color: var(--white-pure);
         }
 
         .profile-frame {
@@ -144,22 +242,30 @@
             justify-content: center;
         }
 
-        /* Enlarged Rectangular Profile Photo Styling */
+        /* Animated Gradient Border Frame around Profile Headshot */
+        .profile-avatar-container {
+            position: relative;
+            padding: 5px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--gold-regal), var(--navy-deep), var(--gold-light));
+            background-size: 200% 200%;
+            animation: gradientBorder 6s ease infinite;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 35px var(--gold-glow);
+        }
+
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .profile-avatar {
             width: 320px;
             height: 400px;
-            margin: 0 auto;
             border-radius: 8px;
-            border: 4px solid var(--gold-regal);
             background: var(--navy-muted);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 160, 89, 0.2);
             overflow: hidden;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .profile-avatar:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 0 25px rgba(197, 160, 89, 0.35);
+            position: relative;
         }
 
         .profile-avatar img {
@@ -168,6 +274,11 @@
             object-fit: cover;
             object-position: center top;
             display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-avatar-container:hover img {
+            transform: scale(1.03);
         }
 
         .cta-group {
@@ -179,71 +290,73 @@
         .btn-gold {
             background-color: var(--gold-regal);
             color: var(--navy-deep);
-            padding: 0.85rem 2rem;
+            padding: 0.9rem 2.2rem;
             font-family: var(--font-heading);
             font-weight: 700;
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 2px;
+            border-radius: 3px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition-smooth);
             border: 1px solid var(--gold-regal);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.25);
         }
 
         .btn-gold:hover {
             background-color: var(--gold-light);
             border-color: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(197, 160, 89, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
         }
 
         .btn-outline {
             background-color: transparent;
             color: var(--white-pure);
-            padding: 0.85rem 2rem;
+            padding: 0.9rem 2.2rem;
             font-family: var(--font-heading);
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 2px;
+            border-radius: 3px;
             text-decoration: none;
             border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
+            transition: var(--transition-smooth);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .btn-outline:hover {
             border-color: var(--gold-regal);
             color: var(--gold-regal);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            background: rgba(197, 160, 89, 0.05);
         }
 
         /* Section Layouts */
         .section-white {
             background-color: var(--white-pure);
-            padding: 6rem 2rem;
+            padding: 6.5rem 2rem;
         }
 
         .section-ivory {
             background-color: var(--ivory-bg);
-            padding: 6rem 2rem;
+            padding: 6.5rem 2rem;
         }
 
         .container {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
         .section-header {
-            margin-bottom: 3.5rem;
+            margin-bottom: 3.8rem;
             text-align: left;
         }
 
@@ -259,7 +372,7 @@
 
         .section-title {
             font-family: var(--font-regal);
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             color: var(--navy-deep);
             font-weight: 700;
             position: relative;
@@ -268,8 +381,8 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
+            width: 65px;
+            height: 3.5px;
             background: var(--gold-regal);
             margin-top: 0.8rem;
         }
@@ -277,8 +390,9 @@
         /* Metric Grid */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .metric-card {
@@ -288,8 +402,9 @@
             border-bottom: 1px solid #E2E8F0;
             border-left: 1px solid #E2E8F0;
             padding: 2.5rem 1.8rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, border-top-color 0.3s ease;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
         }
@@ -299,21 +414,27 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: var(--gold-subtle);
             border-radius: 0 0 0 100%;
+            transition: var(--transition-smooth);
         }
 
         .metric-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             border-top-color: var(--gold-regal);
+            box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08);
+        }
+
+        .metric-card:hover::before {
+            background: rgba(197, 160, 89, 0.2);
         }
 
         .metric-number {
             font-family: var(--font-regal);
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.2rem;
+            font-weight: 800;
             color: var(--navy-deep);
             line-height: 1;
             margin-bottom: 0.8rem;
@@ -321,52 +442,76 @@
 
         .metric-label {
             font-family: var(--font-heading);
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
         .metric-desc {
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
+        }
+
+        /* Executive Value Statement Box */
+        .executive-summary-box {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.02) 0%, rgba(197, 160, 89, 0.07) 100%);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            border-left: 5px solid var(--gold-regal);
+            padding: 2.2rem 2.8rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .executive-summary-box p {
+            font-size: 1.05rem;
+            color: var(--navy-deep);
+            font-weight: 500;
+            line-height: 1.85;
         }
 
         /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 2rem;
+            padding-left: 2.2rem;
             border-left: 2px solid #E2E8F0;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3.8rem;
+            transition: var(--transition-smooth);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2.55rem;
+            left: -2.75rem;
             top: 0.2rem;
-            width: 1rem;
-            height: 1rem;
+            width: 1.1rem;
+            height: 1.1rem;
             border-radius: 50%;
             background: var(--gold-regal);
-            border: 3px solid var(--white-pure);
-            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+            border: 3.5px solid var(--white-pure);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.25);
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-item:hover::before {
+            background: var(--navy-deep);
+            box-shadow: 0 0 0 5px var(--gold-regal);
         }
 
         .timeline-role {
             font-family: var(--font-heading);
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: var(--navy-deep);
             font-weight: 700;
         }
 
         .timeline-org {
             font-family: var(--font-regal);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: var(--gold-regal);
             font-weight: 700;
             margin-bottom: 0.2rem;
@@ -378,12 +523,12 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.9rem;
         }
 
         .timeline-body {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
         }
 
         .timeline-body ul {
@@ -393,8 +538,8 @@
 
         .timeline-body ul li {
             position: relative;
-            padding-left: 1.2rem;
-            margin-bottom: 0.55rem;
+            padding-left: 1.3rem;
+            margin-bottom: 0.65rem;
         }
 
         .timeline-body ul li::before {
@@ -403,6 +548,7 @@
             left: 0;
             color: var(--gold-regal);
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* Strategic Blueprint Cards */
@@ -416,20 +562,20 @@
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
             padding: 2.5rem 2rem;
-            border-radius: 4px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: var(--transition-smooth);
             position: relative;
         }
 
         .blueprint-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(10, 25, 47, 0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(10, 25, 47, 0.08);
             border-color: var(--gold-regal);
         }
 
         .blueprint-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1.2rem;
             display: inline-block;
         }
@@ -452,14 +598,14 @@
         .research-wrapper {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
         .research-poster-box {
-            background: #0F172A;
-            padding: 2rem;
+            background: #0B1729;
+            padding: 3rem 2.5rem;
             text-align: center;
             border-bottom: 3px solid var(--gold-regal);
         }
@@ -467,99 +613,224 @@
         .research-poster-img {
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
+            border-radius: 6px;
             border: 1px solid rgba(197, 160, 89, 0.4);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+            transition: var(--transition-smooth);
+        }
+
+        .research-poster-img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 25px 50px rgba(197, 160, 89, 0.2);
         }
 
         .research-results-box {
-            padding: 3rem;
+            padding: 3.5rem;
             background: var(--white-pure);
         }
 
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            gap: 1.8rem;
+            margin: 2.2rem 0;
         }
 
         .results-item {
             background: var(--ivory-bg);
-            border-left: 3px solid var(--gold-regal);
-            padding: 1.2rem 1.5rem;
+            border-left: 4px solid var(--gold-regal);
+            padding: 1.4rem 1.6rem;
+            border-radius: 0 4px 4px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .results-item:hover {
+            transform: translateX(4px);
+            background: #F1F5F9;
         }
 
         .results-item-title {
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: var(--navy-deep);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.35rem;
         }
 
         .results-item-desc {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
 
-        /* Education & Certs Grid */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* Modal Popup Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(7, 19, 38, 0.93);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .edu-card {
+        .modal.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--white-pure);
+            margin: 3% auto;
+            padding: 2rem;
+            border: 2px solid var(--gold-regal);
+            width: 85%;
+            max-width: 1100px;
+            border-radius: 6px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            color: var(--navy-deep);
+            float: right;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--gold-regal);
+        }
+
+        /* Eye-Catching Education Hub Redesign */
+        .edu-hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.2rem;
+        }
+
+        .edu-hub-card {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
-            border-left: 4px solid var(--navy-deep);
-            padding: 2rem;
-            transition: border-left-color 0.3s ease;
+            border-radius: 8px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .edu-card:hover {
-            border-left-color: var(--gold-regal);
+        .edu-hub-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(10, 25, 47, 0.09);
+            border-color: var(--gold-regal);
         }
 
-        .edu-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            color: var(--navy-deep);
-            margin-bottom: 0.3rem;
+        .edu-card-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.3rem;
+            margin-bottom: 1.5rem;
         }
 
-        .edu-card .school {
+        .edu-emblem {
+            width: 55px;
+            height: 55px;
+            background: var(--navy-deep);
             color: var(--gold-regal);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--gold-regal);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            flex-shrink: 0;
         }
 
-        /* Visual Eye-Catching Honors Section */
+        .edu-degree {
+            font-family: var(--font-heading);
+            font-size: 1.28rem;
+            color: var(--navy-deep);
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .edu-institution {
+            color: var(--gold-regal);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.35rem;
+        }
+
+        .edu-tag-pill {
+            display: inline-block;
+            background: var(--gold-subtle);
+            color: var(--navy-deep);
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1.2rem;
+        }
+
+        .cert-badge-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .cert-badge-item {
+            background: var(--ivory-bg);
+            border-left: 3.5px solid var(--gold-regal);
+            padding: 0.85rem 1.1rem;
+            font-size: 0.9rem;
+            color: var(--navy-deep);
+            font-weight: 600;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Honors Section Visual Cards */
         .honors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.2rem;
         }
 
         .honor-card-visual {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
-            border-radius: 4px;
-            padding: 2.2rem;
+            border-radius: 8px;
+            padding: 2.5rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .honor-card-visual:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-7px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.08);
             border-color: var(--gold-regal);
         }
 
@@ -569,7 +840,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 4.5px;
             background: linear-gradient(90deg, var(--gold-regal), var(--navy-deep));
         }
 
@@ -583,23 +854,23 @@
         .honor-badge-visual {
             background: var(--gold-subtle);
             color: var(--gold-regal);
-            padding: 0.35rem 0.8rem;
+            padding: 0.35rem 0.85rem;
             font-family: var(--font-heading);
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 2px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 3px;
+            border: 1px solid rgba(197, 160, 89, 0.35);
         }
 
         .honor-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         .honor-title {
             font-family: var(--font-heading);
-            font-size: 1.25rem;
+            font-size: 1.28rem;
             color: var(--navy-deep);
             font-weight: 700;
             margin-bottom: 0.4rem;
@@ -607,7 +878,7 @@
         }
 
         .honor-issuer {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--gold-regal);
             font-weight: 700;
             margin-bottom: 1rem;
@@ -617,25 +888,26 @@
             display: inline-block;
             background: var(--navy-deep);
             color: var(--white-pure);
-            padding: 0.4rem 0.8rem;
-            font-size: 0.8rem;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            border-radius: 2px;
-            margin-top: 1rem;
+            border-radius: 3px;
+            margin-top: 1.2rem;
         }
 
         /* Call to Action Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--navy-deep) 0%, #0F172A 100%);
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
             color: var(--white-pure);
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             text-align: center;
             border-top: 4px solid var(--gold-regal);
             border-bottom: 2px solid var(--gold-regal);
+            position: relative;
         }
 
         .cta-box {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
@@ -643,27 +915,27 @@
             color: var(--gold-regal);
             font-family: var(--font-regal);
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+            font-size: 0.88rem;
+            margin-bottom: 1.2rem;
         }
 
         .cta-title {
             font-family: var(--font-regal);
-            font-size: 2.4rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--white-pure);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.4rem;
             line-height: 1.3;
         }
 
         .cta-description {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #CBD5E1;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.8rem;
             font-weight: 300;
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
         .cta-actions {
@@ -677,32 +949,48 @@
         footer {
             background-color: var(--navy-deep);
             color: #94A3B8;
-            padding: 3.5rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         footer h3 {
             font-family: var(--font-regal);
             color: var(--white-pure);
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 0.4rem;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+        }
+
+        /* Scroll Animation Utility */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (max-width: 992px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; }
             .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { justify-content: center; }
             .profile-avatar { width: 280px; height: 350px; }
             .cta-group { justify-content: center; }
             .nav-links { display: none; }
-            .cta-title { font-size: 1.8rem; }
-            .research-results-box { padding: 1.8rem; }
+            .cta-title { font-size: 1.9rem; }
+            .research-results-box { padding: 2rem; }
+            .modal-content { width: 95%; margin: 10% auto; }
+            .executive-summary-box { padding: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Executive Top Header -->
+    <!-- Executive Top Glassmorphism Header -->
     <header>
         <nav>
             <a href="#" class="brand-logo">RÉAN CLINTON<span>.</span></a>
@@ -721,21 +1009,37 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div>
-                <div class="hero-subtitle">Barbadian National Development Scholar</div>
+            <div class="animate-on-scroll">
+                <div class="hero-subtitle">
+                    <span class="hero-subtitle-dot"></span>
+                    Barbadian National Development Scholar
+                </div>
                 <h1 class="hero-title">Operations, Human Capital & Regional Governance Executive</h1>
                 <p class="hero-description">
                     Aligning organizational resilience, multi-jurisdictional compliance, and high-performance workforce strategies across regulated aviation environments and international enterprise operations.
                 </p>
+
+                <!-- Core Competency Matrix Tags -->
+                <div class="skill-tags">
+                    <span class="skill-tag">Multi-Jurisdictional Governance</span>
+                    <span class="skill-tag">ICAO & ISAGO Compliance</span>
+                    <span class="skill-tag">Human Capital Strategy</span>
+                    <span class="skill-tag">Crisis Resilience</span>
+                    <span class="skill-tag">Federal Grant Oversight</span>
+                </div>
+
                 <div class="cta-group">
                     <a href="#experience" class="btn-gold">View Leadership Track Record</a>
                     <a href="#research" class="btn-outline">Access Strategic Research</a>
                 </div>
             </div>
-            <div class="profile-frame">
-                <!-- Rectangular Executive Headshot Photo Container -->
-                <div class="profile-avatar">
-                    <img src="profile.jpg" alt="Réan Clinton Executive Headshot">
+            
+            <div class="profile-frame animate-on-scroll">
+                <!-- Profile Headshot Container with Gold Animated Border Flow -->
+                <div class="profile-avatar-container">
+                    <div class="profile-avatar">
+                        <img src="profile.jpg" alt="Réan Clinton Executive Headshot">
+                    </div>
                 </div>
             </div>
         </div>
@@ -744,32 +1048,39 @@
     <!-- 1. Strategic Impact Metrics -->
     <section id="summary" class="section-white">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag">Leadership at Scale</div>
                 <h2 class="section-title">Strategic Impact Metrics</h2>
             </div>
 
             <div class="metrics-grid">
-                <div class="metric-card">
+                <div class="metric-card animate-on-scroll">
                     <div class="metric-number" data-target="300">0</div>
                     <div class="metric-label">Workforce Members Managed</div>
                     <div class="metric-desc">Multidisciplinary personnel and ground operations teams directed across airport and HR environments.</div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card animate-on-scroll">
                     <div class="metric-number" data-target="2">0</div>
                     <div class="metric-label">$2M+ Grant Oversight</div>
                     <div class="metric-desc">Fiscal oversight and operational budget auditing managed for federal research programs.</div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card animate-on-scroll">
                     <div class="metric-number" data-target="7">0</div>
                     <div class="metric-label">Global Airline Accounts</div>
                     <div class="metric-desc">Human capital strategy and round-the-clock service execution directed for international carriers.</div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card animate-on-scroll">
                     <div class="metric-number" data-target="100">0</div>
                     <div class="metric-label">100% Audit Readiness</div>
                     <div class="metric-desc">Maintained full audit readiness under ICAO, IATA, and ISAGO regulatory standards.</div>
                 </div>
+            </div>
+
+            <!-- Executive Value Statement -->
+            <div class="executive-summary-box animate-on-scroll">
+                <p>
+                    <strong>Executive Value Proposition:</strong> Operating at the intersection of regulatory policy, cross-functional leadership, and human capital transformation. Proven ability to insulate complex organizations from systemic regulatory friction, optimize multi-million dollar operational budgets, and build resilient, high-performing teams across sovereign and private-sector jurisdictions.
+                </p>
             </div>
         </div>
     </section>
@@ -777,13 +1088,13 @@
     <!-- 2. Leadership Track Record -->
     <section id="experience" class="section-ivory">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag">Career Progression</div>
                 <h2 class="section-title">Professional Experience</h2>
             </div>
 
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item animate-on-scroll">
                     <div class="timeline-role">Graduate Research Coordinator</div>
                     <div class="timeline-org">College of Aviation, Embry-Riddle Aeronautical University | Daytona Beach, FL</div>
                     <div class="timeline-date">Aug 2024 – Apr 2026</div>
@@ -797,7 +1108,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item animate-on-scroll">
                     <div class="timeline-role">Human Resources Business Partner</div>
                     <div class="timeline-org">DSPS HR Solutions | Remote, Barbados</div>
                     <div class="timeline-date">Jan 2024 – Aug 2024</div>
@@ -810,7 +1121,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item animate-on-scroll">
                     <div class="timeline-role">Acting Human Resources Manager</div>
                     <div class="timeline-org">Caribbean Aircraft Handling (CAH) | Christ Church, Barbados</div>
                     <div class="timeline-date">Feb 2023 – Apr 2023</div>
@@ -823,7 +1134,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item animate-on-scroll">
                     <div class="timeline-role">Human Resources Coordinator</div>
                     <div class="timeline-org">Caribbean Aircraft Handling (CAH) | Christ Church, Barbados</div>
                     <div class="timeline-date">Jul 2019 – Jul 2023</div>
@@ -843,13 +1154,13 @@
     <!-- 3. Strategic Vision & Executive Blueprint -->
     <section id="competencies" class="section-white">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag">Strategic Vision</div>
                 <h2 class="section-title">Forward-Looking Executive Blueprint</h2>
             </div>
 
             <div class="blueprint-grid">
-                <div class="blueprint-card" style="border-top: 3px solid var(--gold-regal);">
+                <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--gold-regal);">
                     <div class="blueprint-icon">🌐</div>
                     <h3 class="blueprint-title">Global Regulatory Horizon</h3>
                     <p class="blueprint-desc">
@@ -857,7 +1168,7 @@
                     </p>
                 </div>
 
-                <div class="blueprint-card" style="border-top: 3px solid var(--navy-deep);">
+                <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--navy-deep);">
                     <div class="blueprint-icon">🏛️</div>
                     <h3 class="blueprint-title">Institutional Ecosystem Cohesion</h3>
                     <p class="blueprint-desc">
@@ -865,7 +1176,7 @@
                     </p>
                 </div>
 
-                <div class="blueprint-card" style="border-top: 3px solid var(--gold-regal);">
+                <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--gold-regal);">
                     <div class="blueprint-icon">🛡️</div>
                     <h3 class="blueprint-title">Resilience & Crisis Architecture</h3>
                     <p class="blueprint-desc">
@@ -873,7 +1184,7 @@
                     </p>
                 </div>
 
-                <div class="blueprint-card" style="border-top: 3px solid var(--navy-deep);">
+                <div class="blueprint-card animate-on-scroll" style="border-top: 4px solid var(--navy-deep);">
                     <div class="blueprint-icon">⚡</div>
                     <h3 class="blueprint-title">Human Capital Modernization</h3>
                     <p class="blueprint-desc">
@@ -887,27 +1198,27 @@
     <!-- 4. Strategic Research Poster & Results Vault -->
     <section id="research" class="section-ivory">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag">Executive Vault</div>
                 <h2 class="section-title">Strategic Research & Policy Results</h2>
             </div>
 
-            <!-- Global Aviation Research Context Banner -->
-            <div style="background: var(--navy-deep); color: var(--white-pure); padding: 2rem; border-radius: 4px; margin-bottom: 2.5rem; border-left: 4px solid var(--gold-regal);">
-                <h3 style="font-family: var(--font-heading); color: var(--gold-regal); font-size: 1.15rem; margin-bottom: 0.5rem;">The Imperative of Global Aviation Safety Harmonization</h3>
-                <p style="font-size: 0.95rem; color: #CBD5E1; line-height: 1.7;">
+            <!-- Context Banner -->
+            <div class="animate-on-scroll" style="background: var(--navy-deep); color: var(--white-pure); padding: 2.2rem; border-radius: 6px; margin-bottom: 2.5rem; border-left: 5px solid var(--gold-regal); box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <h3 style="font-family: var(--font-heading); color: var(--gold-regal); font-size: 1.2rem; margin-bottom: 0.6rem;">The Imperative of Global Aviation Safety Harmonization</h3>
+                <p style="font-size: 0.98rem; color: #CBD5E1; line-height: 1.8;">
                     Global civil aviation relies on consistent regulatory standards. When developing states face structural resource constraints, safety gaps emerge that affect international airspace integrity. My award-winning quantitative research evaluates state capacity and international safety management protocols, delivering data-driven frameworks to establish uniform compliance across diverse global regions.
                 </p>
             </div>
 
-            <div class="research-wrapper">
+            <div class="research-wrapper animate-on-scroll">
                 <!-- Research Poster Focus -->
                 <div class="research-poster-box">
-                    <div style="margin-bottom: 1.5rem; text-align: left;">
-                        <span style="color: var(--gold-regal); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 0.3rem;">
+                    <div style="margin-bottom: 1.8rem; text-align: left;">
+                        <span style="color: var(--gold-regal); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.8px; display: block; margin-bottom: 0.4rem;">
                             🏆 Award-Winning Empirical Research Poster
                         </span>
-                        <h3 style="font-family: var(--font-heading); color: var(--white-pure); font-size: 1.35rem;">
+                        <h3 style="font-family: var(--font-heading); color: var(--white-pure); font-size: 1.4rem;">
                             Small Island Developing States & ICAO Annex 19 Compliance
                         </h3>
                     </div>
@@ -915,18 +1226,18 @@
                     <!-- High-Resolution Poster Image Frame -->
                     <img src="poster.png" alt="Research Poster: SIDS & ICAO Annex 19 Safety Compliance" class="research-poster-img" onerror="this.style.display='none'; document.getElementById('poster-error').style.display='block';">
                     
-                    <div id="poster-error" style="display:none; padding: 2rem; color: var(--gold-light);">
-                        <p style="font-size: 1.1rem; font-weight: 600;">[ poster.png Upload Pending ]</p>
-                        <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.5rem;">Ensure <code>poster.png</code> is saved in the exact same folder as <code>index.html</code>.</p>
+                    <div id="poster-error" style="display:none; padding: 2.5rem; color: var(--gold-light);">
+                        <p style="font-size: 1.15rem; font-weight: 600;">[ poster.png Upload Pending ]</p>
+                        <p style="font-size: 0.88rem; color: #94A3B8; margin-top: 0.5rem;">Ensure <code>poster.png</code> is saved in the exact same folder as <code>index.html</code>.</p>
                     </div>
                 </div>
 
-                <!-- Blended Research Results & Presentation Action -->
+                <!-- Blended Research Results & Interactive Modal Button -->
                 <div class="research-results-box">
-                    <h4 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.15rem; margin-bottom: 0.5rem;">
+                    <h4 style="font-family: var(--font-heading); color: var(--navy-deep); font-size: 1.2rem; margin-bottom: 0.6rem;">
                         Key Research Findings & Policy Impact
                     </h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+                    <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.8;">
                         Utilizing Chi-Square independence tests and descriptive statistical analyses, this study investigates how Small Island Developing State (SIDS) classification impacts compliance with ICAO Annex 19 Safety Management standards.
                     </p>
 
@@ -945,66 +1256,115 @@
                         </div>
                     </div>
 
-                    <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #E2E8F0;">
-                        <a href="presentation.pdf" target="_blank" class="btn-gold">
-                            <span>View Complete Results & Slide Deck</span>
-                            <span style="font-size: 1.1rem;">→</span>
-                        </a>
+                    <div style="text-align: center; margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid #E2E8F0;">
+                        <button onclick="openModal()" class="btn-gold">
+                            <span>Interactive Results Deck Viewer</span>
+                            <span style="font-size: 1.1rem;">🔍</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Education & Certifications -->
+    <!-- Modal Popup for Presentation Deck -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 1.2rem; font-size: 1.3rem;">Research Presentation Deck</h3>
+            <iframe src="presentation.pdf" width="100%" height="560px" style="border: 1px solid #E2E8F0; border-radius: 4px;"></iframe>
+            <div style="text-align: right; margin-top: 1.2rem;">
+                <a href="presentation.pdf" target="_blank" class="btn-gold" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">Download PDF directly</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Redesigned Visual Education & Credential Hub -->
     <section id="education" class="section-white">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag">Credentials</div>
-                <h2 class="section-title">Education & Professional Certifications</h2>
+                <h2 class="section-title">Education & Executive Certifications</h2>
             </div>
 
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <h3>Master of Science in Aviation (Distinction)</h3>
-                    <div class="school">Embry-Riddle Aeronautical University | 2024 – 2026</div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">
-                        Specialization: Aerospace Management, Sustainability & Safety Management Systems.<br>
-                        <strong>Barbadian National Development Scholar</strong>.
-                    </p>
+            <div class="edu-hub-grid">
+                <!-- Degree 1 -->
+                <div class="edu-hub-card animate-on-scroll">
+                    <div>
+                        <div class="edu-card-top">
+                            <div class="edu-emblem">🎓</div>
+                            <div>
+                                <h3 class="edu-degree">Master of Science in Aviation</h3>
+                                <div class="edu-institution">Embry-Riddle Aeronautical University</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7;">
+                            Graduated with Distinction.<br>
+                            Specialization: Aerospace Management, Sustainability & Safety Management Systems (SMS).
+                        </p>
+                    </div>
+                    <div>
+                        <span class="edu-tag-pill">National Scholar Awardee</span>
+                    </div>
                 </div>
 
-                <div class="edu-card">
-                    <h3>Bachelor of Science in Management (Honors)</h3>
-                    <div class="school">The University of the West Indies | 2019 – 2022</div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">
-                        Comprehensive grounding in organizational strategy, quantitative decision modeling, and corporate management.
-                    </p>
+                <!-- Degree 2 -->
+                <div class="edu-hub-card animate-on-scroll">
+                    <div>
+                        <div class="edu-card-top">
+                            <div class="edu-emblem">🏛️</div>
+                            <div>
+                                <h3 class="edu-degree">Bachelor of Science in Management</h3>
+                                <div class="edu-institution">The University of the West Indies</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.7;">
+                            Graduated with Honors.<br>
+                            Foundational focus in strategic organization design, quantitative decision modeling, and governance.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="edu-tag-pill">Honors Graduate</span>
+                    </div>
                 </div>
 
-                <div class="edu-card">
-                    <h3>Executive Certifications</h3>
-                    <div class="school">SHRM / HRCI / UC Irvine</div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">
-                        • <strong>SHRM-SCP</strong> (Senior Certified Professional Expected Sep 2026)<br>
-                        • <strong>HR Analytics Certificate</strong> (UC Irvine, Feb 2026)<br>
-                        • <strong>Talent Acquisition Certificate</strong> (HRCI, Feb 2026)
-                    </p>
+                <!-- Professional Certifications -->
+                <div class="edu-hub-card animate-on-scroll" style="border-top: 4px solid var(--gold-regal);">
+                    <div>
+                        <div class="edu-card-top">
+                            <div class="edu-emblem">📜</div>
+                            <div>
+                                <h3 class="edu-degree">Executive Certifications</h3>
+                                <div class="edu-institution">SHRM / HRCI / UC Irvine</div>
+                            </div>
+                        </div>
+                        <div class="cert-badge-list">
+                            <div class="cert-badge-item">
+                                🏅 SHRM-SCP (Senior Certified Professional Candidate)
+                            </div>
+                            <div class="cert-badge-item">
+                                📊 HR Analytics Specialist (UC Irvine)
+                            </div>
+                            <div class="cert-badge-item">
+                                🎯 Strategic Talent Acquisition (HRCI)
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Honors & Recognition (Eye-Catching Visual Redesign) -->
+    <!-- 6. Honors & Recognition -->
     <section id="honors" class="section-ivory">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll">
                 <div class="section-tag">Distinctions</div>
                 <h2 class="section-title">Honors & Recognition</h2>
             </div>
 
             <div class="honors-grid">
-                <div class="honor-card-visual">
+                <div class="honor-card-visual animate-on-scroll">
                     <div>
                         <div class="honor-header">
                             <span class="honor-badge-visual">National Honors</span>
@@ -1012,7 +1372,7 @@
                         </div>
                         <h3 class="honor-title">National Development Scholar</h3>
                         <div class="honor-issuer">Government of Barbados</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
                             Awarded full national postgraduate scholarship for academic leadership and strategic alignment with Caribbean infrastructure and regional policy goals.
                         </p>
                     </div>
@@ -1021,7 +1381,7 @@
                     </div>
                 </div>
 
-                <div class="honor-card-visual">
+                <div class="honor-card-visual animate-on-scroll">
                     <div>
                         <div class="honor-header">
                             <span class="honor-badge-visual">Global Distinction</span>
@@ -1029,7 +1389,7 @@
                         </div>
                         <h3 class="honor-title">1st Place Graduate Research Award</h3>
                         <div class="honor-issuer">University Aviation Association</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
                             Recognized globally for empirical quantitative research establishing baseline safety compliance models for international civil aviation authorities.
                         </p>
                     </div>
@@ -1038,7 +1398,7 @@
                     </div>
                 </div>
 
-                <div class="honor-card-visual">
+                <div class="honor-card-visual animate-on-scroll">
                     <div>
                         <div class="honor-header">
                             <span class="honor-badge-visual">Institutional Award</span>
@@ -1046,7 +1406,7 @@
                         </div>
                         <h3 class="honor-title">International Research Excellence</h3>
                         <div class="honor-issuer">Embry-Riddle Aeronautical University</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
                             Honored for pioneering research evaluating international civil aviation safety standards, state capacity modeling, and risk mitigation frameworks.
                         </p>
                     </div>
@@ -1060,7 +1420,7 @@
 
     <!-- 7. Executive Contact & Call to Action Section -->
     <section id="contact" class="cta-section">
-        <div class="cta-box">
+        <div class="cta-box animate-on-scroll">
             <div class="cta-subtitle">Initiate Strategic Engagement</div>
             <h2 class="cta-title">Ready to Elevate Your Organization's Operational & Human Capital Strategy?</h2>
             <p class="cta-description">
@@ -1077,18 +1437,32 @@
     <footer>
         <div class="container">
             <h3>RÉAN CLINTON</h3>
-            <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;">
+            <p style="color: var(--gold-regal); font-family: var(--font-heading); font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem;">
                 Operations, Human Capital & Regional Governance Executive
             </p>
-            <p style="font-size: 0.8rem; color: #64748B;">
+            <p style="font-size: 0.82rem; color: #64748B;">
                 © Réan Clinton. Built for Executive & Regional Governance Excellence.
             </p>
         </div>
     </footer>
 
-    <!-- Interactive Counter Script -->
+    <!-- Interactive Scripts -->
     <script>
-        const observer = new IntersectionObserver((entries) => {
+        // Intersection Observer for Scroll Animations
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            scrollObserver.observe(element);
+        });
+
+        // Counter Animation Script
+        const metricObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const counters = entry.target.querySelectorAll('.metric-number');
@@ -1108,12 +1482,32 @@
                         };
                         updateCount();
                     });
-                    observer.unobserve(entry.target);
+                    metricObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.4 });
 
-        observer.observe(document.querySelector('#summary'));
+        metricObserver.observe(document.querySelector('#summary'));
+
+        // Modal Presentation Popup Script
+        function openModal() {
+            const modal = document.getElementById("pdfModal");
+            modal.style.display = "block";
+            setTimeout(() => { modal.classList.add("show"); }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("pdfModal");
+            modal.classList.remove("show");
+            setTimeout(() => { modal.style.display = "none"; }, 300);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("pdfModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
