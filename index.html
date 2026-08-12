@@ -93,7 +93,7 @@
             color: var(--gold-regal);
         }
 
-        /* Hero Section (Deep Navy canvas with Regal Accents) */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--navy-deep) 0%, #0F172A 100%);
             color: var(--white-pure);
@@ -199,7 +199,7 @@
             transform: translateY(-2px);
         }
 
-        /* Section Wrappers & Content */
+        /* Section Wrappers */
         .section-white {
             background-color: var(--white-pure);
             padding: 6rem 2rem;
@@ -247,7 +247,7 @@
             margin-top: 0.8rem;
         }
 
-        /* Metric Highlights Grid */
+        /* Metric Grid */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -292,7 +292,7 @@
             color: var(--text-muted);
         }
 
-        /* Core Executive Competencies */
+        /* Competency Grid */
         .competency-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -349,7 +349,7 @@
             top: 0.2rem;
         }
 
-        /* Structured Experience Timeline */
+        /* Timeline */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -385,16 +385,71 @@
             font-size: 0.95rem;
             color: var(--gold-regal);
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
         }
 
         .timeline-body {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-top: 0.8rem;
         }
 
-        /* Thoughtful Assets Viewer (Poster & Presentation Tabs) */
+        .timeline-body ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-body ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-body ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gold-regal);
+            font-weight: bold;
+        }
+
+        /* Education & Certs Grid */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .edu-card {
+            background: var(--white-pure);
+            border: 1px solid #E2E8F0;
+            border-left: 4px solid var(--navy-deep);
+            padding: 2rem;
+        }
+
+        .edu-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--navy-deep);
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-card .school {
+            color: var(--gold-regal);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Asset Viewer */
         .asset-viewer-container {
             background: var(--white-pure);
             border: 1px solid #E2E8F0;
@@ -445,7 +500,7 @@
             align-items: center;
         }
 
-        /* Honors Section (Executive Text Cards) */
+        /* Honors Section */
         .honors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -528,9 +583,10 @@
             <a href="#" class="brand-logo">RÉAN CLINTON<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#summary">Overview</a></li>
-                <li><a href="#competencies">Capabilities</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#research-assets">Research Assets</a></li>
+                <li><a href="#competencies">Capabilities</a></li>
+                <li><a href="#documents">Resume & Strategy</a></li>
+                <li><a href="#education">Education & Certs</a></li>
                 <li><a href="#honors">Recognition</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -542,13 +598,13 @@
         <div class="hero-container">
             <div>
                 <div class="hero-subtitle">Barbadian National Development Scholar</div>
-                <h1 class="hero-title">Operations, Human Capital & Regional Governance Executive</h1>
+                <h1 class="hero-title">Operations, Human Capital & Aviation Executive</h1>
                 <p class="hero-description">
-                    Driving organizational resilience, multi-jurisdictional compliance, and high-performance talent strategies across Small Island Developing States (SIDS) and regulated international environments.
+                    Aligning organizational resilience, multi-jurisdictional compliance, and high-performance workforce strategies across regulated aviation environments and international enterprise operations.
                 </p>
                 <div class="cta-group">
                     <a href="#experience" class="btn-gold">View Leadership Track Record</a>
-                    <a href="#research-assets" class="btn-outline">Explore Research & Strategy</a>
+                    <a href="#documents" class="btn-outline">Access Resume & Briefings</a>
                 </div>
             </div>
             <div class="profile-frame">
@@ -558,7 +614,7 @@
         </div>
     </section>
 
-    <!-- Metric Overview (Canvas White) -->
+    <!-- 1. Strategic Metric Overview -->
     <section id="summary" class="section-white">
         <div class="container">
             <div class="section-header">
@@ -569,121 +625,175 @@
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-number" data-target="300">0</div>
-                    <div class="metric-label">Personnel Commanded</div>
-                    <div class="metric-desc">Multidisciplinary teams directed across complex operational environments.</div>
+                    <div class="metric-label">Workforce Members Managed</div>
+                    <div class="metric-desc">Multidisciplinary personnel and ground operations teams directed across airport & HR environments[cite: 2].</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-number" data-target="57">0</div>
-                    <div class="metric-label">SIDS Jurisdictions</div>
-                    <div class="metric-desc">UN-recognized states evaluated for governance and state capacity compliance.</div>
+                    <div class="metric-number" data-target="2">0</div>
+                    <div class="metric-label">$2M+ Grant Oversight</div>
+                    <div class="metric-desc">Fiscal oversight and operational budget auditing managed for federal research programs[cite: 2].</div>
                 </div>
                 <div class="metric-card">
-                    <div class="metric-number" data-target="787">0</div>
-                    <div class="metric-label">Regulatory Baseline Data Points</div>
-                    <div class="metric-desc">ICAO EFOD reported differences structured and statistically analyzed[cite: 1].</div>
+                    <div class="metric-number" data-target="7">0</div>
+                    <div class="metric-label">Global Airline Accounts</div>
+                    <div class="metric-desc">Human capital strategy and 24/7 service execution directed for international carriers[cite: 2].</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-number" data-target="100">0</div>
                     <div class="metric-label">% Audit Compliance</div>
-                    <div class="metric-desc">Maintained across multi-jurisdictional workforce and operations.</div>
+                    <div class="metric-desc">Maintained passed audits under ICAO, IATA, and ISAGO regulatory standards[cite: 2].</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Executive Competencies (Canvas Ivory) -->
-    <section id="competencies" class="section-ivory">
+    <!-- 2. Leadership Track Record (Prioritized Experience) -->
+    <section id="experience" class="section-ivory">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Career Progression</div>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-role">Graduate Research Coordinator</div>
+                    <div class="timeline-org">College of Aviation, Embry-Riddle Aeronautical University | Daytona Beach, FL</div>
+                    <div class="timeline-date">Aug 2024 – Apr 2026</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Managed fiscal oversight for $2M+ in federal grant funds, auditing expenditures against operational budgets to ensure compliance[cite: 2].</li>
+                            <li>Integrated Salesforce CRM and KnowledgeLake across 5 academic programs to automate document processing, track satisfaction KPIs, and accelerate resolution timelines[cite: 2].</li>
+                            <li>Led the development and rollout of an automated dissertation chair matching tool, eliminating placement inaccuracies between student proposals and faculty specializations[cite: 2].</li>
+                            <li>Conducted comprehensive global aviation safety research evaluating international civil aviation standards and regulatory frameworks to optimize industry risk mitigation[cite: 2].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Human Resources Business Partner</div>
+                    <div class="timeline-org">DSPS HR Solutions | Remote, Barbados</div>
+                    <div class="timeline-date">Jan 2024 – Aug 2024</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Championed business initiatives across a portfolio of clients, ensuring company policies and SOPs reflected core business objectives[cite: 2].</li>
+                            <li>Implemented performance management frameworks and clear KPI evaluation processes for operational teams, establishing structured feedback loops and accountability mechanisms[cite: 2].</li>
+                            <li>Developed workforce analytics dashboards to track key people metrics, delivering data-driven insights to C-suite leadership for strategic workforce planning and cost optimization[cite: 2].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Acting Human Resources Manager</div>
+                    <div class="timeline-org">Caribbean Aircraft Handling (CAH) | Christ Church, Barbados</div>
+                    <div class="timeline-date">Feb 2023 – Apr 2023</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Directed human capital strategy across 7+ global airline accounts, balancing competing corporate and stakeholder priorities to ensure efficient 24/7 service execution[cite: 2].</li>
+                            <li>Maintained audit-readiness for executive oversight committees and global regulatory bodies to pass ICAO, IATA, and ISAGO safety and quality audits[cite: 2].</li>
+                            <li>Reconciled unplanned labor expenditures during irregular operations by executing airline chargebacks to protect operating margins and control labor costs[cite: 2].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Human Resources Coordinator</div>
+                    <div class="timeline-org">Caribbean Aircraft Handling (CAH) | Christ Church, Barbados</div>
+                    <div class="timeline-date">Jul 2019 – Jul 2023</div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Reduced Time-to-Fill from 45 to 21 days via predictive recruitment models for peak flight schedules[cite: 2].</li>
+                            <li>Served as a trusted HR advisor addressing workforce grievances and conflict resolution at the root level, preventing formal labor disputes and maintaining positive organizational culture[cite: 2].</li>
+                            <li>Drove the transition to a hybrid human capital management system that improved safety tracking and HR processes across 5 departments to support over 300 staff members[cite: 2].</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Core Executive Capabilities -->
+    <section id="competencies" class="section-white">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Core Capabilities</div>
-                <h2 class="section-title">Governance & Operational Focus</h2>
+                <h2 class="section-title">Aviation & Operational Focus</h2>
             </div>
 
             <div class="competency-grid">
                 <div class="competency-card">
-                    <div class="competency-icon">🏛️</div>
-                    <h3 class="competency-title">Multi-Jurisdictional Governance</h3>
+                    <div class="competency-icon">✈️</div>
+                    <h3 class="competency-title">Aviation & Regulatory Compliance</h3>
                     <ul class="competency-list">
-                        <li>SIDS institutional capacity evaluation and policy alignment.</li>
-                        <li>Regulatory framework implementation and service-level agreement oversight.</li>
-                        <li>Resource Dependency & Policy Implementation theoretical modeling[cite: 1].</li>
+                        <li>Audit execution and readiness under ICAO, IATA, and ISAGO standards[cite: 2].</li>
+                        <li>Safety Management Systems (SMS) and aerospace policy risk mitigation[cite: 2].</li>
+                        <li>Ground handling operational scheduling and 24/7 airline client management[cite: 2].</li>
                     </ul>
                 </div>
 
                 <div class="competency-card">
                     <div class="competency-icon">👥</div>
-                    <h3 class="competency-title">Human Capital Strategy & Contractor Lifecycle</h3>
+                    <h3 class="competency-title">Human Capital & Talent Analytics</h3>
                     <ul class="competency-list">
-                        <li>End-to-end management of independent contractor and remote team networks.</li>
-                        <li>SHRM-SCP aligned strategic workforce planning and succession design.</li>
-                        <li>High-trust performance management and multi-disciplinary leadership.</li>
+                        <li>End-to-end recruitment optimization and predictive capacity planning[cite: 2].</li>
+                        <li>Workforce analytics dashboard design for executive decision-making[cite: 2].</li>
+                        <li>Conflict resolution, labor union relations, and KPI performance modeling[cite: 2].</li>
                     </ul>
                 </div>
 
                 <div class="competency-card">
-                    <div class="competency-icon">📊</div>
-                    <h3 class="competency-title">Data Analytics & Process Optimization</h3>
+                    <div class="competency-icon">🏛️</div>
+                    <h3 class="competency-title">Fiscal Oversight & Systems Integration</h3>
                     <ul class="competency-list">
-                        <li>Predictive labor analytics and capacity demand forecasting.</li>
-                        <li>Statistical hypothesis testing (Pearson's $\chi^2$, Cramer's V) via IBM SPSS[cite: 1].</li>
-                        <li>Streamlined onboarding pipelines and operational risk mitigation.</li>
+                        <li>Federal grant financial auditing ($2M+) and chargeback reconciliation[cite: 2].</li>
+                        <li>Enterprise CRM automation (Salesforce, KnowledgeLake) across business units[cite: 2].</li>
+                        <li>Small Island Developing States (SIDS) regional governance frameworks[cite: 2].</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Professional Track Record (Canvas White) -->
-    <section id="experience" class="section-white">
+    <!-- 4. Interactive Resume & Research Asset Viewer -->
+    <section id="documents" class="section-ivory">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Career Progression</div>
-                <h2 class="section-title">Leadership Track Record</h2>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-role">Operations & Human Capital Strategy Lead</div>
-                    <div class="timeline-org">Regional & Regulated Infrastructure Operations</div>
-                    <div class="timeline-body">
-                        Direct workforce planning, operational scheduling, and compliance workflows for teams of up to 300+ personnel. Engineered data-driven scheduling frameworks that optimized labor budgets while ensuring 100% adherence to regulatory standards and safety management systems.
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-role">National Development Scholar & Principal Governance Researcher</div>
-                    <div class="timeline-org">Embry-Riddle Aeronautical University / Ministry of Education, Barbados</div>
-                    <div class="timeline-body">
-                        Conducted groundbreaking quantitative research on global aviation safety compliance across 57 UN-recognized SIDS[cite: 1]. Created the COMPASS Model to facilitate asset-pooling through Regional Safety Oversight Organizations (RSOOs)[cite: 1].
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Integrated Research & Strategy Assets (Canvas Ivory) -->
-    <section id="research-assets" class="section-ivory">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Evidence of Expertise</div>
-                <h2 class="section-title">Featured Research & Executive Briefings</h2>
+                <div class="section-tag">Executive Vault</div>
+                <h2 class="section-title">Resume & Strategic Briefings</h2>
             </div>
 
             <div class="asset-viewer-container">
                 <div class="asset-tabs">
-                    <button class="tab-btn active" onclick="switchTab('presentation-tab', this)">Executive Slide Deck</button>
-                    <button class="tab-btn" onclick="switchTab('poster-tab', this)">Visual Research Poster</button>
+                    <button class="tab-btn active" onclick="switchTab('resume-tab', this)">Official Resume</button>
+                    <button class="tab-btn" onclick="switchTab('presentation-tab', this)">Aviation Slide Deck</button>
+                    <button class="tab-btn" onclick="switchTab('poster-tab', this)">Research Poster</button>
                 </div>
 
-                <!-- Tab 1: Presentation Deck -->
-                <div id="presentation-tab" class="tab-content active">
+                <!-- Tab 1: Official Resume -->
+                <div id="resume-tab" class="tab-content active">
                     <div class="asset-meta">
                         <div>
-                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Empirical Evaluation of ICAO Annex 19 Compliance & NCLB Alignment[cite: 1]</h3>
+                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Executive Curriculum Vitae</h3>
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                                A 17-slide executive brief detailing empirical findings on SIDS state capacity, statistical dependencies in EFOD compliance data, and actionable institutional recommendations for regional risk pools and regulatory bodies[cite: 1].
+                                Complete overview covering aerospace management, human capital leadership across global airline accounts, and institutional grant administration[cite: 2].
                             </p>
-                            <a href="presentation.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download Full Presentation Deck (PDF)[cite: 1]</a>
+                            <a href="resume.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download Official Resume (PDF)</a>
+                        </div>
+                        <div>
+                            <iframe src="resume.pdf" style="width: 100%; height: 220px; border: 1px solid #CBD5E1; border-radius: 2px;" title="Resume Preview"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Presentation Deck -->
+                <div id="presentation-tab" class="tab-content">
+                    <div class="asset-meta">
+                        <div>
+                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">Empirical Evaluation of Regulatory Compliance & Institutional Capacity</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                                An executive brief detailing aviation safety compliance, state capacity trends, and institutional recommendations for regional safety oversight organizations.
+                            </p>
+                            <a href="presentation.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download Full Presentation Deck (PDF)</a>
                         </div>
                         <div>
                             <iframe src="presentation.pdf" style="width: 100%; height: 220px; border: 1px solid #CBD5E1; border-radius: 2px;" title="Presentation Preview"></iframe>
@@ -691,13 +801,13 @@
                     </div>
                 </div>
 
-                <!-- Tab 2: Poster -->
+                <!-- Tab 3: Poster -->
                 <div id="poster-tab" class="tab-content">
                     <div class="asset-meta">
                         <div>
-                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS & Annex 19 Compliance</h3>
+                            <h3 style="font-family: var(--font-heading); color: var(--navy-deep); margin-bottom: 0.5rem;">State Capacity & Global Aviation Safety: SIDS Compliance</h3>
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-                                Visual synthesis presented at Embry-Riddle Aeronautical University. Maps state capacity constraints against Safety Management System (SMS) implementation hurdles across global SIDS.
+                                Visual synthesis presented at Embry-Riddle Aeronautical University. Maps state capacity constraints against Safety Management System (SMS) implementation hurdles across SIDS.
                             </p>
                             <a href="poster.pdf" target="_blank" class="btn-gold" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.75rem;">Download High-Res Research Poster (PDF)</a>
                         </div>
@@ -710,8 +820,47 @@
         </div>
     </section>
 
-    <!-- Honors & Recognition (Canvas White) -->
-    <section id="honors" class="section-white">
+    <!-- 5. Education & Certifications -->
+    <section id="education" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Credentials</div>
+                <h2 class="section-title">Education & Professional Certifications</h2>
+            </div>
+
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>Master of Science in Aviation (Distinction)</h3>
+                    <div class="school">Embry-Riddle Aeronautical University | 2024 – 2026</div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">
+                        Specialization: Aerospace Management, Sustainability & Safety Management Systems (SMS)[cite: 2].<br>
+                        <strong>Barbadian National Development Scholar</strong>[cite: 2].
+                    </p>
+                </div>
+
+                <div class="edu-card">
+                    <h3>Bachelor of Science in Management (Honors)</h3>
+                    <div class="school">The University of the West Indies | 2019 – 2022</div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">
+                        Comprehensive grounding in organizational strategy, operational management, and leadership[cite: 2].
+                    </p>
+                </div>
+
+                <div class="edu-card">
+                    <h3>Executive Certifications</h3>
+                    <div class="school">SHRM / HRCI / UC Irvine</div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">
+                        • <strong>SHRM-SCP</strong> (Senior Certified Professional - Expected Sep 2026)[cite: 2]<br>
+                        • <strong>HR Analytics Certificate</strong> (UC Irvine, Feb 2026)[cite: 2]<br>
+                        • <strong>Talent Acquisition Certificate</strong> (HRCI, Feb 2026)[cite: 2]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Honors & Recognition -->
+    <section id="honors" class="section-ivory">
         <div class="container">
             <div class="section-header">
                 <div class="section-tag">Distinctions</div>
@@ -724,7 +873,7 @@
                     <h3 class="honor-title">Barbadian National Development Scholar</h3>
                     <div class="honor-issuer">Government of Barbados</div>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Granted full national postgraduate scholarship for academic excellence and strategic alignment with Caribbean infrastructure, policy, and regional development goals.
+                        Granted full national postgraduate scholarship for academic excellence and strategic alignment with Caribbean infrastructure, policy, and regional development goals[cite: 2].
                     </p>
                 </div>
 
@@ -733,16 +882,16 @@
                     <h3 class="honor-title">1st Place Graduate Research Award</h3>
                     <div class="honor-issuer">University Aviation Association (UAA)</div>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Recognized globally for empirical quantitative research establishing the baseline for SIDS regulatory compliance and state capacity constraints in global aviation[cite: 1].
+                        Recognized globally for empirical quantitative research establishing the baseline for SIDS regulatory compliance and state capacity constraints in global aviation.
                     </p>
                 </div>
 
                 <div class="honor-card">
                     <div class="honor-badge">Institutional Excellence</div>
-                    <h3 class="honor-title">International Engagement Award for Excellence in International Education Research</h3>
+                    <h3 class="honor-title">International Engagement Award for Excellence in Research</h3>
                     <div class="honor-issuer">Embry-Riddle Aeronautical University (ERAU)</div>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">
-                        Honored for research excellence in international education, state capacity modeling across Small Island Developing States, and multi-jurisdictional governance frameworks.
+                        Honored for research excellence in evaluating international civil aviation standards, state capacity modeling, and regulatory risk mitigation frameworks[cite: 2].
                     </p>
                 </div>
             </div>
@@ -757,7 +906,7 @@
                 Operations, Human Capital & Regional Governance Specialist
             </p>
             <p style="color: #CBD5E1; font-size: 0.95rem;">
-                Barbados / Regional | (937) 477-7862 | <a href="mailto:reanclinton@gmail.com" style="color: var(--gold-regal); text-decoration: none;">reanclinton@gmail.com</a>
+                Bridgetown, Barbados | (937) 477-7862 | <a href="mailto:reanclinton@gmail.com" style="color: var(--gold-regal); text-decoration: none;">reanclinton@gmail.com</a>[cite: 2]
             </p>
             <p style="margin-top: 2rem; font-size: 0.8rem; color: #64748B;">
                 © Réan Clinton. Built for Executive & Regional Governance Excellence.
@@ -767,7 +916,7 @@
 
     <!-- Interactive JavaScript -->
     <script>
-        // Interactive Tab Switcher for Presentation & Poster
+        // Interactive Tab Switcher
         function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -792,7 +941,7 @@
                                 counter.innerText = Math.ceil(count);
                                 setTimeout(updateCount, 30);
                             } else {
-                                counter.innerText = target + (target === 300 ? '+' : '');
+                                counter.innerText = (target === 2 ? '$2M+' : target + (target === 300 ? '+' : ''));
                             }
                         };
                         updateCount();
